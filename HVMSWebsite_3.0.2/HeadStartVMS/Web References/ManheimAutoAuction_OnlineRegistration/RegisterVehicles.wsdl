@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="UploadFileResponse">
+        <xsd:all>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="error" type="xsd:string" />
+          <xsd:element name="vehicles" type="tns:vehicleResults" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="vehicleResult">
+        <xsd:all>
+          <xsd:element name="invid" type="xsd:int" />
+          <xsd:element name="vin" type="xsd:string" />
+          <xsd:element name="run" nillable="true" type="xsd:string" />
+          <xsd:element name="saledate" nillable="true" type="xsd:string" />
+          <xsd:element name="accepted" nillable="true" type="xsd:boolean" />
+          <xsd:element name="reason" nillable="true" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="vehicleResults">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:vehicleResult[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="vehicle">
+        <xsd:all>
+          <xsd:element name="invid" type="xsd:int" />
+          <xsd:element name="vin" type="xsd:string" />
+          <xsd:element name="lane" type="xsd:int" />
+          <xsd:element name="run" type="xsd:int" />
+          <xsd:element name="saledate" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="vehicles">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:vehicle[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="file">
+        <xsd:all>
+          <xsd:element name="filestring" type="xsd:string" />
+          <xsd:element name="test" type="xsd:boolean" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadFileRequest">
+    <wsdl:part name="file" type="tns:file" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileResponse">
+    <wsdl:part name="return" type="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnassignVehiclesRequest">
+    <wsdl:part name="vehicles" type="tns:vehicles" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnassignVehiclesResponse">
+    <wsdl:part name="return" type="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RegisterVehiclesPortType">
+    <wsdl:operation name="UploadFile">
+      <documentation>Upload a File</documentation>
+      <wsdl:input message="tns:UploadFileRequest" />
+      <wsdl:output message="tns:UploadFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnassignVehicles">
+      <documentation>Upload Vehicles to be Unassigned from Run Number</documentation>
+      <wsdl:input message="tns:UploadUnassignVehiclesRequest" />
+      <wsdl:output message="tns:UploadUnassignVehiclesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegisterVehiclesBinding" type="tns:RegisterVehiclesPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php#UploadFile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnassignVehicles">
+      <soap:operation soapAction="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php#UploadUnassignVehicles" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegisterVehicles">
+    <wsdl:port name="RegisterVehiclesPort" binding="tns:RegisterVehiclesBinding">
+      <soap:address location="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

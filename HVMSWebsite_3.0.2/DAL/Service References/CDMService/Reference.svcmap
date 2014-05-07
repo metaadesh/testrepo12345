@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1edc3980-92ac-4744-bee0-50c2111cb481" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.10.31/cdmservice/HSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HSService.xsd" MetadataType="Schema" ID="43cc309a-6ffc-48ce-a972-bed896bad7b8" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HSService1.xsd" MetadataType="Schema" ID="16e72ad6-53dd-4e99-a034-938c58604e80" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HSService2.xsd" MetadataType="Schema" ID="80f118cd-5b52-4762-b55b-9c9607896301" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HSService3.xsd" MetadataType="Schema" ID="50813a6f-ae73-49c4-b62d-5301645b2b3e" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd4" />
+    <MetadataFile FileName="HSService.disco" MetadataType="Disco" ID="b3e6225c-b563-4ca4-9142-687eebb14aeb" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?disco" />
+    <MetadataFile FileName="HSService.wsdl" MetadataType="Wsdl" ID="5fb17ce0-e3e3-4ae5-8e48-162cdc75c5fc" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?wsdl" />
+    <MetadataFile FileName="HSService4.xsd" MetadataType="Schema" ID="ffaf4d75-553a-411e-8d63-cea9f7bab25f" SourceId="1" SourceUrl="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

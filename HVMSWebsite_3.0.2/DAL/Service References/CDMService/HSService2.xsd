@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.10.31/CDMService/HSService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer.DataContracts" />
+  <xs:complexType name="ServiceResponseOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Header" nillable="true" type="tns:ResponseHeader" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfstring" nillable="true" type="tns:ServiceResponseOfstring" />
+  <xs:complexType name="ResponseHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TransactionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ErrorResponse" />
+      <xs:element minOccurs="0" name="TransactionTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseHeader" nillable="true" type="tns:ResponseHeader" />
+  <xs:complexType name="ErrorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorResponse" nillable="true" type="tns:ErrorResponse" />
+  <xs:complexType name="ServiceResponseOfResponseTableDataUs8T9G22">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ResponseTableData" Namespace="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer.DataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Header" nillable="true" type="tns:ResponseHeader" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Metaoption.ChromeDataService.DataAccessLayer.DataContracts" minOccurs="0" name="Data" nillable="true" type="q2:ArrayOfResponseTableData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfResponseTableDataUs8T9G22" nillable="true" type="tns:ServiceResponseOfResponseTableDataUs8T9G22" />
+  <xs:complexType name="Chrome_Make">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MakeID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINDivisionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_Make" nillable="true" type="tns:Chrome_Make" />
+  <xs:complexType name="Chrome_Model">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MakeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINDivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINModelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_Model" nillable="true" type="tns:Chrome_Model" />
+  <xs:complexType name="ArrayOfChrome_Body">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_Body" nillable="true" type="tns:Chrome_Body" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_Body" nillable="true" type="tns:ArrayOfChrome_Body" />
+  <xs:complexType name="Chrome_Body">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BodyID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EngineSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="OldStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrimName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINDivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINStyleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_Body" nillable="true" type="tns:Chrome_Body" />
+  <xs:complexType name="ArrayOfChrome_BodyStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_BodyStyle" nillable="true" type="tns:Chrome_BodyStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_BodyStyle" nillable="true" type="tns:ArrayOfChrome_BodyStyle" />
+  <xs:complexType name="Chrome_BodyStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPrimary" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StyleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_BodyStyle" nillable="true" type="tns:Chrome_BodyStyle" />
+  <xs:complexType name="Chrome_VINPattern">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutoTransAvail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngineCID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EngineSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngineTypeCategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ForcedInductionCategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FuelTypeCategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GVWRRange" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManualTransAvail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransmissionTypeCategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VINDivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINPatternID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINStyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_VINPattern" nillable="true" type="tns:Chrome_VINPattern" />
+  <xs:complexType name="ArrayOfChrome_YMMBCV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_YMMBCV" nillable="true" type="tns:Chrome_YMMBCV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_YMMBCV" nillable="true" type="tns:ArrayOfChrome_YMMBCV" />
+  <xs:complexType name="Chrome_YMMBCV">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ChromeStyleID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUpdated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EngineSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="NewID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OldID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TrimName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINDivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINPatternID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINStyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_YMMBCV" nillable="true" type="tns:Chrome_YMMBCV" />
+  <xs:complexType name="ArrayOfChrome_YMMB">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_YMMB" nillable="true" type="tns:Chrome_YMMB" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_YMMB" nillable="true" type="tns:ArrayOfChrome_YMMB" />
+  <xs:complexType name="Chrome_YMMB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyID" type="xs:int" />
+      <xs:element minOccurs="0" name="EngineSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCustom" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MakeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="TrimName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINDivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINStyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_YMMB" nillable="true" type="tns:Chrome_YMMB" />
+  <xs:complexType name="ArrayOfChrome_VINPatternStyleMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_VINPatternStyleMapping" nillable="true" type="tns:Chrome_VINPatternStyleMapping" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_VINPatternStyleMapping" nillable="true" type="tns:ArrayOfChrome_VINPatternStyleMapping" />
+  <xs:complexType name="Chrome_VINPatternStyleMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChromeStyleID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINMappingID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINPatternID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_VINPatternStyleMapping" nillable="true" type="tns:Chrome_VINPatternStyleMapping" />
+  <xs:complexType name="ArrayOfChrome_ColorExterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_ColorExterior" nillable="true" type="tns:Chrome_ColorExterior" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_ColorExterior" nillable="true" type="tns:ArrayOfChrome_ColorExterior" />
+  <xs:complexType name="Chrome_ColorExterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ColorID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUpdated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ext1Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ext1RGBHex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_ColorExterior" nillable="true" type="tns:Chrome_ColorExterior" />
+  <xs:complexType name="ArrayOfChrome_ColorInterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_ColorInterior" nillable="true" type="tns:Chrome_ColorInterior" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_ColorInterior" nillable="true" type="tns:ArrayOfChrome_ColorInterior" />
+  <xs:complexType name="Chrome_ColorInterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ColorID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUpdated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GenericID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IntDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_ColorInterior" nillable="true" type="tns:Chrome_ColorInterior" />
+  <xs:complexType name="ArrayOfChrome_ColorCombo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_ColorCombo" nillable="true" type="tns:Chrome_ColorCombo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_ColorCombo" nillable="true" type="tns:ArrayOfChrome_ColorCombo" />
+  <xs:complexType name="Chrome_ColorCombo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtID" type="xs:int" />
+      <xs:element minOccurs="0" name="IntID" type="xs:int" />
+      <xs:element minOccurs="0" name="MakeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_ColorCombo" nillable="true" type="tns:Chrome_ColorCombo" />
+  <xs:complexType name="ArrayOfChrome_VINEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_VINEquipment" nillable="true" type="tns:Chrome_VINEquipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_VINEquipment" nillable="true" type="tns:ArrayOfChrome_VINEquipment" />
+  <xs:complexType name="Chrome_VINEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="VINAvailability" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VINPatternID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_VINEquipment" nillable="true" type="tns:Chrome_VINEquipment" />
+  <xs:complexType name="ArrayOfChrome_StyleGenericEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_StyleGenericEquipment" nillable="true" type="tns:Chrome_StyleGenericEquipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_StyleGenericEquipment" nillable="true" type="tns:ArrayOfChrome_StyleGenericEquipment" />
+  <xs:complexType name="Chrome_StyleGenericEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ChromeStyleID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StyleAvailability" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_StyleGenericEquipment" nillable="true" type="tns:Chrome_StyleGenericEquipment" />
+  <xs:complexType name="ArrayOfChrome_ConsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_ConsInfo" nillable="true" type="tns:Chrome_ConsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_ConsInfo" nillable="true" type="tns:ArrayOfChrome_ConsInfo" />
+  <xs:complexType name="Chrome_ConsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StyleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_ConsInfo" nillable="true" type="tns:Chrome_ConsInfo" />
+  <xs:complexType name="ArrayOfChrome_YearMakeModelStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chrome_YearMakeModelStyle" nillable="true" type="tns:Chrome_YearMakeModelStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChrome_YearMakeModelStyle" nillable="true" type="tns:ArrayOfChrome_YearMakeModelStyle" />
+  <xs:complexType name="Chrome_YearMakeModelStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutoBuilderStyleID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvailableInNVD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChromeStyleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionID" type="xs:int" />
+      <xs:element minOccurs="0" name="DivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FleetOnly" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HistoricalStyleID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MfrStyleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubdivisionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SubdivisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrimName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chrome_YearMakeModelStyle" nillable="true" type="tns:Chrome_YearMakeModelStyle" />
+  <xs:complexType name="ArrayOfWS_MediaGallery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WS_MediaGallery" nillable="true" type="tns:WS_MediaGallery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWS_MediaGallery" nillable="true" type="tns:ArrayOfWS_MediaGallery" />
+  <xs:complexType name="WS_MediaGallery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackgroundDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Match" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrimaryColorOptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShotCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VinPattern" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="primaryRGBHexCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WS_MediaGallery" nillable="true" type="tns:WS_MediaGallery" />
+  <xs:complexType name="ArrayOfWS_GenericEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WS_GenericEquipment" nillable="true" type="tns:WS_GenericEquipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWS_GenericEquipment" nillable="true" type="tns:ArrayOfWS_GenericEquipment" />
+  <xs:complexType name="WS_GenericEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="GenericEquipmentId" type="xs:int" />
+      <xs:element minOccurs="0" name="InstalledCause" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StyleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WS_GenericEquipment" nillable="true" type="tns:WS_GenericEquipment" />
+</xs:schema>

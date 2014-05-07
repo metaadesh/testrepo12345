@@ -1,0 +1,1013 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HeadStartVMS_24Feb" Class="Admin_DALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.21;Initial Catalog=HVMSRapid;Integrated Security=True" SettingsObjectName="METAOPTION.DAL.Properties.Settings" SettingsPropertyName="HVMSRapidConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SecurityUser" Member="SecurityUsers">
+    <Type Name="SecurityUser">
+      <Column Name="SecurityUserID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntityTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntityID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserPassword" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserNote" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContactId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IPRestriction" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dealer" Member="Dealers">
+    <Type Name="Dealer">
+      <Column Name="DealerId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DealerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DealerDIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DealerTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DealerCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DealerSourceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PreferenceSettings" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReceiveSms" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReceiveEmail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AuctionAccessNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Dealer_Address" Member="Addresses" ThisKey="DealerId" OtherKey="EntityId" Type="Address" />
+      <Association Name="DealerType_Dealer" Member="DealerType" ThisKey="DealerTypeId" OtherKey="DealerTypeId" Type="DealerType" IsForeignKey="true" />
+      <Association Name="DealerSource_Dealer" Member="DealerSource" ThisKey="DealerSourceId" OtherKey="DealerSourceId" Type="DealerSource" IsForeignKey="true" />
+      <Association Name="DealerCategory_Dealer" Member="DealerCategory" ThisKey="DealerCategoryId" OtherKey="DealerCategoryId" Type="DealerCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Address" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="AddressId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntityId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EntityTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Suite" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone1Ext" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone2Ext" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Dealer_Address" Member="Dealer" ThisKey="EntityId" OtherKey="DealerId" Type="Dealer" IsForeignKey="true" />
+      <Association Name="EntityType_Address" Member="EntityType" ThisKey="EntityTypeId" OtherKey="EntityTypeId" Type="EntityType" IsForeignKey="true" />
+      <Association Name="Buyer_Address" Member="Buyer" ThisKey="EntityId" OtherKey="BuyerId" Type="Buyer" IsForeignKey="true" />
+      <Association Name="Vendor_Address" Member="Vendor" ThisKey="EntityId" OtherKey="VendorId" Type="Vendor" IsForeignKey="true" />
+      <Association Name="UtilityCompany_Address" Member="UtilityCompany" ThisKey="EntityId" OtherKey="UtilityCompanyId" Type="UtilityCompany" IsForeignKey="true" />
+      <Association Name="Employee_Address" Member="Employee" ThisKey="EntityId" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntityType" Member="EntityTypes">
+    <Type Name="EntityType">
+      <Column Name="EntityTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EntityType" Member="EntityType1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRealEntity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EntityType_Address" Member="Addresses" ThisKey="EntityTypeId" OtherKey="EntityTypeId" Type="Address" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buyer" Member="Buyers">
+    <Type Name="Buyer">
+      <Column Name="BuyerId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TitleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Buyer_Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxIdNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentTermId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommissionTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Level2CommissionTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Level2CommissionBuyerId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CommissionValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="StateSalesmanLicenseNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LicensePlateNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CommissionTermId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDirectBuyer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ParentBuyer" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AccessLevel" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Buyer_Address" Member="Addresses" ThisKey="BuyerId" OtherKey="EntityId" Type="Address" />
+      <Association Name="PaymentTerm_Buyer" Member="PaymentTerm" ThisKey="PaymentTermId" OtherKey="PaymentTermId" Type="PaymentTerm" IsForeignKey="true" />
+      <Association Name="CommissionType_Buyer" Member="CommissionType" ThisKey="CommissionTypeId" OtherKey="CommissionTypeId" Type="CommissionType" IsForeignKey="true" />
+      <Association Name="CommissionTerm_Buyer" Member="CommissionTerm" ThisKey="CommissionTermId" OtherKey="CommissionTermId" Type="CommissionTerm" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Engine" Member="Engines">
+    <Type Name="Engine">
+      <Column Name="EngineId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EngineType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Engine" Member="Engine1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WheelDrive" Member="WheelDrives">
+    <Type Name="WheelDrive">
+      <Column Name="WheelDriveId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WheelDrive" Member="WheelDrive1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VendorType" Member="VendorTypes">
+    <Type Name="VendorType">
+      <Column Name="VendorTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorType" Member="VendorType1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="VendorType_Vendor" Member="Vendors" ThisKey="VendorTypeId" OtherKey="VendorTypeId" Type="Vendor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VendorCategory" Member="VendorCategories">
+    <Type Name="VendorCategory">
+      <Column Name="VendorCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorCategory" Member="VendorCategory1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="VendorCategory_Vendor" Member="Vendors" ThisKey="VendorCategoryId" OtherKey="VendorCategoryId" Type="Vendor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trans" Member="Trans">
+    <Type Name="Tran">
+      <Column Name="TransId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Titles" Member="Titles">
+    <Type Name="Title">
+      <Column Name="TitleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Member="Title1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.State" Member="States">
+    <Type Name="State">
+      <Column Name="StateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StateCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Member="State1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentTerm" Member="PaymentTerms">
+    <Type Name="PaymentTerm">
+      <Column Name="PaymentTermId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaymentTerm" Member="PaymentTerm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PaymentTerm_Buyer" Member="Buyers" ThisKey="PaymentTermId" OtherKey="PaymentTermId" Type="Buyer" />
+      <Association Name="PaymentTerm_Vendor" Member="Vendors" ThisKey="PaymentTermId" OtherKey="PaymentTermId" Type="Vendor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PayementFrequency" Member="PayementFrequencies">
+    <Type Name="PayementFrequency">
+      <Column Name="PayementFrequencyId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PayementFrequency" Member="PayementFrequency1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PayementFrequency_UtilityCompany" Member="UtilityCompanies" ThisKey="PayementFrequencyId" OtherKey="PayementFrequencyId" Type="UtilityCompany" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobTitle" Member="JobTitles">
+    <Type Name="JobTitle">
+      <Column Name="JobTitleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobTitle" Member="JobTitle1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DealerType" Member="DealerTypes">
+    <Type Name="DealerType">
+      <Column Name="DealerTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DealerType" Member="DealerType1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DealerType_Dealer" Member="Dealers" ThisKey="DealerTypeId" OtherKey="DealerTypeId" Type="Dealer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DealerSource" Member="DealerSources">
+    <Type Name="DealerSource">
+      <Column Name="DealerSourceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DealerSource_Dealer" Member="Dealers" ThisKey="DealerSourceId" OtherKey="DealerSourceId" Type="Dealer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DealerCategory" Member="DealerCategories">
+    <Type Name="DealerCategory">
+      <Column Name="DealerCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DealerCategory_Dealer" Member="Dealers" ThisKey="DealerCategoryId" OtherKey="DealerCategoryId" Type="Dealer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContactType" Member="ContactTypes">
+    <Type Name="ContactType">
+      <Column Name="ContactTypeId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContactType" Member="ContactType1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyCategory" Member="CompanyCategories">
+    <Type Name="CompanyCategory">
+      <Column Name="CompanyCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyCategory" Member="CompanyCategory1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CompanyCategory_UtilityCompany" Member="UtilityCompanies" ThisKey="CompanyCategoryId" OtherKey="CompanyCategoryId" Type="UtilityCompany" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CommissionType" Member="CommissionTypes">
+    <Type Name="CommissionType">
+      <Column Name="CommissionTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CommissionType" Member="CommissionType1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CommissionType_Buyer" Member="Buyers" ThisKey="CommissionTypeId" OtherKey="CommissionTypeId" Type="Buyer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CommissionTerm" Member="CommissionTerms">
+    <Type Name="CommissionTerm">
+      <Column Name="CommissionTermId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CommissionTerm" Member="CommissionTerm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CommissionTerm_Buyer" Member="Buyers" ThisKey="CommissionTermId" OtherKey="CommissionTermId" Type="Buyer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DocumentType" Member="DocumentTypes">
+    <Type Name="DocumentType">
+      <Column Name="DocumentTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentType" Member="DocumentType1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EntityTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurityGroupRight" Member="SecurityGroupRights">
+    <Type Name="SecurityGroupRight">
+      <Column Name="SecurityGroupRightId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SecurityGroupId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SecurityRightID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="SecurityRight_SecurityGroupRight" Member="SecurityRight" ThisKey="SecurityRightID" OtherKey="SecurityRightID" Type="SecurityRight" IsForeignKey="true" />
+      <Association Name="SecurityGroup_SecurityGroupRight" Member="SecurityGroup" ThisKey="SecurityGroupId" OtherKey="SecurityGroupId" Type="SecurityGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurityRight" Member="SecurityRights">
+    <Type Name="SecurityRight">
+      <Column Name="SecurityRightID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RightName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RightDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SecurityRight_SecurityGroupRight" Member="SecurityGroupRights" ThisKey="SecurityRightID" OtherKey="SecurityRightID" Type="SecurityGroupRight" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vendor" Member="Vendors">
+    <Type Name="Vendor">
+      <Column Name="VendorId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VendorDIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VendorCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VendorTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaxIdNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentTermId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExpenseAutoApproval" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TransExpenseCalculationMethod" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Vendor_Address" Member="Addresses" ThisKey="VendorId" OtherKey="EntityId" Type="Address" />
+      <Association Name="PaymentTerm_Vendor" Member="PaymentTerm" ThisKey="PaymentTermId" OtherKey="PaymentTermId" Type="PaymentTerm" IsForeignKey="true" />
+      <Association Name="VendorCategory_Vendor" Member="VendorCategory" ThisKey="VendorCategoryId" OtherKey="VendorCategoryId" Type="VendorCategory" IsForeignKey="true" />
+      <Association Name="VendorType_Vendor" Member="VendorType" ThisKey="VendorTypeId" OtherKey="VendorTypeId" Type="VendorType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UtilityCompany" Member="UtilityCompanies">
+    <Type Name="UtilityCompany">
+      <Column Name="UtilityCompanyId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxIdNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PayementFrequencyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="UtilityCompany_Address" Member="Addresses" ThisKey="UtilityCompanyId" OtherKey="EntityId" Type="Address" />
+      <Association Name="CompanyCategory_UtilityCompany" Member="CompanyCategory" ThisKey="CompanyCategoryId" OtherKey="CompanyCategoryId" Type="CompanyCategory" IsForeignKey="true" />
+      <Association Name="PayementFrequency_UtilityCompany" Member="PayementFrequency" ThisKey="PayementFrequencyId" OtherKey="PayementFrequencyId" Type="PayementFrequency" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EmployeeId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TitleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmployeeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmployeeTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DriverLicenseStateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DriverLicenseNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DriverLicensExpDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SpecialPayrollConditions" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Comments" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Employee_Address" Member="Addresses" ThisKey="EmployeeId" OtherKey="EntityId" Type="Address" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeeType" Member="EmployeeTypes">
+    <Type Name="EmployeeType">
+      <Column Name="EmployeeTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeType" Member="EmployeeType1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurityGroup" Member="SecurityGroups">
+    <Type Name="SecurityGroup">
+      <Column Name="SecurityGroupId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsSystemDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SecurityGroup_SecurityGroupRight" Member="SecurityGroupRights" ThisKey="SecurityGroupId" OtherKey="SecurityGroupId" Type="SecurityGroupRight" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginHistory" Member="LoginHistories">
+    <Type Name="LoginHistory">
+      <Column Name="LoginHistoryId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsSuccess" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogInId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoginFrom" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SessionID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LogOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LookupTables" Member="LookupTables">
+    <Type Name="LookupTable">
+      <Column Name="LookupTableId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TableName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShowColumns" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsReadWrite" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bank" Member="Banks">
+    <Type Name="Bank">
+      <Column Name="BankId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BankContact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankABA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupStatus" Member="GroupStatus">
+    <Type Name="GroupStatus">
+      <Column Name="GroupStatusId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupStatus" Member="GroupStatus1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Organisation" Member="Organisations">
+    <Type Name="Organisation">
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Organisation" Member="Organisation1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CCMID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RHASIWebsiteDealerID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AllowLaneAutomation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AllowMAA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetOrganisation" Method="GetOrganisation">
+    <ElementType Name="GetOrganisationResult">
+      <Column Name="OrgId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OrgName" Type="System.String" DbType="VarChar(63) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BuyerDetailsInsert" Method="BuyerDetailsInsert">
+    <Parameter Name="BuyerId" Parameter="buyerId" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="TitleId" Parameter="titleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="MiddleName" Parameter="middleName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="BuyerCode" Parameter="buyerCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TaxIdNumber" Parameter="taxIdNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PaymentTermId" Parameter="paymentTermId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommissionTypeId" Parameter="commissionTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommissionValue" Parameter="commissionValue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="StateSalesmanLicenseNumber" Parameter="stateSalesmanLicenseNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LicensePlateNumber" Parameter="licensePlateNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CellPhone" Parameter="cellPhone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CommissionTermId" Parameter="commissionTermId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="IsDirectBuyer" Parameter="isDirectBuyer" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ParentBuyer" Parameter="parentBuyer" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="AccessLevel" Parameter="accessLevel" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Street" Parameter="street" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Suite" Parameter="suite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StateId" Parameter="stateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountryId" Parameter="countryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1" Parameter="phone1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1Ext" Parameter="phone1Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2" Parameter="phone2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2Ext" Parameter="phone2Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email1" Parameter="email1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email2" Parameter="email2" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Buyer_DirectBuyerList" Method="Buyer_DirectBuyerList">
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="Buyer_DirectBuyerListResult">
+      <Column Name="BuyerId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BuyerName" Type="System.String" DbType="NVarChar(154) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BuyerCode_CheckAvailability" Method="BuyerCode_CheckAvailability">
+    <Parameter Name="BuyerCode" Parameter="buyerCode" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="BuyerCode_CheckAvailabilityResult">
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Group_Delete" Method="Group_Delete">
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SecurityGroupUpdate" Method="SecurityGroupUpdate">
+    <Parameter Name="SecurityGroupId" Parameter="securityGroupId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="GroupName" Parameter="groupName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GroupDesc" Parameter="groupDesc" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAssociatedRightsWithGroup" Method="GetAssociatedRightsWithGroup">
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="GetAssociatedRightsWithGroupResult">
+      <Column Name="SecurityGroupRightId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SecurityRightID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RightName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RightDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SecurityGroupId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteUserOrRightFromGroup" Method="DeleteUserOrRightFromGroup">
+    <Parameter Name="Mode" Parameter="mode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetCountryList" Method="GetCountryList">
+    <ElementType Name="GetCountryListResult">
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetStates" Method="GetStates">
+    <Parameter Name="CountryId" Parameter="countryId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetStatesResult">
+      <Column Name="StateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Update_Password" Method="Update_Password">
+    <Parameter Name="ReturnEntityTypeID" Parameter="returnEntityTypeID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="securityuserid" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="updatepassword" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="modifiedBy" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CustomerDealerInsert" Method="CustomerDealerInsert">
+    <Parameter Name="DealerId" Parameter="dealerId" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="DealerName" Parameter="dealerName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DealerDIN" Parameter="dealerDIN" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DealerTypeId" Parameter="dealerTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DealerCategoryId" Parameter="dealerCategoryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DealerSourceId" Parameter="dealerSourceId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="PreferenceSettings" Parameter="preferenceSettings" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ReceiveSms" Parameter="receiveSms" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ReceiveEmail" Parameter="receiveEmail" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AuctionAccessNo" Parameter="auctionAccessNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Street" Parameter="street" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Suite" Parameter="suite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StateId" Parameter="stateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountryId" Parameter="countryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1" Parameter="phone1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1Ext" Parameter="phone1Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2" Parameter="phone2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2Ext" Parameter="phone2Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email1" Parameter="email1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email2" Parameter="email2" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DealerFranchiseInsert" Method="DealerFranchiseInsert">
+    <Parameter Name="FranchiseId" Parameter="franchiseId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DealerId" Parameter="dealerId" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetMakeList" Method="GetMakeList">
+    <ElementType Name="GetMakeListResult">
+      <Column Name="MakeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VINDivisionName" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMakeInYearRange" Method="GetMakeInYearRange">
+    <Parameter Name="YearFrom" Parameter="yearFrom" Type="System.Int32" DbType="Int" />
+    <Parameter Name="YearTo" Parameter="yearTo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetMakeInYearRangeResult">
+      <Column Name="MakeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Make" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.VendorDetailsInsert" Method="VendorDetailsInsert">
+    <Parameter Name="VendorId" Parameter="vendorId" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="VendorName" Parameter="vendorName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="VendorDIN" Parameter="vendorDIN" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="VendorCategoryId" Parameter="vendorCategoryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TaxIdNo" Parameter="taxIdNo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="VendorTypeId" Parameter="vendorTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PaymentTermId" Parameter="paymentTermId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TransExpenseCalculationMethod" Parameter="transExpenseCalculationMethod" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Street" Parameter="street" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Suite" Parameter="suite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StateId" Parameter="stateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountryId" Parameter="countryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1" Parameter="phone1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1Ext" Parameter="phone1Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2" Parameter="phone2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2Ext" Parameter="phone2Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email1" Parameter="email1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email2" Parameter="email2" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UtilityCompanyInsert" Method="UtilityCompanyInsert">
+    <Parameter Name="UtilityCompanyId" Parameter="utilityCompanyId" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="TaxIdNumber" Parameter="taxIdNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CompanyCategoryId" Parameter="companyCategoryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PayementFrequencyId" Parameter="payementFrequencyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Street" Parameter="street" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Suite" Parameter="suite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StateId" Parameter="stateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountryId" Parameter="countryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1" Parameter="phone1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1Ext" Parameter="phone1Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2" Parameter="phone2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2Ext" Parameter="phone2Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email1" Parameter="email1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email2" Parameter="email2" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EmployeeInsert" Method="EmployeeInsert">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="TitleId" Parameter="titleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MiddleName" Parameter="middleName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmployeeCode" Parameter="employeeCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmployeeTypeId" Parameter="employeeTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CellPhone" Parameter="cellPhone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DriverLicenseStateId" Parameter="driverLicenseStateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DriverLicenseNumber" Parameter="driverLicenseNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DriverLicensExpDate" Parameter="driverLicensExpDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SpecialPayrollConditions" Parameter="specialPayrollConditions" Type="System.String" DbType="NText" />
+    <Parameter Name="Street" Parameter="street" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Suite" Parameter="suite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StateId" Parameter="stateId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountryId" Parameter="countryId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1" Parameter="phone1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone1Ext" Parameter="phone1Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2" Parameter="phone2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phone2Ext" Parameter="phone2Ext" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fax" Parameter="fax" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email1" Parameter="email1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email2" Parameter="email2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateAdded" Parameter="dateAdded" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SuperAdminLogin" Method="SuperAdminLogin">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="UserPassword" Parameter="userPassword" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="OrgCode" Parameter="orgCode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SuperAdminLoginResult">
+      <Column Name="SecurityUserId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EntityID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EntityTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Organisation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SuperAdminLoginWithIP" Method="SuperAdminLoginWithIP">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserPassword" Parameter="userPassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IPAddress" Parameter="iPAddress" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="OrgCode" Parameter="orgCode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SuperAdminLoginWithIPResult">
+      <Column Name="SecurityUserId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EntityID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EntityTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Organisation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Permission_ByUserID" Method="Permission_ByUserID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="Permission_ByUserIDResult">
+      <Column Name="Permission" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.User_GetIPRestriction" Method="User_GetIPRestriction">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="User_GetIPRestrictionResult">
+      <Column Name="IPRestriction" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Email_Password" Method="Email_Password">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="Email_PasswordResult">
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTitles" Method="GetTitles">
+    <ElementType Name="GetTitlesResult">
+      <Column Name="TitleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEmployeeList" Method="GetEmployeeList">
+    <ElementType Name="GetEmployeeListResult">
+      <Column Name="EmployeeId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmployeeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmployeeTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmployeeType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SecurityUser_UpdateActiveStatus" Method="SecurityUser_UpdateActiveStatus">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SecurityGroupInsert" Method="SecurityGroupInsert">
+    <Parameter Name="SecurityGroupId" Parameter="securityGroupId" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="GroupName" Parameter="groupName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GroupDesc" Parameter="groupDesc" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsSystemDefault" Parameter="isSystemDefault" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="SecurityGroupInsertResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.IPUser_PermissionSelect" Method="IPUser_PermissionSelect">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="IPUser_PermissionSelectResult">
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IPType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IPRestriction" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateUserSettings" Method="UpdateUserSettings">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="SettingKeyValue" Parameter="settingKeyValue" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="UpdateUserSettingsResult">
+      <Column Name="" Member="Column1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SecurityUser_Update" Method="SecurityUser_Update">
+    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UserNote" Parameter="userNote" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ModifiedBy" Parameter="modifiedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SecurityUserId" Parameter="securityUserId" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAssociatedGroupsWithUser" Method="GetAssociatedGroupsWithUser">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="GetAssociatedGroupsWithUserResult">
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SecurityUserGroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spEntity5in1" Method="spEntity5in1">
+    <Parameter Name="Initial" Parameter="initial" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EntityType" Parameter="entityType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="spEntity5in1Result">
+      <Column Name="EntityId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EntityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Logout" Method="Logout">
+    <Parameter Name="LoginHistoryID" Parameter="loginHistoryID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Admin_CheckUserNameExistance" Method="Admin_CheckUserNameExistance">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Admin_CheckUserNameExistanceResult">
+      <Column Name="" Member="Column1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectAllLookupTables" Method="SelectAllLookupTables">
+    <Parameter Name="IsReadWrite" Parameter="isReadWrite" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="SelectAllLookupTablesResult">
+      <Column Name="LookupTableId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ShowColumns" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TableName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsReadWrite" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BuyerListSearch" Method="BuyerListSearch">
+    <Parameter Name="BuyerName" Parameter="buyerName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Commission" Parameter="commission" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Payment" Parameter="payment" Type="System.Int32" DbType="Int" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Country" Parameter="country" Type="System.Int32" DbType="Int" />
+    <Parameter Name="State" Parameter="state" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ZipCode" Parameter="zipCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="BuyerListSearchResult">
+      <Column Name="BuyerId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BuyerName" Type="System.String" DbType="NVarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="Commission" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentTerm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CityStateZip" Type="System.String" DbType="NVarChar(154)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.VendorSearchList" Method="VendorSearchList">
+    <Parameter Name="VendorName" Parameter="vendorName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Category" Parameter="category" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Country" Parameter="country" Type="System.Int32" DbType="Int" />
+    <Parameter Name="State" Parameter="state" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ZipCode" Parameter="zipCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="VendorSearchListResult">
+      <Column Name="VendorId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="VendorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VendorDIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CityStateZip" Type="System.String" DbType="NVarChar(153)" CanBeNull="true" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Organisation_CountAllEmployees" Method="Organisation_CountAllEmployees">
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="Organisation_CountAllEmployeesResult">
+      <Column Name="Customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Buyer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vendor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Utility Company]" Member="Utility_Company" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Employee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_UpdateEntityStatus" Method="Admin_UpdateEntityStatus">
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="EntityTypeID" Parameter="entityTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EntityID" Parameter="entityID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Admin_GetLeftPanelValue" Method="Admin_GetLeftPanelValue">
+    <ElementType Name="Admin_GetLeftPanelValueResult">
+      <Column Name="ActiveUsers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActiveOrganisations" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActiveSystems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Organisation_Search" Method="Organisation_Search">
+    <Parameter Name="OrgName" Parameter="orgName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="OrgCode" Parameter="orgCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Website" Parameter="website" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Organisation_SearchResult">
+      <Column Name="OrganisationID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OrgName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Organisation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CCMID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RHASIWebsiteDealerID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_DeleteOrganisation" Method="Admin_DeleteOrganisation">
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="status" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="LoginID" Parameter="loginID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Image_DeleteOrganisation" Method="Image_DeleteOrganisation">
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="status" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAllUserInfo" Method="GetAllUserInfo">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EntityTypeID" Parameter="entityTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SortExpression" Parameter="sortExpression" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="GetAllUserInfoResult">
+      <Column Name="EmployeeID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameDisplay" Type="System.String" DbType="NVarChar(102)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserNote" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserPassword" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EntityType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Permission" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="EntityID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EntityTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetUserInfo" Method="Admin_GetUserInfo">
+    <Parameter Name="SecurityUserId" Parameter="securityUserId" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="Admin_GetUserInfoResult">
+      <Column Name="SecurityUserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EntityTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntityID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserPassword" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserNote" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContactId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IPRestriction" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OrgID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsSuperAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OrgDisplayName" Type="System.String" DbType="VarChar(62)" CanBeNull="true" />
+      <Column Name="ENTITY_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AddNewBankAccount" Method="AddNewBankAccount">
+    <Parameter Name="Result" Parameter="result" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="BankID" Parameter="bankID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccNumber" Parameter="accNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="OrgID" Parameter="orgID" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="AddedBy" Parameter="addedBy" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

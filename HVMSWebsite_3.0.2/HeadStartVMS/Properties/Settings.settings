@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="METAOPTION.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HeadStartVMS_ManheimAutoAuction_OnlineRegistration_RegisterVehicles" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php</Value>
+    </Setting>
+    <Setting Name="HeadStartVMS_ReportingService_ReportingService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://sql/ReportServer/ReportService.asmx</Value>
+    </Setting>
+    <Setting Name="HeadStartVMS_AutoFillCustomersService_AutoFillNames" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9616/HeadStartVMS/WS/AutoFillCustomers.asmx</Value>
+    </Setting>
+    <Setting Name="HeadStartVMS_PeachtreeService_HeadStartVMSPtree" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://24.229.49.203/HeadStartVMS.asmx</Value>
+    </Setting>
+    <Setting Name="HeadStartVMS_UCR_LinkCRService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

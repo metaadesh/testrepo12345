@@ -1,0 +1,71 @@
+﻿body
+{
+    margin: 0px;
+    padding: 0;
+    color: #000000;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.siteheader
+{
+    background: #370633 !important;
+    border-bottom: 1px solid #A973A7;
+    clear: both;
+    color: #FFFFFF;
+    width: 100%;
+    height:60px;
+}
+
+.sitelogo-text
+{
+    padding: 10px;
+    width: 60%;
+    float: left;
+    text-align: left;
+    font-size: 20px;
+}
+
+.sitelogo-text h1
+{
+	margin:0px 0px 0px 0px; 
+	color:#fff;
+	font-size:28px;
+}
+
+.login-info
+{
+	float:right;
+	text-align:right;
+	color:#B2E203;
+	margin:5px 0px;
+	font-weight:bold;
+	width:500px; 
+    margin-right: 10px;
+    
+}
+
+.login-info a,
+.login-info a:visited
+{
+	color:#B2E203; 
+	text-decoration: none;
+}
+ 
+.login-info a:hover
+{
+	color:#fff;
+	text-decoration: underline dotted;
+}
+
+.login-info p
+{
+	text-align:right !important;
+	margin-bottom: 5px !important;
+}
+
+.login-info .last-login
+{
+	font-size:11px;
+}

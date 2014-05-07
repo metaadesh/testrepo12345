@@ -1,0 +1,485 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin_MasterLeftPanel.master.cs"
+    Inherits="METAOPTION.UI.Admin_MasterLeftPanel" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head1" runat="server">
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HeadStart VMS</title>
+    <link href="../Styles/AjaxRelated.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/MainStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/ModalPopUp.css" rel="stylesheet" type="text/css" />
+    <script src="../Styles/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="../Styles/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../Styles/thickbox-compressed.js" type="text/javascript"></script>
+    <script src="../Styles/Menu.js" type="text/javascript"></script>
+    <script src="../Styles/PageScript.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <link href="../Styles/ControlStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/thickbox.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/AdminStyle1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function showHide(obj) {
+            var pageLoad = false;
+            if (obj == null) {
+                pageLoad = true;
+                obj = document.getElementById("ctl00_repeter_inentities_ctl00_show_entity");
+            }
+            var strTrID = obj.id;
+            strTrID = strTrID + "_tr";
+            var strImgID = obj.id;
+            strImgID = strImgID + "_img";
+            var length = document.getElementById('ctl00_hNoSystem').value;
+            var objTr;
+            var objImg;
+            var curTrState = document.getElementById(strTrID).style.display;
+            for (var i = 0; i < length; i++) {
+                objTr = document.getElementById("ctl00_repeter_inentities_ctl0" + i + "_show_entity_tr");
+                objImg = document.getElementById("ctl00_repeter_inentities_ctl0" + i + "_show_entity_img");
+                objTr.style.display = 'none';
+                $(objImg).attr("src", "../Images/expand.png");
+            }
+            if (curTrState == 'none' || pageLoad) {
+                var curTr;
+                curTr = document.getElementById(strTrID);
+                objImg = document.getElementById(strImgID);
+                curTr.style.display = '';
+                $(objImg).attr("src", "../Images/collapse.png");
+            }
+        }
+
+    </script>
+    <script type="text/javascript" language="javascript">
+        function Logout_click() {
+            window.history.forward(1);
+        }
+    </script>
+    <style type="text/css">
+        .style1
+        {
+            height: 25px;
+        }
+        .style2
+        {
+            font-size: 12px;
+            color: #21618C;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            height: 25px;
+            padding: 5px;
+        }
+        .font
+        {
+            font-size: 11px;
+            font-weight: normal;
+        }
+        .OrangeText_Link_NoUnderLine
+        {
+            font-size: 11px;
+            color: #ff8f00;
+            text-decoration: none;
+            padding: 5px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        :hover.OrangeText_Link_NoUnderLine
+        {
+            font-size: 11px;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <center>
+        <asp:HiddenField ID="hNoSystem" runat="server" />
+        <table border="0" cellpadding="0" class="MainTable" style="border-collapse: collapse">
+            <tr>
+                <td>
+                    <!-- Header Start -->
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="LogoNew">
+                                <div style='margin-top: 0px;'>
+                                    <img id="imgLogo" border="0" src="../images/Logo.gif" width="207" height="35" alt=""
+                                        runat="server" />
+                                </div>
+                                <div style='margin-top: 6px;'>
+                                    <asp:Label ID="lblOrgName" runat="server" Text="ADMIN PANEL" CssClass="OrgName"></asp:Label>
+                                </div>
+                                <%--<img border="0" src="../images/Logo.gif" width="207" height="35" alt="" />--%>
+                                <asp:ScriptManager ID="ScriptManager5" runat="server">
+                                    <Services>
+                                        <asp:ServiceReference Path="~/WS/AutoFillCustomers.asmx" />
+                                    </Services>
+                                </asp:ScriptManager>
+                            </td>
+                            <td class="LoginStatusWindow" align="right">
+                                <!-- Login Status Window Start -->
+                                <table border="0" cellpadding="0" style="border-collapse: collapse" class="LoginStatus">
+                                    <tr>
+                                        <td class="LoginTd" style="white-space: nowrap;">
+                                            <asp:Label ID="lbl_Welcome_Disname" runat="server" Text=""></asp:Label>
+                                            &nbsp;|&nbsp;
+                                            <asp:LinkButton ID="link_logout" runat="server" CssClass="LoginTxt" Text="Logout"
+                                                CausesValidation="false" OnClick="link_logout_click" OnClientClick="Logout_click()"></asp:LinkButton>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LoginTd" style="white-space: nowrap;">
+                                            <%--Last Login was on : 11/11/2013 11:46 PM--%>
+                                            <asp:Label ID="lbl_LastLoginTime" runat="server" Text=""></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Login Status Window End -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="TopMenuBarTd">
+                                <div class="menu">
+                                    <ul>
+                                        <li><a href="Admin_Home.aspx">DASHBOARD</a></li>
+                                        <li><a href="#">Organization</a>
+                                            <ul>
+                                                <li><a href="Admin_AddOrganization.aspx">Add Organization</a></li>
+                                                <li><a href="Admin_SearchOrganization.aspx">Manage Organization</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">SETTINGS</a>
+                                            <ul>
+                                                <li><a href="Admin_ManageIP.aspx">Manage IP</a></li>
+                                                <li><a href="Admin_ManageSystem.aspx">Manage System</a></li>
+                                                <li><a href="Admin_ViewAllGroups.aspx">Manage Groups</a></li>
+                                                <li><a href="Admin_LookUpTables.aspx">Manage LookUps</a></li>
+                                                <li><a href="Admin_ManageUserSetting.aspx">Manage Users</a></li>
+                                                <li><a href="Admin_ManageEntities.aspx">Manage Entities</a></li>
+                                                <li><a href="Admin_ChangePassword.aspx">Change Password</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Header End -->
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="padding: 0px 2px 0px 2px;">
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="LeftPanel" valign="top">
+                                <!-- Left Panel Start -->
+                                <table border="0" cellpadding="0" style="border-collapse: collapse">
+                                    <tr>
+                                        <td class="LeftPanelTable" colspan="2">
+                                            <%--Change this picture with statistics pic (Prem)--%>
+                                            <img border="0" src="../Images/Statistics.png" width="236" height="28" alt="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" style="padding: 10px" colspan="2">
+                                            <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                                                <tr>
+                                                    <td width="10" align="left">
+                                                        <img border="0" src="../images/Buller-2.gif" width="5" height="5" alt="" />
+                                                    </td>
+                                                    <td class="LeftPanelContentHeading" align="left">
+                                                        Total Users
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="OrangeText_LeftPanel" align="left">
+                                                        <asp:Label ID="lblNoOfUsers" runat="server" Text="22 Users"></asp:Label>
+                                                        &nbsp; - <a href="Admin_ManageUserSetting.aspx?org=-1&type=-1&status=1" class="OrangeText_Link">
+                                                            View Details
+                                                            <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        <img border="0" src="../images/Buller-2.gif" width="5" height="5" alt="" />
+                                                    </td>
+                                                    <td class="LeftPanelContentHeading" align="left">
+                                                        Total Organizations
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="OrangeText_LeftPanel" align="left">
+                                                        <asp:Label ID="lblOrganizations" runat="server" Text="5 Organizations"></asp:Label>
+                                                        &nbsp; - <a href="Admin_SearchOrganization.aspx?status=1" class="OrangeText_Link">View
+                                                            Details
+                                                            <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        <img border="0" src="../images/Buller-2.gif" width="5" height="5" alt="" />
+                                                    </td>
+                                                    <td class="LeftPanelContentHeading" align="left">
+                                                        Total Systems
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="OrangeText_LeftPanel" align="left">
+                                                        <asp:Label ID="lblSystems" runat="server" Text=""></asp:Label>
+                                                        &nbsp; - <a href="Admin_ManageSystem.aspx?org=-1&status=1" class="OrangeText_Link">View
+                                                            Details
+                                                            <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelFooter">
+                                            &nbsp;
+                                        </td>
+                                        <td class="LeftPanelFooter" align="right">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" colspan="2">
+                                            <img border="0" src="../Images/Entities.png" width="236" height="28" alt="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" style="padding: 10px" colspan="2">
+                                            <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                                                <tr>
+                                                    <td class="style2" align="left">
+                                                        <asp:Repeater ID="repeter_inentities" runat="server" Visible="true" OnItemDataBound="repeter_itemdatabound">
+                                                            <ItemTemplate>
+                                                                <table width="100%">
+                                                                    <tr id="show_org">
+                                                                        <td width="10" align="left" colspan="2">
+                                                                            <div id="show_entity" runat="server" onclick="showHide(this);">
+                                                                                <table width="100%">
+                                                                                    <tr>
+                                                                                        <td style="white-space: nowrap;">
+                                                                                            <asp:HiddenField ID="hdnORGID" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"OrgID") %>' />
+                                                                                            <image id="show_entity_img" runat="server" alt="Organization"></image>
+                                                                                            <%--src="../Images/expand.png"--%>
+                                                                                            <asp:Label ID="lbl_org" runat="server" class="LeftPanelContentHeading" Text='<%#DataBinder.Eval(Container.DataItem,"Organisation") %>'></asp:Label>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr id="show_entity_tr" runat="server">
+                                                                        <td>
+                                                                        </td>
+                                                                        <td>
+                                                                            <table width="0" style="margin-left: 15px;">
+                                                                                <tr class="entity_type">
+                                                                                    <td style="height: 20px;">
+                                                                                        <img src="../Images/Buller-1.gif" alt="Buyer" />
+                                                                                        <asp:HiddenField ID="hdn_buyer" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"Buyer") %>' />
+                                                                                        <asp:HiddenField ID="hdn_dealer" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"Dealer") %>' />
+                                                                                        <asp:HiddenField ID="hdn_employee" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"Employee") %>' />
+                                                                                        <asp:HiddenField ID="hdn_uc" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"UtilityCompany") %>' />
+                                                                                        <asp:HiddenField ID="hdn_vendor" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"Vendor") %>' />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="hrefbuyer" class="OrangeText_Link" runat="server" href="#">
+                                                                                            <%-- <p id="p_buyer" runat="server" onclick="xdisable(this);>
+                                                                                            <p id="p_buyer" runat="server" onclick="xdisable(this);" >--%>
+                                                                                            <p>
+                                                                                                Buyer (<asp:Label ID="lbl_buyer" runat="server" CssClass="font" Text='<%#DataBinder.Eval(Container.DataItem,"Buyer") %>'></asp:Label>)</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="entity_type">
+                                                                                    <td style="height: 20px;">
+                                                                                        <img src="../Images/Buller-1.gif" alt="Dealer/Customer" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="hrefcustomer" class="OrangeText_Link" runat="server" href="#">
+                                                                                            <p>
+                                                                                                Dealer (<asp:Label ID="lbl_dealer" runat="server" CssClass="font" Text='<%#DataBinder.Eval(Container.DataItem,"Dealer") %>'></asp:Label>)</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="entity_type">
+                                                                                    <td style="height: 20px;">
+                                                                                        <img src="../Images/Buller-1.gif" alt="Employee" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a class="OrangeText_Link" runat="server" id="hrefemployee" href="#">
+                                                                                            <p>
+                                                                                                Employee (<asp:Label ID="Label1" runat="server" CssClass="font" Text='<%#DataBinder.Eval(Container.DataItem,"Employee") %>'></asp:Label>)</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="entity_type">
+                                                                                    <td style="height: 20px;">
+                                                                                        <img src="../Images/Buller-1.gif" alt="Utility Company" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a class="OrangeText_Link" runat="server" id="hrefuc" href="#">
+                                                                                            <p>
+                                                                                                Utility Company (<asp:Label ID="lbl_uc" runat="server" CssClass="font" Text='<%#DataBinder.Eval(Container.DataItem,"UtilityCompany") %>'></asp:Label>)</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="entity_type">
+                                                                                    <td style="height: 20px;">
+                                                                                        <img src="../Images/Buller-1.gif" alt="Vendor" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a class="OrangeText_Link" runat="server" id="hrefvendor" href="#">
+                                                                                            <p>
+                                                                                                Vendor (<asp:Label ID="lbl_vendor" runat="server" CssClass="font" Text='<%#DataBinder.Eval(Container.DataItem,"Vendor") %>'></asp:Label>)</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </ItemTemplate>
+                                                        </asp:Repeater>
+                                                    </td>
+                                                </tr>
+                                                <tr align="right">
+                                                    <td>
+                                                        <asp:HyperLink ID="hlk_moremsg" runat="server" Text="<i>..more</i>" CssClass="OrangeText_Link_NoUnderLine"
+                                                            NavigateUrl="../UI/Admin_Organizationentities.aspx" Visible="false"></asp:HyperLink>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Label ID="lbl" runat="server"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelFooter">
+                                            &nbsp;
+                                        </td>
+                                        <td class="LeftPanelFooter" align="right">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" colspan="2">
+                                            <img border="0" src="../Images/System-Settings.png" width="236" height="28" alt="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" style="padding: 10px" colspan="2">
+                                            <table border="0" width="210" cellpadding="0" style="border-collapse: collapse">
+                                                <tr>
+                                                    <td align="left" colspan="2" class="OrangeText_LeftPanel">
+                                                        <img src="../Images/Buller-1.gif" alt="Dealer/Customer" />
+                                                        <a href="Admin_ViewAllGroups.aspx" class="OrangeText_Link">Group Setting</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" colspan="2" class="OrangeText_LeftPanel">
+                                                        <img src="../Images/Buller-1.gif" alt="Dealer/Customer" />
+                                                        <a href="Admin_ManageIP.aspx" class="OrangeText_Link">IP Permission Setting</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" colspan="2" class="OrangeText_LeftPanel">
+                                                        <img src="../Images/Buller-1.gif" alt="Dealer/Customer" />
+                                                        <a href="Admin_LookUpTables.aspx" class="OrangeText_Link">Lookup Tables Setting</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelFooter" colspan="2">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Left Panel End -->
+                            </td>
+                            <td valign="top" width="730" class="RightPanel">
+                                <!-- Right Panel/Content Panel Start -->
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                                <!-- Right Panel/Content Panel End -->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="FooterPanel">
+                    <!-- Footer Start Here -->
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="FooterPanelLinkTd" align="left">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="OrangeText_LeftPanel" align="left">
+                                © 2009 RhollensheadAutoSales.com, Inc. All Rights Reserved.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Footer Start nd -->
+                </td>
+            </tr>
+        </table>
+        <asp:ObjectDataSource ID="RepcontrolDB" runat="server" TypeName="METAOPTION.BAL.Admin_Common"
+            SelectMethod="OrganizationList"></asp:ObjectDataSource>
+    </center>
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    showHide(null);
+    function xdisable(sach) {
+        var xo;
+        xo = document.getElementById("ctl00_repeter_inentities_ctl00_lbl_buyer").value; ;
+        sach.href.value = "#";
+        //xo.style.display = 'none';
+        alert(xo);
+
+    }
+</script>

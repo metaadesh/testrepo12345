@@ -1,0 +1,616 @@
+body{
+	margin:0px;
+	padding:0;
+	background:#E3ECF5 url(../images/page_bg.jpg) center repeat-y;
+	color:#000000;
+	font-size:12px;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+    	}
+td{
+	color:#535152;
+	font-size:11px;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+a{
+    outline:none !important;
+    	}    	
+form{
+	padding:0px;
+	margin:0px;
+	}
+
+/* CSS for Login Page Start */
+
+.MainTable{
+	background-color:#ffffff;
+	}
+.formTxtBold{
+	color:#000000;
+	font-size:11px;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	}
+.FormItems{
+	color:#000000;
+	font-size:12px;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	border:#C7D5E2 1px solid;
+	padding:3px;
+	width:145px;
+	}
+#LoginContainer{
+	height:217px;	
+	width:430px;	
+	position:absolute;	
+	top:50%;	
+	left:50%;
+	margin:-108px auto auto -215px;
+	}
+#LoginTable{
+	border:#D5E3EC 1px solid;
+	background:url(../images/Login_Window_Bg.gif) bottom no-repeat;
+	}
+#MainHeading{
+	
+	color:#344396;
+	font-size:18px;
+	font-family:Trebuchet MS;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-indent:5px;
+	
+	}
+#LoginContent{
+	padding:7px 10px 7px 10px;
+	}
+/* CSS for Login Page End */
+
+/* CSS for Header Panel Start */
+
+.Logo{
+	padding:34px 11px 34px 11px;
+	text-align:left;
+	}
+.LoginStatusWindow{
+	padding: 10px;
+	}
+.LoginStatus{
+	border-top:#DEE1F4 1px solid;
+	border-bottom:#DEE1F4 1px solid;
+	background-color: #F6F7FB;
+	}
+.LoginTd{
+	padding : 10px;
+	font-weight:bold;
+	font-size:12px;
+	color : #000000;
+	text-decoration:none;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:left;
+	}
+.LoginTxt{
+	font-size:12px;
+	color : #000000;
+	text-decoration:none;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+:hover.LoginTxt{
+	font-size:12px;
+	color : #ff0000;
+	text-decoration:underline;
+	font-family:  Arial, Helvetica, sans-serif;
+	}
+.TopMenuBarTd{
+	background:url(../images/TopMenuBarNormalBg.gif);
+	background-repeat: repeat-x;
+	margin:0px;
+	padding:0px;
+	}
+
+/* style the outer div to give it width */
+.menu {font-size:11px;padding:0px;}
+
+/* remove all the bullets, borders and padding from the default list styling */
+.menu ul {padding:0;margin:0;list-style-type:none; height:38px; }
+
+
+.menu ul ul {width: auto;}
+
+
+.menu ul li {float:left; height: 38px;
+    line-height: 38px; background:url(../images/TopMenuDevider.gif); background-repeat:no-repeat; background-position:center right;}
+
+.menu ul ul li {display:block;width: auto;height:auto;position:relative;line-height:1em; border-bottom:1px #2384BF solid;}
+
+
+.menu a, .menu a:visited { color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: 100%;
+    padding: 0 21px 0 17px;
+    text-decoration: none;
+    text-transform: uppercase;}
+.menu a.current{background:#3da1e0;}
+
+.menu ul ul a, .menu ul ul a:visited { background: none repeat scroll 0 0 #1C5E88;
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    height: 100%;
+    line-height: 2em;
+    padding: 0.5em 1em;
+    text-transform: none;
+    width: 12em;}
+.menu ul table ul a, .menu ul table ul a:visited  {width:14em; w\idth:12em;}
+
+
+/* style the table so that it takes no part in the layout - required for IE to work */
+.menu table {position:absolute; left:0; top:0; font-size:1em; z-index:-1;}
+.menu ul ul table {lef\t:-1px;}
+.menu ul ul table ul.left {margin-lef\t:2px;}
+
+.menu li:hover {position:relative;}
+* html .menu a:hover {position:relative;}
+
+/* style the third level background */
+.menu ul ul ul a, .menu ul ul ul a:visited {background:#3da1e0;}
+/* style the fourth level background */
+.menu ul ul ul ul a, .menu ul ul ul ul a:visited {background:#3da1e0;}
+/* style the sub level 1 background */
+.menu ul :hover a.sub1 {background:#3da1e0;}
+/* style the sub level 2 background */
+.menu ul ul :hover a.sub2 {background:#3da1e0;}
+
+/* style the level hovers */
+/* first */
+.menu a:hover {color:#fff;background:#3da1e0;}
+.menu :hover > a {color:#fff;background:url(../images/TopMenuBarActiveBg.gif); background-repeat:repeat-x;}
+
+.menu ul ul a:hover{color:#fff;background:#3da1e0;}
+.menu ul ul :hover > a {color:#fff;background:#FCA737;}
+
+.menu ul ul ul a:hover {background:#3da1e0;}
+.menu ul ul ul :hover > a {background:#3da1e0;}
+
+.menu ul ul ul ul a:hover {background:#eee;}
+
+
+
+.menu ul ul {visibility:hidden;position:absolute;height:0;top:38px;left:0;width:14em;}
+
+.menu ul ul ul{left:14em;top:0;width:14em;}
+
+.menu ul ul ul.left {left:-14em;}
+
+.menu ul li:hover ul, .menu ul a:hover ul {visibility:visible; height:auto; padding-bottom:3em; background:transparent url(images/trans.gif);}
+
+.menu ul :hover ul ul{visibility:hidden;}
+
+.menu ul :hover ul :hover ul ul{visibility:hidden;}
+
+.menu ul :hover ul :hover ul{visibility:visible;}
+
+.menu ul :hover ul :hover ul :hover ul {visibility:visible;}
+/* End */
+
+/* CSS for Header Panel End */
+
+/* CSS for Left Panel Start Here */
+
+.LeftPanel{
+	background-color: #E4EDF4;
+	padding:6px;
+	}
+.LeftPanelTable{
+	border:#BFDFEE 1px solid;
+	background-color:#E2F6FD;
+	}
+.LeftPanelFooter{
+	border:#BFDFEE 1px solid;
+	background-color:#BFDFEE;
+	padding:5px;
+	}
+.LeftPanelContentHeading{
+	font-size:12px;
+	color : #21618C;
+	text-decoration:none;
+	font-family:  Arial, Helvetica, sans-serif;
+	padding:5px;
+	font-weight:bold;
+	}
+.OrangeText_LeftPanel{
+	font-size:11px;
+	color : #ff8f00;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:5px;
+	}
+.BlackTxt_Link{
+	font-size:11px;
+	color : #000000;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+:hover.BlackTxt_Link{
+	font-size:11px;
+	color : #ff0000;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+/* CSS for Left Panel End Here */
+
+
+/* CSS for Right Panel Start Here */
+	
+.RightPanel{
+	padding:6px;
+	}
+.Container{
+	border-right:#FDAB42 1px solid;
+	border-bottom:#FDAB42 1px solid;
+	padding:0px 5px 5px 0px;
+	}
+.ContainerHaeding{
+	color:#FDAB42;
+	font-size : 16px;
+	font-weight:bold;
+	font-family:Trebuchet MS, Tahhoma, Verdana, Arial, Helvetica, sans-serif;
+	}
+.OrangeText_Link{
+	font-size:11px;
+	color : #ff8f00;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+:hover.OrangeText_Link{
+	font-size:11px;
+	color : #000000;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+	
+/* CSS for Right Panel End Here */	
+
+/* CSS for Footer Panel Start Here */	
+
+.FooterPanel{
+padding:2px 0px 2px 0px;
+	}
+.FooterPanelLinkTd{
+	background:url(../images/Footer-Link-Bg.gif);
+	background-repeat: repeat-x;
+	height:30px;
+	margin:0px;
+	padding:0px 10px 0px 10px;
+	font-size:11px;
+	color : #ffffff;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.FooterPanelLinkTd a{
+	font-size:11px;
+	color : #ffffff;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.FooterPanelLinkTd a:hover{
+	font-size:11px;
+	color : #ffffff;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.FooterLink_Devider{
+	padding:0px 20px 0px 20px;
+	font-size:11px;
+	color : #ffffff;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+
+/* CSS for Footer Panel End Here */	
+
+/* CSS for Tab Start here */
+
+.tab_container {
+	float: left;
+	width: 100%;
+	}
+.tab-buttons-panel {
+	width: 100%;
+	float: left;
+	background: url(../images/wt-norm.png) repeat-x bottom;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #535152;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	text-decoration: none
+	}
+.tab-buttons-panel ul {
+	margin: 0;
+	padding: 0px;
+	list-style: none;
+	}
+.tab-buttons-panel li {
+	float:left;    
+	margin:0px 1px 0px 0px;
+	padding:0;
+	cursor: pointer;
+	border-color: #b8cbde;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	background: url(../images/wt-right.png) no-repeat right top;
+	}
+.tab-buttons-panel span {
+	color: #222;
+	display: block;
+	background: url(../images/wt-left.png) no-repeat left top;
+	padding: 5px 15px 4px;
+	}
+.tab-buttons-panel li.tab-show {
+	background: url(../images/wt-right-on.png) no-repeat right top;
+	border-width: 0px 0px 0px 0px;
+	}
+.tab-buttons-panel li.tab-show span {
+	background:url(../images/wt-left-on.png) no-repeat left top;
+	padding:5px 15px 5px;
+	}
+.tab-content {
+	top: 27px;
+	position: relative;
+	border-width: 0px 1px 1px 1px;
+	border-color: #b8cbde;
+	border-style: none solid solid solid;
+	background-color: #e1e6ee;
+	display: none;
+	padding: 15px;
+	padding-bottom: 0px;
+	}
+.ext-border-box .tab-content {
+	top: 0px;    
+	}
+.tab-content-show {
+	display: block;
+	margin-top:-2px;
+	}
+.tab-content-panel-border {
+	margin-bottom: 20px;
+	}
+.tab-content-panel {
+	padding: 10px 10px 10px 10px;
+	border: 1px dotted #abb3b0;
+	background-color: #f8fafd;
+	}
+.tab-content-panel li {
+	list-style-type: circle;
+	list-style-position: inside;
+	}
+	
+/* CSS for Tab End Here */
+
+
+/* Commom CSS Start Here */
+
+.height30{
+	height:30px;	
+	}
+.BlackText{
+	font-size:11px;
+	color : #000000;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.DivTxt_Normal{
+	text-align : justify;
+	line-height : 150%;
+	padding:0px 5px 0px 5px;
+	color:#000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	TEXT-DECORATION: none;
+	}
+.FormItem{
+    font-size: 11px;
+    font-family: Arial;
+    
+    }
+.ForFieldSet{
+	border:#bfdef0 1px solid;
+	padding:10px;
+	}
+.ForLegend{
+	background-color:#bfdef0;
+	color:#535152;
+	font-weight:bold;
+	padding:6px 25px 6px 25px;
+	font-size:12px;
+	font-family: Arial;
+	}
+.Btn_Form{
+	background-color:#0c4f7c;
+	color:#ffffff;
+	padding:3px;
+	font-size:12px;
+	font-family: Arial;
+	border : #0c4f7c 0px solid;
+	}
+.Btn_Form_Small{
+	background-color:#0c4f7c;
+	color:#ffffff;
+	padding:0px 2px 0px 2px;
+	font-size:11px;
+	font-family: Arial;
+	border : #0c4f7c 0px solid;
+	font-weight:bold;
+	}
+.TableBorder{
+	border : #bbdef1 1px solid;
+	padding:5px;
+	font-weight: normal; 
+	font-size: 12px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+.TableHeadingBg{
+	background:url(../images/tablebg.jpg);
+	height:28px;
+	border : #bbdef1 1px solid;
+	}
+.TableHeading{
+	font-weight: bold; 
+	font-size: 12px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-indent : 5px;
+	}
+.HeadingEditButton{
+	padding:0px 5px 0px 0px
+	}
+.FooterContentDetails{
+	border : #bbdef1 1px solid;
+	padding:5px 5px 5px 5px;
+	font-weight: bold; 
+	font-size: 12px;
+	color: #21618C;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	background-color : #EAF5F9;
+	}
+.SearchHeading{
+	border : #bbdef1 1px solid;
+	padding:3px 3px 3px 5px;
+	font-weight: bold; 
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	background-color : #bbdef1;
+	text-transform: uppercase;
+	}
+.Nornmal-Arial-12{
+	font-weight: normal; 
+	font-size: 12px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+.Nornmal-Arial-12-Italic{
+	font-weight: normal; 
+	font-size: 12px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-style:italic;
+	}
+.GridHeader{
+	border:#e2e2e2 1px solid;
+	background-color:#eee;
+	font-weight:bold;
+	padding:4px;
+	text-align:left;
+	}
+.GridContent{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:4px;
+	text-align:left;
+	}
+.GridContent_Search{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:3px;
+	text-align:left;
+	}
+	
+.GridHeader_padding5{
+	border:#e2e2e2 1px solid;
+	background-color:#eee;
+	font-weight:bold;
+	padding:5px;
+	text-align:left;
+	}
+.GridContent_padding5{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:5px;
+	text-align:left;
+	}
+.GridContent_Link{
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline	;
+	padding:3px;
+	}
+:hover.GridContent_Link{
+	font-size: 11px;
+	color: #ff0000;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+	padding:3px;
+	}	
+.AddNew{
+	padding:6px 6px 6px 0px;
+	}
+.AddNewExpenseTxt{
+	font-size: 11px;
+	font-weight:bold;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+	}
+:hover.AddNewExpenseTxt{
+	font-size: 11px;
+	font-weight:bold;
+	color: #ff0000;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+	}
+.AddHeading{
+	background:url(../images/HeadingBg.gif);
+	background-repeat: repeat-y;
+	font-size:15px;
+	color : #21618C;
+	text-decoration:underline;
+	font-family:  Arial, Helvetica, sans-serif;
+	padding:7px;
+	font-weight:bold;
+	text-transform: uppercase;
+	text-align:left;
+	}
+.NormalPadding{
+	padding:5px;
+	}
+.PopUpBox{border-collapse: collapse;;border:5px solid #115481;}
+.PopUpBoxHeading{background-color:#115481; border-bottom:5px solid #115481;text-transform: uppercase;color:#ffffff;font-weight:bold;}
+
+.myContainer
+{
+    border-right: #FDAB42 1px solid !important;
+    border-bottom: #FDAB42 1px solid !important;
+    border-left: #FDAB42 1px solid !important;
+    border-top: #FDAB42 1px solid !important;
+    padding: 2px 5px 5px 0px !important;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+}

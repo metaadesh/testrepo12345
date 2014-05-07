@@ -1,0 +1,1430 @@
+﻿body
+{
+    margin: 0px;
+    padding: 0; /*background:#E3ECF5 url(../images/page_bg.jpg) center repeat-y;*/
+    background-color: #E3ECF5;
+    color: #000000;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+td
+{
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a
+{
+    outline: none !important;
+}
+form
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* CSS for Login Page Start */
+
+.MainTable
+{
+    background-color: #ffffff;
+}
+.formTxtBold
+{
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.FormItems
+{
+    color: #000000;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border: #C7D5E2 1px solid;
+    padding: 3px;
+    width: 145px;
+}
+#LoginContainer
+{
+    height: 217px;
+    width: 430px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -108px auto auto -215px;
+}
+#LoginTable
+{
+    border: #D5E3EC 1px solid;
+    background: url(../images/Login_Window_Bg.gif) bottom no-repeat;
+}
+#MainHeading
+{
+    background-color: #D5E3EC;
+    color: #344396;
+    font-size: 18px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-indent: 5px;
+    padding: 10px;
+}
+#LoginContent
+{
+    padding: 7px 10px 7px 10px;
+}
+/* CSS for Login Page End */
+
+/* CSS for Header Panel Start */
+
+.Logo
+{
+    padding: 34px 11px 34px 11px;
+    text-align: left;
+}
+.LoginStatusWindow
+{
+    padding: 10px;
+}
+.LoginStatus
+{
+    border-top: #DEE1F4 1px solid;
+    border-bottom: #DEE1F4 1px solid;
+    background-color: #F6F7FB;
+}
+.LoginTd
+{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+.LoginTxt
+{
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:hover.LoginTxt
+{
+    font-size: 12px;
+    color: #ff0000;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.TopMenuBarTd
+{
+    background: url(../images/TopMenuBarNormalBg.gif);
+    background-repeat: repeat-x;
+    margin: 0px;
+    padding: 0px;
+}
+.suckertreemenu
+{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    padding: 0px;
+    margin: 0px;
+}
+/* CSS For Top Menu Bar*/
+.suckertreemenu ul
+{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+/*Top level list items*/
+.suckertreemenu ul li
+{
+    position: relative;
+    display: inline;
+    float: left;
+}
+/*Top level menu link items style*/
+.suckertreemenu ul li a
+{
+    display: block;
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    color: #ffffff;
+}
+/*1st sub level menu*/
+.suckertreemenu ul li ul
+{
+    left: 0px;
+    position: absolute;
+    top: 1em; /* no need to change, as true value set by script */
+    display: block;
+    visibility: hidden;
+    background-color: #1C5E88; /*overall menu background color*/
+    text-align: left;
+    z-index: 9999;
+}
+/*Sub level menu list items (undo style from Top level List Items)*/
+.suckertreemenu ul li ul li
+{
+    display: list-item;
+    float: none;
+}
+/*All subsequent sub menu levels offset after 1st level sub menu */
+.suckertreemenu ul li ul li ul
+{
+    left: 155px !important;
+}
+/* Sub level menu links style */
+.suckertreemenu ul li ul li a
+{
+    display: block;
+    white-space: nowrap;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+    border-right: 0px;
+}
+.suckertreemenu ul li ul li a:hover
+{
+    background-color: #FCA737;
+    color: #ffffff;
+}
+/* Holly Hack for IE \*/
+* html .suckertreemenu ul li
+{
+    float: left;
+    height: 1%;
+    width: 8px;
+}
+* html .suckertreemenu ul li a
+{
+    height: 5px;
+}
+/* End */
+
+/* CSS for Header Panel End */
+
+/* CSS for Left Panel Start Here */
+
+.LeftPanel
+{
+    background-color: #E4EDF4;
+    padding: 6px;
+}
+.LeftPanelTable
+{
+    border: #BFDFEE 1px solid;
+    background-color: #E2F6FD;
+}
+.LeftPanelFooter
+{
+    border: #BFDFEE 1px solid;
+    background-color: #BFDFEE;
+    padding: 5px;
+}
+.LeftPanelContentHeading
+{
+    font-size: 12px;
+    color: #21618C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    font-weight: bold;
+}
+.OrangeText_LeftPanel
+{
+    font-size: 11px;
+    color: #ff8f00;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+.BlackTxt_Link
+{
+    font-size: 11px;
+    color: #000000;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:hover.BlackTxt_Link
+{
+    font-size: 11px;
+    color: #ff0000;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* CSS for Left Panel End Here */
+
+
+/* CSS for Right Panel Start Here */
+
+.RightPanel
+{
+    padding: 6px;
+}
+.Container
+{
+    border-right: #FDAB42 1px solid !important;
+    border-bottom: #FDAB42 1px solid !important;
+    padding: 0px 5px 5px 0px !important;
+}
+.ContainerHaeding
+{
+    color: #FDAB42;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Trebuchet MS, Tahhoma, Verdana, Arial, Helvetica, sans-serif;
+}
+.OrangeText_Link
+{
+    font-size: 11px;
+    color: #ff8f00;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:hover.OrangeText_Link
+{
+    font-size: 11px;
+    color: #000000;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CSS for Right Panel End Here */
+
+/* CSS for Footer Panel Start Here */
+
+.FooterPanel
+{
+    padding: 2px 0px 2px 0px;
+}
+.FooterPanelLinkTd
+{
+    background: url(../images/Footer-Link-Bg.gif);
+    background-repeat: repeat-x;
+    height: 30px;
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    font-size: 11px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.FooterLink
+{
+    font-size: 11px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:hover.FooterLink
+{
+    font-size: 11px;
+    color: #ffffff;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.FooterLink_Devider
+{
+    padding: 0px 20px 0px 20px;
+    font-size: 11px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* CSS for Footer Panel End Here */
+
+/* Commom CSS Start Here */
+
+.BlackText
+{
+    font-size: 11px;
+    color: #000000;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.DivTxt_Normal
+{
+    text-align: justify;
+    line-height: 150%;
+    padding: 0px 5px 0px 5px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.FormItem
+{
+    font-size: 11px;
+    font-family: Arial;
+}
+.ForFieldSet
+{
+    border: #bfdef0 1px solid;
+    padding: 10px;
+}
+.ForLegend
+{
+    background-color: #bfdef0;
+    color: #535152;
+    font-weight: bold;
+    padding: 2px 45px 2px 45px;
+    font-size: 12px;
+    font-family: Arial;
+}
+.Btn_Form
+{
+    background-color: #0c4f7c;
+    color: #ffffff;
+    padding: 3px;
+    font-size: 12px;
+    font-family: Arial;
+    border: #0c4f7c 0px solid;
+}
+
+.Btn_Disabled, .Btn_Form[disabled]
+{
+    border-width: 1px;
+    border-style: solid;
+    padding: 3px;
+    color: #808080;
+    font-size: 12px;
+    font-family: Arial;
+    background-color: #E6E6E6;
+}
+
+.TableBorder
+{
+    border: #bbdef1 1px solid;
+    padding: 3px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.TableBorderB
+{
+    border: #bbdef1 1px solid;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    width: 150px;
+}
+
+.TableListItem
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.TableHeadingBg
+{
+    background: url(../images/tablebg.jpg);
+    height: 28px;
+    border: #bbdef1 1px solid;
+}
+.TableHeading
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-indent: 5px;
+}
+.HeadingEditButton
+{
+    padding: 0px 5px 0px 0px;
+}
+.FooterContentDetails
+{
+    border: #bbdef1 1px solid;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #21618C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #EAF5F9;
+}
+.Nornmal-Arial-12
+{
+    font-weight: normal;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.Nornmal-Arial-12-Italic
+{
+    font-weight: normal;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-style: italic;
+}
+/*
+	.GridHeader{
+	border:#e2e2e2 1px solid;
+	background-color:#eee;
+	font-weight:bold;
+	padding:4px;
+	text-align:left;
+	}
+.GridContent{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:4px;
+	text-align:left;
+	}
+	.GridContentNumbers{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:4px;
+	text-align:right;
+	}
+
+.GridContentLeft{
+	border:#e2e2e2 1px solid;
+	font-size: 10px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:1px;
+	text-align:left;
+	}	
+
+
+.GridContentRight
+	{
+	border:#e2e2e2 1px solid;
+	font-size: 10px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:1px;
+	text-align:right;
+}
+	
+	
+.GridContentEdit{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:4px;
+	text-align:left;
+	background-color:#bfdef0;
+	}
+.GridHeader_padding5{
+	border:#e2e2e2 1px solid;
+	background-color:#eee;
+	font-weight:bold;
+	padding:5px;
+	text-align:left;
+	}
+.GridContent_padding5{
+	border:#e2e2e2 1px solid;
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding:5px;
+	text-align:left;
+	}
+.GridContent_Link{
+	font-size: 11px;
+	color: #535152;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline	;
+	padding:3px;
+	}
+:hover.GridContent_Link{
+	font-size: 11px;
+	color: #ff0000;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+	padding:3px;
+	}	*/
+.AddNew
+{
+    padding: 6px 6px 6px 0px;
+}
+.AddNewExpenseTxt
+{
+    font-size: 11px;
+    font-weight: bold;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+:hover.AddNewExpenseTxt
+{
+    font-size: 11px;
+    font-weight: bold;
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+.AddHeading
+{
+    /*background:url(../images/HeadingBg.gif);*/
+    background-repeat: repeat-y;
+    font-size: 15px;
+    color: #21618C;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+}
+.NormalPadding
+{
+    padding: 5px;
+}
+.PopUpBox
+{
+    border-collapse: collapse;
+    border: 5px solid #115481;
+}
+.PopUpBoxHeading
+{
+    background-color: #115481;
+    border-bottom: 5px solid #115481;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.date
+{
+    width: 95px;
+}
+/* Added By Anwarul */
+.ListViewEditContent
+{
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+}
+.ListViewNotesContent
+{
+    font-size: 10px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: justify;
+}
+.CheckBox
+{
+    border: #bbdef1 1px solid;
+    padding: 3px 3px 3px 5px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #bbdef1;
+    text-transform: uppercase;
+}
+.GridHeaderRight
+{
+    border: #e2e2e2 1px solid;
+    background-color: #eee;
+    font-weight: bold;
+    padding: 4px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.GridAmountContent
+{
+    border: #e2e2e2 1px solid;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: right;
+    padding: 2px;
+    text-decoration: none;
+    clear: right;
+    white-space: nowrap;
+}
+.GridContentRightLane
+{
+    padding: 2px;
+    text-align: right;
+}
+.ForEditTable
+{
+    background-color: #bfdef0;
+    color: #535152;
+    padding: 0px 0px 0px 0px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.TableListItem
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.RemoveTextDecoration
+{
+    text-decoration: none;
+}
+
+
+/* END */
+
+/* Extended */
+.Grid
+{
+    border: #e2e2e2 1px solid;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+}
+
+.GridContent a, .GridContent a:visited
+{
+    color: #535152;
+}
+
+.GridContent a:hover
+{
+    color: #ff0000;
+}
+
+.GridHeader a, .GridHeader a:visited
+{
+    font-weight: bold;
+    text-align: left;
+    color: #535152;
+    text-decoration: none;
+    display: block;
+}
+
+.GridHeader a:hover
+{
+    font-size: 11px;
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+
+.GridEmptyRow
+{
+    border: #e2e2e2 1px solid;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: center;
+    height: 200px;
+}
+
+.FooterContentDetails a, .FooterContentDetails a:visited
+{
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+.FooterContentDetails a:hover
+{
+    font-size: 11px;
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+.filterbtn
+{
+    padding: 1px 5px 1px 5px;
+}
+
+#accountPayableTD .GridHeader a, #accountPayableTD .GridHeader a:visited
+{
+    text-decoration: underline;
+}
+
+.NumericGridContent
+{
+    text-align: right;
+}
+.NumericGridHeader
+{
+    text-align: center;
+}
+
+div.dealer
+{
+    cursor: pointer;
+}
+div.dealer span
+{
+    display: none;
+}
+div.dealer:hover span
+{
+    border: 2px solid #CCC;
+    width: 200px;
+    position: absolute;
+    display: block;
+    background-color: #cec;
+    margin-left: -50px;
+    padding: 5px;
+}
+
+.slideshowimage
+{
+    max-width: 680px;
+    max-height: 530px;
+    min-width: 300px;
+    min-height: 300px;
+    text-align: center;
+    border: none;
+}
+
+.btn
+{
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #0C4F7C;
+    border: 0 solid #0C4F7C;
+    padding: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: normal !important;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.popuptitlebar
+{
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: move;
+}
+
+.GridContentImages
+{
+    text-align: center;
+}
+
+.GridHeaderAction
+{
+    text-align: center;
+}
+
+.NoImageFound
+{
+    background: url(../images/wait.gif);
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+}
+
+.WrapDeviceID
+{
+    white-space: pre; /* CSS 2.0 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3.0 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap; /* HP Printers */
+    word-wrap: break-word; /* IE 5+ */
+}
+
+
+
+.PreTableBorderB
+{
+    border: 1px solid #C0DCEE;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #21618C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    width: 150px;
+}
+
+.PreTableBorder
+{
+    border: 1px solid #C0DCEE;
+    padding: 3px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #2c2c2c;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.PreFooterContentDetails
+{
+    border: 1px solid #FFF1DD;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #21618C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #FFF1DD;
+}
+
+.PreFooterContentDetails td table
+{
+    padding: 2px;
+}
+
+.PreFooterContentDetails td table tbody tr td
+{
+    padding-right: 5px;
+}
+
+.Tooltip
+{
+    padding: 0px 5px 0px 0px;
+}
+
+.PopupHeaderRadio
+{
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+.HideGridColumn
+{
+    display: none;
+}
+
+.LeftPanelContentHeading Label
+{
+    margin-left: 5px;
+    position: relative;
+    bottom: 3px;
+}
+
+
+/* CSS for Preinventory Left Panel Start Here */
+
+.pre-LeftPanel
+{
+    /*	background-color:#094F7C; 	padding:1px;*/
+    background-color: #E8F2F8;
+    padding: 8px;
+}
+.pre-LeftPanelTable
+{
+    border: #e2f6fd 1px solid;
+    background-color: #E2F6FD;
+}
+.pre-LeftPanelFooter
+{
+    border: #BFDFEE 1px solid;
+    background-color: #BFDFEE;
+    padding: 5px;
+}
+.pre-LeftPanelContentHeading
+{
+    font-size: 12px;
+    color: #21618C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    font-weight: bold;
+}
+/*.OrangeText_LeftPanel{
+	font-size:11px;
+	color :#0C507E;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:5px;
+	}*/
+.PreTableHeadingBg
+{
+    background: url(../images/pretablebg.gif);
+    height: 28px;
+    border-left: 1px solid #99c5e2;
+    border-right: 1px solid #99c5e2;
+}
+.pre-TableHeading
+{
+    color: #064B7A;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 2.2;
+    text-decoration: none;
+    text-indent: 5px;
+    text-transform: capitalize;
+}
+.pre-GridHeader
+{
+    border: #bfd3e0 1px solid;
+    background-color: #DCEBF5;
+    font-weight: bold;
+    padding: 4px;
+    text-align: left;
+}
+
+.pre-GridContent
+{
+    border: 1px solid #C0DCEE;
+    font-size: 11px;
+    color: #2C2C2C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: left;
+}
+.PreFooterContentDetails
+{
+    border: 1px solid #FFF1DD;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #21618C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #DCEBF5;
+}
+
+.PreFooterContentDetails td
+{
+    border: 0;
+}
+
+/* Added for mobile version*/
+
+.GridHeader
+{
+    border: #e2e2e2 1px solid;
+    background-color: #D9D9D9;
+    font-weight: bold;
+    padding: 4px;
+    text-align: left;
+}
+.GridContent
+{
+    border: 1px solid #BBDEF1;
+    font-size: 11px;
+    color: #2C2C2C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: left;
+}
+.GridContentCentre
+{
+    border: 1px solid #BBDEF1;
+    font-size: 11px;
+    color: #2C2C2C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: center;
+}
+.GridContentNumbers
+{
+    border: 1px solid #BBDEF1;
+    font-size: 11px;
+    color: #2C2C2C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: right;
+}
+
+.GridContentLeft
+{
+    border: #e2e2e2 1px solid;
+    font-size: 10px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 1px;
+    text-align: left;
+}
+
+
+.GridContentRight
+{
+    border: #e2e2e2 1px solid;
+    font-size: 10px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 1px;
+    text-align: right;
+}
+
+
+.GridContentEdit
+{
+    border: #e2e2e2 1px solid;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: left;
+    background-color: #bfdef0;
+}
+.GridHeader_padding5
+{
+    border: #e2e2e2 1px solid;
+    background-color: #eee;
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+}
+.GridContent_padding5
+{
+    border: #e2e2e2 1px solid;
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 5px;
+    text-align: left;
+}
+.GridContent_Link
+{
+    font-size: 11px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    padding: 3px;
+}
+:hover.GridContent_Link
+{
+    font-size: 11px;
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+/*************************Preety 13 june 2012 ****************************/
+
+img.inventory-icon
+{
+    height: 72px;
+    width: 59px;
+    background: url(../Images/img_Home-icon.gif) repeat 0 0;
+}
+img.account-icon
+{
+    background: url("../Images/img_Home-icon.gif") repeat scroll -248px 0 transparent;
+    height: 72px;
+    width: 54px;
+}
+
+img.search-icon
+{
+    background: url("../Images/img_Home-icon.gif") repeat scroll -148px 0 transparent;
+    height: 72px;
+    width: 96px;
+}
+
+img.manage-icon
+{
+    background: url("../Images/img_Home-icon.gif") repeat scroll -332px 0 transparent;
+    height: 72px;
+    width: 65px;
+}
+img.lane-icon
+{
+    background: url("../Images/img_Home-icon.gif") repeat scroll -412px 0 transparent;
+    height: 72px;
+    width: 65px;
+}
+.headstart-logo
+{
+    background: url(../Images/tittle-tab.PNG) repeat scroll 0 0 transparent;
+    height: 36px;
+    width: 216px;
+}
+
+#Home
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll 0 -49px transparent;
+    height: 38px;
+    width: 79px;
+}
+
+#Intities
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -91px -51px transparent;
+    height: 38px;
+    width: 96px;
+}
+#AccontsPayable
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -199px -51px transparent;
+    height: 38px;
+    width: 180px;
+}
+#Search
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -388px -51px transparent;
+    height: 38px;
+    width: 94px;
+}
+#SearchDealer
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -388px -49px transparent;
+    height: 38px;
+    width: 94px;
+}
+#Reports
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -491px -51px transparent;
+    height: 38px;
+    width: 102px;
+}
+#Admin
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -602px -51px transparent;
+    height: 38px;
+    width: 90px;
+}
+#Mobile
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -704px -51px transparent;
+    height: 38px;
+    width: 90px;
+}
+#UCR
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -223px -3px transparent;
+    height: 38px;
+    width: 90px;
+}
+.status-bg
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -805px -96px transparent;
+    height: 29px;
+    width: 243px;
+}
+.announcement-bg
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -1054px -96px transparent;
+    height: 28px;
+    width: 243px;
+}
+
+.GridNewRowHeader
+{
+    font-weight: normal;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/*************************Ashar 31 July 2012 ****************************/
+.NestedGridHeader
+{
+    border: #e2e2e2 1px solid;
+    background-color: #D9D9D9;
+    font-weight: bold;
+    padding: 4px;
+    text-align: left;
+}
+.NestedGridContent
+{
+    border: 1px solid #BBDEF1;
+    font-size: 11px;
+    color: #2C2C2C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: left;
+}
+.NestedGridContentNumbers
+{
+    border: 1px solid #BBDEF1;
+    font-size: 11px;
+    color: #2C2C2C;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    text-align: right;
+}
+
+.GroupItemCenter
+{
+    text-align: left;
+    padding-left: 25px;
+}
+
+.GroupHeaderFont
+{
+    font-style: italic;
+    font-weight: bold;
+}
+.NestedGridPanel
+{
+    padding: 5px 0px;
+}
+.OrangeText_InvDtlMenu
+{
+    font-size: 11px;
+    color: #ff8f00;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 0px;
+}
+
+.ChkBoxLst label
+{
+    margin-left: 5px;
+}
+.ChkBoxLabelVerticalAlign label
+{
+    position: relative;
+    top: -2px;
+}
+
+/************* 3 Jan-2013  ****************************/
+#EntityHome
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -7px -47px transparent;
+    height: 38px;
+    width: 75px;
+}
+
+#CompanyDetails
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -10px -174px transparent;
+    height: 38px;
+    width: 99px;
+}
+
+
+
+#MobileExpense
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -116px -174px transparent;
+    height: 38px;
+    width: 160px;
+}
+
+#EntityAccountPayable
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -205px -49px transparent;
+    height: 38px;
+    width: 164px;
+}
+#EntityMobile
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -701px -48px transparent;
+    height: 38px;
+    width: 92px;
+}
+
+#MyProfile
+{
+    background: url("../Images/tittle-tab.PNG") repeat scroll -1076px -176px transparent;
+    height: 38px;
+    width: 104px;
+}
+
+.TableBorderHeader
+{
+    padding: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-style: italic;
+    background-color: #CCCCCC;
+}
+
+
+.TableBorderLabel
+{
+    padding: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #535152;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    width: 150px;
+}
+
+
+.OrgName
+{
+    font-family: Book Antiqua,Verdana;
+    font-size: 22px;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #21618C;
+    letter-spacing: 2px;
+}
+
+.LogoNew
+{
+    padding: 25px 11px 10px 11px;
+    text-align: left;
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "HeadStartVMS_Reports", "HeadStartVMS_Reports\HeadStartVMS_Reports.rptproj", "{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.Debug|Default.ActiveCfg = Debug
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.Debug|Default.Build.0 = DebugLocal
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.Debug|Default.Deploy.0 = DebugLocal
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.DebugLocal|Default.Build.0 = DebugLocal
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.Production|Default.ActiveCfg = Production
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.Production|Default.Build.0 = Production
+		{D76D1706-AF99-4F0B-A873-9BA50AF96D2C}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

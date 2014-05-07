@@ -1,0 +1,327 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BuyerReportMaster.master.cs"
+    Inherits="METAOPTION.VMSReports.BuyerReportMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>View Reports</title>
+    <%--<link href="../CSS/min.css?v=1" rel="stylesheet" type="text/css" />
+    <script src="../CSS/min.js?v=1" type="text/javascript"></script>--%>
+    <link href="../CSS/AjaxRelated.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/MainStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../CSS/Menu.js" type="text/javascript"></script>
+    <link href="../CSS/ControlStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../CSS/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="../CSS/jquery-1.7.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <center>
+        <table border="0" cellpadding="0" class="MainTable" style="border-collapse: collapse">
+            <tr>
+                <td>
+                    <!-- Header Start -->
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="Logo">
+                                <div>
+                                    <img id="imgLogo" border="0" src="../images/Logo.gif" width="207" height="35" alt=""
+                                        runat="server" />
+                                </div>
+                                <div style='margin-top: 6px;'>
+                                    <asp:Label ID="lblOrgName" runat="server" Text="" CssClass="OrgName"></asp:Label>
+                                </div>
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                </asp:ScriptManager>
+                            </td>
+                            <td class="LoginStatusWindow" align="right">
+                                <!-- Login Status Window Start -->
+                                <table border="0" cellpadding="0" style="border-collapse: collapse" class="LoginStatus">
+                                    <tr>
+                                        <td class="LoginTd" nowrap>
+                                            <asp:Label ID="lblWelcome" CssClass="LoginTxt" runat="server"></asp:Label>
+                                            &nbsp;|&nbsp;
+                                            <%--<a href="#" class="LoginTxt">Logout</a>--%>
+                                            <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout" class="LoginTxt" OnClick="lnkLogout_Click"></asp:LinkButton>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LoginTd" nowrap>
+                                            <%--Last Login was on : 11/11/2008 11:46 PM--%>
+                                            <asp:Label ID="lblLastLogin" runat="server" CssClass="LoginTxt"></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Login Status Window End -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="TopMenuBarTd">
+                                <asp:HiddenField ID="hdnURL" runat="server" Value="0" />
+                                <div class="suckertreemenu" align="center">
+                                    <ul id="treemenu1">
+                                        <li><a href="../UI/BuyerDefault.aspx?Query=refresh" onmouseout="MM_swapImgRestore()"
+                                            onmouseover="MM_swapImage('Home','','../images/Home-Tab-On.gif',0)">
+                                            <%--<img src="../images/Home-Tab.gif" alt="Home" name="Home" width="79" height="38" border="0" id="Home" />--%>
+                                            <img src="../Images/img_trans.gif" width="1" height="1" alt="Home" name="Home" border="0"
+                                                id="Home" />
+                                        </a></li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a style="cursor: pointer;" onclick="RedirectViewVendor();" onmouseout="MM_swapImgRestore()"
+                                            onmouseover="MM_swapImage('MyProfile','','../images/my-profile-hover.PNG',0)">
+                                            <%--<img border="0" src="../images/Intities-Tab.gif" width="96" height="38" alt="" name="Intities" id="Intities" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="" name="MyProfile"
+                                                id="MyProfile" />
+                                        </a></li>
+                                        <li id="liAllPayemtBOLine">
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li id="liAllPayemt"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('AccontsPayable','','../images/AccontsPayable-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/AccontsPayable-Tab.gif" width="180" height="38" alt="Acconts Payable" name="AccontsPayable" id="AccontsPayable" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Acconts Payable"
+                                                name="AccontsPayable" id="AccontsPayable" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li>
+                                                    <asp:HyperLink NavigateUrl="~/UI/Payments.aspx" runat="server" ID="lnkPayments">&nbsp;&nbsp;&nbsp;&nbsp;View 
+                                                    All Payment&nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink NavigateUrl="~/UI/ViewAllExpenses.aspx" runat="server" ID="lnkViewAllExpenses">&nbsp;&nbsp;&nbsp;&nbsp;View All Expense &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','../images/Search-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Search-Tab.gif" width="94" height="38" alt="Search" name="Search" id="Search" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Search" name="Search"
+                                                id="Search" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li><a href="../UI/InventorySearch.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search Inventory&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li id="liViewAllCommission">
+                                                    <asp:HyperLink NavigateUrl="../UI/ViewAllCommission.aspx" runat="server" ID="lnkViewAllCommission">&nbsp;&nbsp;&nbsp;&nbsp;View All Commissions &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                                <li id="liViewAllTitle">
+                                                    <asp:HyperLink NavigateUrl="../UI/ViewAllTitleStatus.aspx" runat="server" ID="lnkviewtitle">&nbsp;&nbsp;&nbsp;&nbsp;View All Title &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liViewAllReportBOline">
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li id="liViewAllReport"><a href="../VMSReports/ATCAuctionsOpenDealList.aspx" onmouseout="MM_swapImgRestore()"
+                                            onmouseover="MM_swapImage('Reports','','../images/Reports-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Reports-Tab.gif" width="102" height="38" alt="Reports" id="Reports" name="Reports" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Reports"
+                                                id="Reports" name="Reports" />
+                                        </a></li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Mobile','','../images/Mobile-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Mobile-Tab.gif" width="90" height="38" alt="Mobile" id="Mobile" name="Mobile" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Mobile" id="Mobile"
+                                                name="Mobile" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li><a href="../UI/PreInventory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Mobile Inventory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li id="liViewPerExp"><a href="../UI/PreExpense.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Mobile
+                                                    Expense&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li id="liViewLoctn"><a href="../UI/ViewLocation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View
+                                                    Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li id="liViewScanLog"><a href="../UI/VinScanLog.aspx">&nbsp;&nbsp;&nbsp;&nbsp;VIN Scan
+                                                    Log&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li id="liViewGenericImg"><a href="../UI/GenericImages.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Generic
+                                                    Images&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Header End -->
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="padding: 0px 2px 0px 2px;">
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="LeftPanel" valign="top">
+                                <!-- Left Panel Start -->
+                                <table border="1" cellpadding="0" style="border-collapse: collapse">
+                                    <tr>
+                                        <td colspan="2" style="background-image: url( '../Images/HeadingImg.gif' ); background-repeat: repeat-x;
+                                            width: 236px; color: #21618C; height: 28px; font-size: 14px; text-align: left;
+                                            vertical-align: middle; font-weight: bold">
+                                            &nbsp;&nbsp;:&nbsp;:&nbsp;&nbsp;HeadStartVMS&nbsp;-&nbsp;Reports
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" style="padding: 5px" colspan="2" align="left">
+                                            <ul>
+                                                <li style="padding-top: 7px"><a href="ATCAuctionsOpenDealList.aspx" class="OrangeText_LeftPanel">
+                                                    <b>ATC Auctions Open Deal List</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="AvgCommissionReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Average Commission</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BlockRunList.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Block Run List</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BlockRunListEnhanced.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Block Run List Enhanced</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BlockRunListExcludingCost.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Block Run List Excluding Cost</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BuyersReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Buyers Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BuyersReportV2.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Buyers Report v2.0</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BuyerInventory.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Buyer Inventory</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="ChargeBackReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>ChargeBack Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="CommissionReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Commission Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="NetProfitAndLoss.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Net Profit & Loss</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="NetProfitAndLossSpecialCaseNotes.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Net Profit & Loss Special Notes</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="NoTitlesReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>No Titles</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="PurchasedCarsByBuyers.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Purchased Cars By Buyers </b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="SoldInventory.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Sold Inventory</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <!-- <li style="padding-top: 7px"><a href="PurchasedCarsByDealers.aspx" class="OrangeText_LeftPanel">
+                                       <b>Purchased Cars By Dealers </b></a>
+                                       <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                    </li>-->
+                                                <li style="padding-top: 7px"><a href="SalesBreakDownReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Sales BreakDown</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <!--<li style="padding-top: 7px"><a href="ViewAllSoldCars.aspx" class="OrangeText_LeftPanel">
+                                       <b>View All Sold Cars</b>
+                                       <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                    </li>-->
+                                                <li style="padding-top: 7px"><a href="UnpaidReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Unpaid Report</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="UnpaidReportSpecificDate.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Unpaid Report Specific Date</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelFooter">
+                                            &nbsp;
+                                        </td>
+                                        <!--<td class="LeftPanelFooter" align="right">
+                                 <a href="../UI/SystemStats.aspx" class="BlackTxt_Link">View All Stats</a>
+                              </td>-->
+                                    </tr>
+                                </table>
+                                <!-- Left Panel End -->
+                            </td>
+                            <td valign="top" width="730" class="RightPanel" align="left">
+                                <!-- Right Panel/Content Panel Start -->
+                                <!-- Right Panel/Content Panel Start -->
+                                <asp:Label ID="lblUIMessage" Width="90%" runat="server"></asp:Label>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="FooterPanel">
+                    <!-- Footer Start Here -->
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="FooterPanelLinkTd" align="left">
+                                <a href="../UI/BuyerDefault.aspx" class="FooterLink">Home</a><span class="FooterLink_Devider">|</span>
+                                <asp:LinkButton ID="lnkClearCache" runat="server" Text="Clear Cache" class="FooterLink"
+                                    CausesValidation="false" OnClick="lnkClearCache_Click"></asp:LinkButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="OrangeText_LeftPanel" align="left">
+                                <asp:Label ID="lblCopyright" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Footer Start nd -->
+                </td>
+            </tr>
+        </table>
+    </center>
+    </form>
+    <script type="text/javascript">
+     function RedirectViewVendor() {
+
+            var URL = $('#<%=hdnURL.ClientID %>').val();
+            if (URL != '0') {
+                window.location = URL;
+            }
+        }
+      function pageLoad()     {  
+   
+         var EntityType = "<%= Session["LoginEntityTypeID"]%>";
+         var AccessLevel = "<%= Session["BuyerAccessLevel"]%>";
+          var IsDirectBuyer = "<%= Session["BuyerIsDirect"]%>";
+            if (EntityType == "2" && AccessLevel== "1" && IsDirectBuyer == "False" ) {
+             $('#liAllPayemtBOLine').hide();
+             $('#liAllPayemt').hide();
+             $('#liViewAllCommission').hide();
+             $('#liViewAllTitle').hide();
+              $('#liViewAllReportBOline').hide();
+             $('#liViewAllReport').hide();
+             $('#liViewPerExp').hide();
+             $('#liViewLoctn').hide();
+             $('#liViewScanLog').hide();
+             $('#liViewGenericImg').hide();
+            }
+        
+        }
+    
+    </script>
+</body>
+</html>

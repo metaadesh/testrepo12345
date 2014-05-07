@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx?wsdl" docRef="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx" xmlns:q1="http://metaoption.com" binding="q1:LinkCRServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx" xmlns:q2="http://metaoption.com" binding="q2:LinkCRServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

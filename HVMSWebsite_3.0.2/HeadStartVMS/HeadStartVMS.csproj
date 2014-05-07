@@ -1,0 +1,2100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E7DA872-0146-4978-A459-8181B6DA95B6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>METAOPTION</RootNamespace>
+    <AssemblyName>HeadStartVMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30512.17815, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\shaekhd.MO\Desktop\AjaxControlToolkitBinary\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BAL, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\bin\Debug\BAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core, Version=1.1.0.2, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified, Version=0.1.1.0, Culture=neutral, PublicKeyToken=7d53ba4f537753a5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="LaneAutomation.BAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\LaneAutomation.BAL.dll</HintPath>
+    </Reference>
+    <Reference Include="MetaOption.Web.UI.WebControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SquishIt.Framework, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Mvc, Version=0.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SquishIt.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SSOLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\HeadstartScrapingSystem\trunk\SSOLib\SSOLib\bin\Debug\SSOLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.QuickStart, Version=1.0.3085.18368, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.QuickStart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.Design, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor, Version=1.4.2.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\dotless.Core.dll" />
+    <Content Include="bin\EcmaScript.NET.modified.dll" />
+    <Content Include="bin\HeadStartVMS.dll" />
+    <Content Include="bin\HeadStartVMS.pdb" />
+    <Content Include="bin\HeadStartVMS.XmlSerializers.dll" />
+    <Content Include="bin\Jurassic.dll" />
+    <Content Include="bin\LaneAutomation.BAL.dll" />
+    <Content Include="bin\LaneAutomation.dll" />
+    <Content Include="bin\MAA_BAL.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\SquishIt.Framework.dll" />
+    <Content Include="bin\SquishIt.Mvc.dll" />
+    <Content Include="bin\Telerik.QuickStart.dll" />
+    <Content Include="bin\Telerik.Web.Design.dll" />
+    <Content Include="bin\Telerik.Web.UI.dll" />
+    <Content Include="bin\Telerik.Web.UI.Skins.dll" />
+    <Content Include="bin\Yahoo.Yui.Compressor.dll" />
+    <Content Include="CSS\AjaxRelated.css" />
+    <Content Include="CSS\ControlStyle.css" />
+    <Content Include="CSS\ext-core-debug.js" />
+    <Content Include="CSS\jquery-1.2.6.min.js" />
+    <Content Include="CSS\jquery-1.4.1-vsdoc.js" />
+    <Content Include="CSS\jquery-1.4.1.js" />
+    <Content Include="CSS\jquery-1.4.1.min.js" />
+    <Content Include="CSS\jquery-1.7.2.min.js" />
+    <Content Include="CSS\jquery.ad-gallery.css" />
+    <Content Include="CSS\jquery.ad-gallery.js" />
+    <Content Include="CSS\jquery.ad-gallery.pack.js" />
+    <Content Include="CSS\jquery.browser.min.js" />
+    <Content Include="CSS\jquery.jqzoom-core-pack.js" />
+    <Content Include="CSS\jquery.jqzoom-core.js" />
+    <Content Include="CSS\jquery.jqzoom.css" />
+    <Content Include="CSS\jquery.tipTip.js" />
+    <Content Include="CSS\jquery.tipTip.minified.js" />
+    <Content Include="CSS\MainStyle.css" />
+    <Content Include="CSS\Menu.js" />
+    <Content Include="CSS\min.css" />
+    <Content Include="CSS\min.js" />
+    <Content Include="CSS\ModalPopUp.css" />
+    <Content Include="CSS\PageScript.js" />
+    <Content Include="CSS\ScanRelated.css" />
+    <Content Include="CSS\tabs.css" />
+    <Content Include="CSS\tabs.js" />
+    <Content Include="CSS\thickbox-compressed.js" />
+    <Content Include="CSS\thickbox.css" />
+    <Content Include="CSS\thickbox.js" />
+    <Content Include="CSS\tipTip.css" />
+    <Content Include="CSS\UCRAssets.css" />
+    <Content Include="CSS\UCRAssets.js" />
+    <Content Include="CSS\UCRZoomer.css" />
+    <Content Include="Images\accept.png" />
+    <Content Include="Images\AccontsPayable-Tab-On.gif" />
+    <Content Include="Images\AccontsPayable-Tab.gif" />
+    <Content Include="Images\Account-Payable.gif" />
+    <Content Include="Images\Add-Inventory-Icon.gif" />
+    <Content Include="Images\AddButton.jpg" />
+    <Content Include="Images\AddNew.gif" />
+    <Content Include="Images\Admin-Tab-On.gif" />
+    <Content Include="Images\Admin-Tab.gif" />
+    <Content Include="Images\ad_next.png" />
+    <Content Include="Images\ad_prev.png" />
+    <Content Include="Images\ad_scroll_back.png" />
+    <Content Include="Images\ad_scroll_forward.png" />
+    <Content Include="Images\Aftersale-Tab-On.gif" />
+    <Content Include="Images\Aftersale-Tab.gif" />
+    <Content Include="Images\Announcements-Heading.gif" />
+    <Content Include="Images\approve.png" />
+    <Content Include="Images\archive-btn.png" />
+    <Content Include="Images\Archiveblue.png" />
+    <Content Include="Images\ArchiveRed.png" />
+    <Content Include="Images\arrow_down.jpg" />
+    <Content Include="Images\arrow_refresh.png" />
+    <Content Include="Images\arrow_up.jpg" />
+    <Content Include="Images\audio-img.PNG" />
+    <Content Include="Images\audio-thumb.PNG" />
+    <Content Include="Images\AUDIO.png" />
+    <Content Include="Images\Auditicon.png" />
+    <Content Include="Images\back.jpg" />
+    <Content Include="Images\basic\x.png" />
+    <Content Include="Images\blackflag.png" />
+    <Content Include="Images\blueflag.png" />
+    <Content Include="Images\brownflag.png" />
+    <Content Include="Images\Buller-1.gif" />
+    <Content Include="Images\Buller-2.gif" />
+    <Content Include="Images\calender-icon.gif" />
+    <Content Include="Images\Camera.jpg" />
+    <Content Include="Images\car-1.png" />
+    <Content Include="Images\car-2.png" />
+    <Content Include="Images\car-3.png" />
+    <Content Include="Images\car-4.png" />
+    <Content Include="Images\car-disabled.png" />
+    <Content Include="Images\car_icon.gif" />
+    <Content Include="Images\ChangePassword.png" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\close_icon.gif" />
+    <Content Include="Images\collapse.png" />
+    <Content Include="Images\company-details.PNG" />
+    <Content Include="Images\company-hover.PNG" />
+    <Content Include="Images\companycontact.PNG" />
+    <Content Include="Images\complete.png" />
+    <Content Include="Images\confirm.gif" />
+    <Content Include="Images\cross_icon_normal.png" />
+    <Content Include="Images\cyanflag.png" />
+    <Content Include="Images\darkGrayflag.png" />
+    <Content Include="Images\defmobile.png" />
+    <Content Include="Images\Delete.gif" />
+    <Content Include="Images\Deleteblue.png" />
+    <Content Include="Images\DeleteButton.jpg" />
+    <Content Include="Images\DeleteButton.png" />
+    <Content Include="Images\DeleteButton1.png" />
+    <Content Include="Images\Deletered.png" />
+    <Content Include="Images\DHistory.PNG" />
+    <Content Include="Images\Documents.gif" />
+    <Content Include="Images\download.PNG" />
+    <Content Include="Images\downright.png" />
+    <Content Include="Images\driveremailnotsent.PNG" />
+    <Content Include="Images\driveremailsent.PNG" />
+    <Content Include="Images\Driver_EmailNotSent.PNG" />
+    <Content Include="Images\Driver_EmailSent.PNG" />
+    <Content Include="Images\Driver_SMSNotSent.PNG" />
+    <Content Include="Images\Driver_SMSSent.PNG" />
+    <Content Include="Images\duplicate-icon.png" />
+    <Content Include="Images\edit-icon-l.jpg" />
+    <Content Include="Images\edit-icon-lane.jpg" />
+    <Content Include="Images\edit-icon.jpg" />
+    <Content Include="Images\edit-icon.png" />
+    <Content Include="Images\Edit-Main-Icon.gif" />
+    <Content Include="Images\Email_NotSent.png" />
+    <Content Include="Images\Email_Sent.png" />
+    <Content Include="Images\expand.png" />
+    <Content Include="Images\ExpandImage.gif" />
+    <Content Include="Images\expense-minus.gif" />
+    <Content Include="Images\expense-types.PNG" />
+    <Content Include="Images\expense.GIF" />
+    <Content Include="Images\Expenses.gif" />
+    <Content Include="Images\expenses.png" />
+    <Content Include="Images\Footer-Link-Bg.gif" />
+    <Content Include="Images\FreshRecords.jpg" />
+    <Content Include="Images\Generic-minus.gif" />
+    <Content Include="Images\Generic.GIF" />
+    <Content Include="Images\grayflag.png" />
+    <Content Include="Images\greenflag.png" />
+    <Content Include="Images\HeadingImg.gif" />
+    <Content Include="Images\hist-icon-l.jpg" />
+    <Content Include="Images\hist-icon-lane.jpg" />
+    <Content Include="Images\Home-Tab-On.gif" />
+    <Content Include="Images\Home-Tab.gif" />
+    <Content Include="Images\H_active.png" />
+    <Content Include="Images\H_add.png" />
+    <Content Include="Images\H_delete.png" />
+    <Content Include="Images\H_minus.png" />
+    <Content Include="Images\imagebox.gif" />
+    <Content Include="Images\ImageboxInventory.gif" />
+    <Content Include="Images\Imagebox_Expense.gif" />
+    <Content Include="Images\img_Home-icon.gif" />
+    <Content Include="Images\img_trans.gif" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\Intities-Tab-On.gif" />
+    <Content Include="Images\Intities-Tab.gif" />
+    <Content Include="Images\inventory-minus.gif" />
+    <Content Include="Images\Inventory-Tab-On.gif" />
+    <Content Include="Images\Inventory-Tab.gif" />
+    <Content Include="Images\inventory.GIF" />
+    <Content Include="Images\laneHistoryicon.PNG" />
+    <Content Include="Images\lightGrayflag.png" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\Loading.gif" />
+    <Content Include="Images\LocationMap.gif" />
+    <Content Include="Images\Login_Button.gif" />
+    <Content Include="Images\Login_Window_Bg.gif" />
+    <Content Include="Images\Logo.gif" />
+    <Content Include="Images\Logo_AutoTrader.gif" />
+    <Content Include="Images\Logo_MetaOption.gif" />
+    <Content Include="Images\magentaflag.png" />
+    <Content Include="Images\Manage-Dealer-Customer-Icon.gif" />
+    <Content Include="Images\Manage-Inventory-Icon.gif" />
+    <Content Include="Images\Manage-Lane-Assignment-Icon.gif" />
+    <Content Include="Images\mobile-preexpense-hover.PNG" />
+    <Content Include="Images\Mobile-Tab-On.gif" />
+    <Content Include="Images\Mobile-Tab.gif" />
+    <Content Include="Images\mobile.png" />
+    <Content Include="Images\ModifedRecods.jpg" />
+    <Content Include="Images\my-profile-hover.PNG" />
+    <Content Include="Images\newedit.gif" />
+    <Content Include="Images\no-print.gif" />
+    <Content Include="Images\nocar.png" />
+    <Content Include="Images\nocarMedium.png" />
+    <Content Include="Images\nocarthumb.PNG" />
+    <Content Include="Images\off.png" />
+    <Content Include="Images\on.png" />
+    <Content Include="Images\opa75.png" />
+    <Content Include="Images\orangeflag.png" />
+    <Content Include="Images\page_bg.jpg" />
+    <Content Include="Images\pending.png" />
+    <Content Include="Images\Pop-Up.gif" />
+    <Content Include="Images\pretablebg.gif" />
+    <Content Include="Images\Preview.gif" />
+    <Content Include="Images\print.gif" />
+    <Content Include="Images\purpleflag.png" />
+    <Content Include="Images\pushpin-blue.png" />
+    <Content Include="Images\redflag.png" />
+    <Content Include="Images\Reports-Tab-On.gif" />
+    <Content Include="Images\Reports-Tab.gif" />
+    <Content Include="Images\Search-Icon.gif" />
+    <Content Include="Images\Search-Tab-On.gif" />
+    <Content Include="Images\Search-Tab.gif" />
+    <Content Include="Images\Select.gif" />
+    <Content Include="Images\Select1.png" />
+    <Content Include="Images\sms-sent.PNG" />
+    <Content Include="Images\sms_not_sent.PNG" />
+    <Content Include="Images\SystemStat-Heading.gif" />
+    <Content Include="Images\SystemStat-PreHeading.gif" />
+    <Content Include="Images\tablebg.jpg" />
+    <Content Include="Images\titlebar_bg.jpg" />
+    <Content Include="Images\tittle-tab.PNG" />
+    <Content Include="Images\TopMenuBarActiveBg.gif" />
+    <Content Include="Images\TopMenuBarNormalBg.gif" />
+    <Content Include="Images\TopMenuDevider.gif" />
+    <Content Include="Images\ucr-btn.png" />
+    <Content Include="Images\ucr-btn1.png" />
+    <Content Include="Images\ucr-btn2.png" />
+    <Content Include="Images\UCR-HOVER.gif" />
+    <Content Include="Images\UCR.gif" />
+    <Content Include="Images\UCR_Minus.gif" />
+    <Content Include="Images\UCR_Plus.gif" />
+    <Content Include="Images\unpending.png" />
+    <Content Include="Images\user.PNG" />
+    <Content Include="Images\valid.png" />
+    <Content Include="Images\video-thumb.PNG" />
+    <Content Include="Images\video.png" />
+    <Content Include="Images\View.jpg" />
+    <Content Include="Images\viewdoc.PNG" />
+    <Content Include="Images\view_edit.png" />
+    <Content Include="Images\Wait.gif" />
+    <Content Include="Images\WaitBig.gif" />
+    <Content Include="Images\WorkOrder.png" />
+    <Content Include="Images\XML.jpg" />
+    <Content Include="Images\yellowflag.png" />
+    <Content Include="UI\ActivityStats.aspx" />
+    <Content Include="UI\ActivitystatsDetail.aspx" />
+    <Content Include="UI\ApplyBuyerPayment.aspx" />
+    <Content Include="UI\ApplyPayments.aspx" />
+    <Content Include="UI\Audit.aspx" />
+    <Content Include="UI\BillOfSale.aspx" />
+    <Content Include="UI\BuyerDefault.aspx" />
+    <Content Include="UI\BuyerSystemStats.aspx" />
+    <Content Include="UI\CompanyContacts.aspx" />
+    <Content Include="UI\CompanyExpenseType.aspx" />
+    <Content Include="UI\ContactLogin.aspx" />
+    <Content Include="UI\DealerListGoogleMap.aspx" />
+    <Content Include="UI\DealerDefault.aspx" />
+    <Content Include="UI\DealerSystemStates.aspx" />
+    <Content Include="UI\DepositSummaryDaily.aspx" />
+    <Content Include="UI\DepositSummaryMonthly.aspx" />
+    <Content Include="UI\DocumentViewer.aspx" />
+    <Content Include="UI\DuplicateExpense.aspx" />
+    <Content Include="UI\EditExpenses.aspx" />
+    <Content Include="UI\EmailDetails.aspx" />
+    <Content Include="UI\EntityUserList.aspx" />
+    <Content Include="UI\ExpenseAgainstPayment.aspx" />
+    <Content Include="UI\ExpenseImageGallery.aspx" />
+    <Content Include="UI\ExpenseImages.aspx" />
+    <Content Include="UI\ExpenseVsDepositReport.aspx" />
+    <Content Include="UI\ExportHistory.aspx" />
+    <Content Include="UI\GenericImageGallery.aspx" />
+    <Content Include="UI\GenericImages.aspx" />
+    <Content Include="UI\ImageGallery.aspx" />
+    <Content Include="UI\InventoryDepositSearch.aspx" />
+    <Content Include="UI\InventoryDetail.aspx" />
+    <Content Include="UI\LaneLog.aspx" />
+    <Content Include="UI\ManageEntityExpenses.aspx" />
+    <Content Include="UI\ManageEntityLocation.aspx" />
+    <Content Include="UI\ManageLocation.aspx" />
+    <Content Include="UI\ManageNotifications.aspx" />
+    <Content Include="UI\ManagePermissionAdd.aspx" />
+    <Content Include="UI\ManagePermissionEdit.aspx" />
+    <Content Include="UI\ManagePermissions.aspx" />
+    <Content Include="UI\NotificationSettings.aspx" />
+    <Content Include="UI\PreExpense.aspx" />
+    <Content Include="UI\PreInventoryDetail.aspx" />
+    <Content Include="UI\PrintPreview_ExpenseAgainstPayment.aspx" />
+    <Content Include="UI\responsedata.xml" />
+    <Content Include="UI\Scanner.aspx" />
+    <Content Include="UI\SectionImages.aspx" />
+    <Content Include="UI\SMSDetail.aspx" />
+    <Content Include="UI\TransportationPriceLookUp.aspx" />
+    <Content Include="UI\UCRDetail.aspx" />
+    <Content Include="UI\UCRLog.aspx" />
+    <Content Include="UI\UCRLogListing.aspx" />
+    <Content Include="UI\UCRResponseData.xml" />
+    <Content Include="UI\UCRUpdateLodRequestData.xml" />
+    <Content Include="UI\UCRUpdateLog.aspx" />
+    <Content Include="UI\VendorDefault.aspx" />
+    <Content Include="UI\VendorSystemStats.aspx" />
+    <Content Include="UI\ViewAllCommission.aspx" />
+    <Content Include="UI\ViewAllDocument.aspx" />
+    <Content Include="UI\ViewAllExpenses.aspx" />
+    <Content Include="UI\ViewAllImages.aspx" />
+    <Content Include="UI\ViewAllTitleStatus.aspx" />
+    <Content Include="UI\ViewLocation.aspx" />
+    <Content Include="UI\VinScanLog.aspx" />
+    <Content Include="UI\WOImageGallery.aspx" />
+    <Content Include="UI\WorkOrderExpense.aspx" />
+    <Content Include="UserControls\BuyerAnnouncementList.ascx" />
+    <Content Include="UserControls\ExpenseDetails.ascx" />
+    <Content Include="UserControls\ManageInventoryStats.ascx" />
+    <Content Include="UserControls\Scanner.ascx" />
+    <Content Include="VMSReports\AccountingReport.aspx" />
+    <Content Include="VMSReports\Account_Payable.aspx" />
+    <Content Include="VMSReports\AfterSalesManagement.aspx" />
+    <Content Include="VMSReports\AlphabeticalRegistration.aspx" />
+    <Content Include="VMSReports\ATCAuctionsOpenDealList.aspx" />
+    <Content Include="VMSReports\AvgCommissionReport.aspx" />
+    <Content Include="VMSReports\BillOFSaleReport.aspx" />
+    <Content Include="VMSReports\BlockRunList.aspx" />
+    <Content Include="VMSReports\BlockRunListEnhanced.aspx" />
+    <Content Include="VMSReports\BlockRunListExcludingCost.aspx" />
+    <Content Include="VMSReports\BuyerInventory.aspx" />
+    <Content Include="VMSReports\BuyersReport.aspx" />
+    <Content Include="VMSReports\BuyersReportV2.aspx" />
+    <Content Include="VMSReports\ChargeBackReport.aspx" />
+    <Content Include="VMSReports\CommissionReport.aspx" />
+    <Content Include="VMSReports\ExpenseReport.aspx" />
+    <Content Include="VMSReports\HereNotHere.aspx" />
+    <Content Include="VMSReports\InventoryOnHandReport.aspx" />
+    <Content Include="VMSReports\InventoryReportJS.aspx" />
+    <Content Include="VMSReports\NetProfitAndLoss.aspx" />
+    <Content Include="VMSReports\NetProfitAndLossSpecialCaseNotes.aspx" />
+    <Content Include="VMSReports\NormanReport.aspx" />
+    <Content Include="VMSReports\NoTitlesReport.aspx" />
+    <Content Include="VMSReports\PaidInventoryReport.aspx" />
+    <Content Include="VMSReports\PurchasedCarsByBuyers.aspx" />
+    <Content Include="VMSReports\PurchasedCarsByDealers.aspx" />
+    <Content Include="VMSReports\RegistrationReport.aspx" />
+    <Content Include="VMSReports\Reports.aspx" />
+    <Content Include="VMSReports\SalesBreakDownReport.aspx" />
+    <Content Include="VMSReports\SBPayablesReport.aspx" />
+    <Content Include="VMSReports\SoldInventory.aspx" />
+    <Content Include="VMSReports\SpecialRunListReport.aspx" />
+    <Content Include="VMSReports\UnPaidReport.aspx" />
+    <Content Include="VMSReports\UnPaidReportSpecificDate.aspx" />
+    <Content Include="VMSReports\ViewAllPayments.aspx" />
+    <Content Include="VMSReports\ViewAllSoldCars.aspx" />
+    <None Include="DynamicWebTWAIN\DynamicWebTWAINPlugIn.msi" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="Temp\offerTest.pdf" />
+    <Content Include="UI\BuyerLaneAssignmentsMaster.Master" />
+    <Content Include="UI\BuyerMasterPage.Master" />
+    <Content Include="UI\BuyerMasterPageNoLeftPanel.Master" />
+    <Content Include="UI\BuyerPreInventoryMaster.Master" />
+    <Content Include="UI\CheckTitleFileName.ashx" />
+    <Content Include="UI\DealerLaneAssignmentsMaster.Master" />
+    <Content Include="UI\DealerMasterPage.Master" />
+    <Content Include="UI\DealerMasterPageNoLeftPanel.Master" />
+    <Content Include="UI\DealerPreInventoryMaster.Master" />
+    <Content Include="UI\VendorLaneAssignmentsMaster.Master" />
+    <Content Include="UI\VendorMasterPage.Master" />
+    <Content Include="UI\VendorMasterPageNoLeftPanel.Master" />
+    <Content Include="UI\VendorPreInventoryMaster.Master" />
+    <Content Include="VMSReports\BuyerReportMaster.Master" />
+    <Content Include="UI\MasterPageFullScreen.Master" />
+    <Content Include="UI\BuyerMasterPageFullScreen.Master" />
+    <Content Include="UI\VendorMasterPageFullScreen.Master" />
+    <Content Include="UI\DealerMasterPageFullScreen.Master" />
+    <None Include="Web References\PeachtreeService\HeadStartVMS.wsdl" />
+    <None Include="Web References\PeachtreeService\Reference.map" />
+    <None Include="Web References\ReportingService\ActiveState.datasource" />
+    <None Include="Web References\ReportingService\CatalogItem.datasource" />
+    <None Include="Web References\ReportingService\DataRetrievalPlan.datasource" />
+    <None Include="Web References\ReportingService\DataSetDefinition.datasource" />
+    <None Include="Web References\ReportingService\DataSource.datasource" />
+    <None Include="Web References\ReportingService\DataSourceDefinition.datasource" />
+    <None Include="Web References\ReportingService\DataSourcePrompt.datasource" />
+    <None Include="Web References\ReportingService\Event.datasource" />
+    <None Include="Web References\ReportingService\ExecutionSettingEnum.datasource" />
+    <None Include="Web References\ReportingService\ExpirationDefinition.datasource" />
+    <None Include="Web References\ReportingService\Extension.datasource" />
+    <None Include="Web References\ReportingService\ExtensionParameter.datasource" />
+    <None Include="Web References\ReportingService\ExtensionSettings.datasource" />
+    <None Include="Web References\ReportingService\ItemTypeEnum.datasource" />
+    <None Include="Web References\ReportingService\Job.datasource" />
+    <None Include="Web References\ReportingService\ParameterValue.datasource" />
+    <None Include="Web References\ReportingService\ParameterValueOrFieldReference.datasource" />
+    <None Include="Web References\ReportingService\Policy.datasource" />
+    <None Include="Web References\ReportingService\Property.datasource" />
+    <None Include="Web References\ReportingService\Reference.map" />
+    <None Include="Web References\ReportingService\ReportHistorySnapshot.datasource" />
+    <None Include="Web References\ReportingService\ReportParameter.datasource" />
+    <None Include="Web References\ReportingService\ReportService.wsdl" />
+    <None Include="Web References\ReportingService\Role.datasource" />
+    <None Include="Web References\ReportingService\Schedule.datasource" />
+    <None Include="Web References\ReportingService\ScheduleDefinitionOrReference.datasource" />
+    <None Include="Web References\ReportingService\Subscription.datasource" />
+    <None Include="Web References\ReportingService\Task.datasource" />
+    <None Include="Web References\ReportingService\Warning.datasource" />
+    <None Include="Web References\UCR\LinkCRService.disco" />
+    <Content Include="Web References\PeachtreeService\HeadStartVMS.disco" />
+    <None Include="Web References\UCR\LinkCRService.wsdl" />
+    <None Include="Web References\UCR\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UCR\ServiceResponce.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\EmailMessage.cs" />
+    <Compile Include="Common\EncryptMD5.cs" />
+    <Compile Include="Common\Util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TestManheim_Page.aspx.cs">
+      <DependentUpon>TestManheim_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestManheim_Page.aspx.designer.cs">
+      <DependentUpon>TestManheim_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ActivityStats.aspx.cs">
+      <DependentUpon>ActivityStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ActivityStats.aspx.designer.cs">
+      <DependentUpon>ActivityStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ActivitystatsDetail.aspx.cs">
+      <DependentUpon>ActivitystatsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ActivitystatsDetail.aspx.designer.cs">
+      <DependentUpon>ActivitystatsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddCustomMMB.aspx.cs">
+      <DependentUpon>AddCustomMMB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddCustomMMB.aspx.designer.cs">
+      <DependentUpon>AddCustomMMB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AfterSalesInventories.aspx.cs">
+      <DependentUpon>AfterSalesInventories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AfterSalesInventories.aspx.designer.cs">
+      <DependentUpon>AfterSalesInventories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AfterSalesInventoryHistory.aspx.cs">
+      <DependentUpon>AfterSalesInventoryHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AfterSalesInventoryHistory.aspx.designer.cs">
+      <DependentUpon>AfterSalesInventoryHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ApplyBuyerPayment.aspx.cs">
+      <DependentUpon>ApplyBuyerPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ApplyBuyerPayment.aspx.designer.cs">
+      <DependentUpon>ApplyBuyerPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ApplyPayments.aspx.cs">
+      <DependentUpon>ApplyPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ApplyPayments.aspx.designer.cs">
+      <DependentUpon>ApplyPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Audit.aspx.cs">
+      <DependentUpon>Audit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Audit.aspx.designer.cs">
+      <DependentUpon>Audit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BillOfSale.aspx.cs">
+      <DependentUpon>BillOfSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BillOfSale.aspx.designer.cs">
+      <DependentUpon>BillOfSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerDefault.aspx.cs">
+      <DependentUpon>BuyerDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerDefault.aspx.designer.cs">
+      <DependentUpon>BuyerDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerLaneAssignmentsMaster.Master.cs">
+      <DependentUpon>BuyerLaneAssignmentsMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerLaneAssignmentsMaster.Master.designer.cs">
+      <DependentUpon>BuyerLaneAssignmentsMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerMasterPage.Master.cs">
+      <DependentUpon>BuyerMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerMasterPage.Master.designer.cs">
+      <DependentUpon>BuyerMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerMasterPageNoLeftPanel.Master.cs">
+      <DependentUpon>BuyerMasterPageNoLeftPanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerMasterPageNoLeftPanel.Master.designer.cs">
+      <DependentUpon>BuyerMasterPageNoLeftPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerPreInventoryMaster.Master.cs">
+      <DependentUpon>BuyerPreInventoryMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerPreInventoryMaster.Master.designer.cs">
+      <DependentUpon>BuyerPreInventoryMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerSystemStats.aspx.cs">
+      <DependentUpon>BuyerSystemStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerSystemStats.aspx.designer.cs">
+      <DependentUpon>BuyerSystemStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CheckTitleFileName.ashx.cs">
+      <DependentUpon>CheckTitleFileName.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompanyContacts.aspx.cs">
+      <DependentUpon>CompanyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CompanyContacts.aspx.designer.cs">
+      <DependentUpon>CompanyContacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompanyExpenseType.aspx.cs">
+      <DependentUpon>CompanyExpenseType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CompanyExpenseType.aspx.designer.cs">
+      <DependentUpon>CompanyExpenseType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ContactLogin.aspx.cs">
+      <DependentUpon>ContactLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ContactLogin.aspx.designer.cs">
+      <DependentUpon>ContactLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerMasterPageFullScreen.Master.cs">
+      <DependentUpon>BuyerMasterPageFullScreen.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerMasterPageFullScreen.Master.designer.cs">
+      <DependentUpon>BuyerMasterPageFullScreen.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerListGoogleMap.aspx.cs">
+      <DependentUpon>DealerListGoogleMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerListGoogleMap.aspx.designer.cs">
+      <DependentUpon>DealerListGoogleMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerMasterPageFullScreen.Master.cs">
+      <DependentUpon>DealerMasterPageFullScreen.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerMasterPageFullScreen.Master.designer.cs">
+      <DependentUpon>DealerMasterPageFullScreen.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorMasterPageFullScreen.Master.cs">
+      <DependentUpon>VendorMasterPageFullScreen.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorMasterPageFullScreen.Master.designer.cs">
+      <DependentUpon>VendorMasterPageFullScreen.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MasterPageFullScreen.Master.cs">
+      <DependentUpon>MasterPageFullScreen.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPageFullScreen.Master.designer.cs">
+      <DependentUpon>MasterPageFullScreen.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerDefault.aspx.cs">
+      <DependentUpon>DealerDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerDefault.aspx.designer.cs">
+      <DependentUpon>DealerDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerLaneAssignmentsMaster.Master.cs">
+      <DependentUpon>DealerLaneAssignmentsMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerLaneAssignmentsMaster.Master.designer.cs">
+      <DependentUpon>DealerLaneAssignmentsMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerMasterPage.Master.cs">
+      <DependentUpon>DealerMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerMasterPage.Master.designer.cs">
+      <DependentUpon>DealerMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerMasterPageNoLeftPanel.Master.cs">
+      <DependentUpon>DealerMasterPageNoLeftPanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerMasterPageNoLeftPanel.Master.designer.cs">
+      <DependentUpon>DealerMasterPageNoLeftPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerPreInventoryMaster.Master.cs">
+      <DependentUpon>DealerPreInventoryMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerPreInventoryMaster.Master.designer.cs">
+      <DependentUpon>DealerPreInventoryMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerSystemStates.aspx.cs">
+      <DependentUpon>DealerSystemStates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerSystemStates.aspx.designer.cs">
+      <DependentUpon>DealerSystemStates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DepositSummaryDaily.aspx.cs">
+      <DependentUpon>DepositSummaryDaily.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DepositSummaryDaily.aspx.designer.cs">
+      <DependentUpon>DepositSummaryDaily.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DepositSummaryMonthly.aspx.cs">
+      <DependentUpon>DepositSummaryMonthly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DepositSummaryMonthly.aspx.designer.cs">
+      <DependentUpon>DepositSummaryMonthly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DocumentViewer.aspx.cs">
+      <DependentUpon>DocumentViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DocumentViewer.aspx.designer.cs">
+      <DependentUpon>DocumentViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DuplicateExpense.aspx.cs">
+      <DependentUpon>DuplicateExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DuplicateExpense.aspx.designer.cs">
+      <DependentUpon>DuplicateExpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditExpenses.aspx.cs">
+      <DependentUpon>EditExpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EditExpenses.aspx.designer.cs">
+      <DependentUpon>EditExpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmailDetails.aspx.cs">
+      <DependentUpon>EmailDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EmailDetails.aspx.designer.cs">
+      <DependentUpon>EmailDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EntityUserList.aspx.cs">
+      <DependentUpon>EntityUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EntityUserList.aspx.designer.cs">
+      <DependentUpon>EntityUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExpenseAgainstPayment.aspx.cs">
+      <DependentUpon>ExpenseAgainstPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExpenseAgainstPayment.aspx.designer.cs">
+      <DependentUpon>ExpenseAgainstPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExpenseImageGallery.aspx.cs">
+      <DependentUpon>ExpenseImageGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExpenseImageGallery.aspx.designer.cs">
+      <DependentUpon>ExpenseImageGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExpenseImages.aspx.cs">
+      <DependentUpon>ExpenseImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExpenseImages.aspx.designer.cs">
+      <DependentUpon>ExpenseImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExpenseVsDepositReport.aspx.cs">
+      <DependentUpon>ExpenseVsDepositReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExpenseVsDepositReport.aspx.designer.cs">
+      <DependentUpon>ExpenseVsDepositReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExportHistory.aspx.cs">
+      <DependentUpon>ExportHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ExportHistory.aspx.designer.cs">
+      <DependentUpon>ExportHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GenericImageGallery.aspx.cs">
+      <DependentUpon>GenericImageGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\GenericImageGallery.aspx.designer.cs">
+      <DependentUpon>GenericImageGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GenericImages.aspx.cs">
+      <DependentUpon>GenericImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\GenericImages.aspx.designer.cs">
+      <DependentUpon>GenericImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImageGallery.aspx.cs">
+      <DependentUpon>ImageGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ImageGallery.aspx.designer.cs">
+      <DependentUpon>ImageGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryDepositSearch.aspx.cs">
+      <DependentUpon>InventoryDepositSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryDepositSearch.aspx.designer.cs">
+      <DependentUpon>InventoryDepositSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryDetail.aspx.cs">
+      <DependentUpon>InventoryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryDetail.aspx.designer.cs">
+      <DependentUpon>InventoryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LaneLog.aspx.cs">
+      <DependentUpon>LaneLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LaneLog.aspx.designer.cs">
+      <DependentUpon>LaneLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MAA_AfterSalesInventories.aspx.cs">
+      <DependentUpon>MAA_AfterSalesInventories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MAA_AfterSalesInventories.aspx.designer.cs">
+      <DependentUpon>MAA_AfterSalesInventories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MakeANewBuyerPayment.aspx.cs">
+      <DependentUpon>MakeANewBuyerPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MakeANewBuyerPayment.aspx.designer.cs">
+      <DependentUpon>MakeANewBuyerPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageEntityExpenses.aspx.cs">
+      <DependentUpon>ManageEntityExpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManageEntityExpenses.aspx.designer.cs">
+      <DependentUpon>ManageEntityExpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageEntityLocation.aspx.cs">
+      <DependentUpon>ManageEntityLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManageEntityLocation.aspx.designer.cs">
+      <DependentUpon>ManageEntityLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageLocation.aspx.cs">
+      <DependentUpon>ManageLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManageLocation.aspx.designer.cs">
+      <DependentUpon>ManageLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageNotifications.aspx.cs">
+      <DependentUpon>ManageNotifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManageNotifications.aspx.designer.cs">
+      <DependentUpon>ManageNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManagePermissionAdd.aspx.cs">
+      <DependentUpon>ManagePermissionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManagePermissionAdd.aspx.designer.cs">
+      <DependentUpon>ManagePermissionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManagePermissionEdit.aspx.cs">
+      <DependentUpon>ManagePermissionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManagePermissionEdit.aspx.designer.cs">
+      <DependentUpon>ManagePermissionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManagePermissions.aspx.cs">
+      <DependentUpon>ManagePermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManagePermissions.aspx.designer.cs">
+      <DependentUpon>ManagePermissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NotificationSettings.aspx.cs">
+      <DependentUpon>NotificationSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\NotificationSettings.aspx.designer.cs">
+      <DependentUpon>NotificationSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PreExpense.aspx.cs">
+      <DependentUpon>PreExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PreExpense.aspx.designer.cs">
+      <DependentUpon>PreExpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PreInventory.aspx.cs">
+      <DependentUpon>PreInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PreInventory.aspx.designer.cs">
+      <DependentUpon>PreInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PreInventoryDetail.aspx.cs">
+      <DependentUpon>PreInventoryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PreInventoryDetail.aspx.designer.cs">
+      <DependentUpon>PreInventoryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PreInventoryMaster.Master.cs">
+      <DependentUpon>PreInventoryMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PreInventoryMaster.Master.designer.cs">
+      <DependentUpon>PreInventoryMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrintPreview_ExpenseAgainstPayment.aspx.cs">
+      <DependentUpon>PrintPreview_ExpenseAgainstPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PrintPreview_ExpenseAgainstPayment.aspx.designer.cs">
+      <DependentUpon>PrintPreview_ExpenseAgainstPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QuickSearch.aspx.cs">
+      <DependentUpon>QuickSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\QuickSearch.aspx.designer.cs">
+      <DependentUpon>QuickSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Scanner.aspx.cs">
+      <DependentUpon>Scanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Scanner.aspx.designer.cs">
+      <DependentUpon>Scanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SectionImages.aspx.cs">
+      <DependentUpon>SectionImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SectionImages.aspx.designer.cs">
+      <DependentUpon>SectionImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SMSDetail.aspx.cs">
+      <DependentUpon>SMSDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SMSDetail.aspx.designer.cs">
+      <DependentUpon>SMSDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TransportationPriceLookUp.aspx.cs">
+      <DependentUpon>TransportationPriceLookUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\TransportationPriceLookUp.aspx.designer.cs">
+      <DependentUpon>TransportationPriceLookUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCRDetail.aspx.cs">
+      <DependentUpon>UCRDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UCRDetail.aspx.designer.cs">
+      <DependentUpon>UCRDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCRLog.aspx.cs">
+      <DependentUpon>UCRLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UCRLog.aspx.designer.cs">
+      <DependentUpon>UCRLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCRLogListing.aspx.cs">
+      <DependentUpon>UCRLogListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UCRLogListing.aspx.designer.cs">
+      <DependentUpon>UCRLogListing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCRUpdateLog.aspx.cs">
+      <DependentUpon>UCRUpdateLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UCRUpdateLog.aspx.designer.cs">
+      <DependentUpon>UCRUpdateLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorDefault.aspx.cs">
+      <DependentUpon>VendorDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorDefault.aspx.designer.cs">
+      <DependentUpon>VendorDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorLaneAssignmentsMaster.Master.cs">
+      <DependentUpon>VendorLaneAssignmentsMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorLaneAssignmentsMaster.Master.designer.cs">
+      <DependentUpon>VendorLaneAssignmentsMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorMasterPage.Master.cs">
+      <DependentUpon>VendorMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorMasterPage.Master.designer.cs">
+      <DependentUpon>VendorMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorMasterPageNoLeftPanel.Master.cs">
+      <DependentUpon>VendorMasterPageNoLeftPanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorMasterPageNoLeftPanel.Master.designer.cs">
+      <DependentUpon>VendorMasterPageNoLeftPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorPreInventoryMaster.Master.cs">
+      <DependentUpon>VendorPreInventoryMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorPreInventoryMaster.Master.designer.cs">
+      <DependentUpon>VendorPreInventoryMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorSystemStats.aspx.cs">
+      <DependentUpon>VendorSystemStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorSystemStats.aspx.designer.cs">
+      <DependentUpon>VendorSystemStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewAllCommission.aspx.cs">
+      <DependentUpon>ViewAllCommission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewAllCommission.aspx.designer.cs">
+      <DependentUpon>ViewAllCommission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewAllDocument.aspx.cs">
+      <DependentUpon>ViewAllDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewAllDocument.aspx.designer.cs">
+      <DependentUpon>ViewAllDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewAllExpenses.aspx.cs">
+      <DependentUpon>ViewAllExpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewAllExpenses.aspx.designer.cs">
+      <DependentUpon>ViewAllExpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewAllImages.aspx.cs">
+      <DependentUpon>ViewAllImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewAllImages.aspx.designer.cs">
+      <DependentUpon>ViewAllImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewAllTitleStatus.aspx.cs">
+      <DependentUpon>ViewAllTitleStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewAllTitleStatus.aspx.designer.cs">
+      <DependentUpon>ViewAllTitleStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewLocation.aspx.cs">
+      <DependentUpon>ViewLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewLocation.aspx.designer.cs">
+      <DependentUpon>ViewLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VinScanLog.aspx.cs">
+      <DependentUpon>VinScanLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VinScanLog.aspx.designer.cs">
+      <DependentUpon>VinScanLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WOImageGallery.aspx.cs">
+      <DependentUpon>WOImageGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\WOImageGallery.aspx.designer.cs">
+      <DependentUpon>WOImageGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WorkOrderExpense.aspx.cs">
+      <DependentUpon>WorkOrderExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\WorkOrderExpense.aspx.designer.cs">
+      <DependentUpon>WorkOrderExpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ExpenseDetails.ascx.cs">
+      <DependentUpon>ExpenseDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ExpenseDetails.ascx.designer.cs">
+      <DependentUpon>ExpenseDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageInventoryStats.ascx.cs">
+      <DependentUpon>ManageInventoryStats.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageInventoryStats.ascx.designer.cs">
+      <DependentUpon>ManageInventoryStats.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Scanner.ascx.cs">
+      <DependentUpon>Scanner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Scanner.ascx.designer.cs">
+      <DependentUpon>Scanner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\AccountingReport.aspx.cs">
+      <DependentUpon>AccountingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\AccountingReport.aspx.designer.cs">
+      <DependentUpon>AccountingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\Account_Payable.aspx.cs">
+      <DependentUpon>Account_Payable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\Account_Payable.aspx.designer.cs">
+      <DependentUpon>Account_Payable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\AfterSalesManagement.aspx.cs">
+      <DependentUpon>AfterSalesManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\AfterSalesManagement.aspx.designer.cs">
+      <DependentUpon>AfterSalesManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\AlphabeticalRegistration.aspx.cs">
+      <DependentUpon>AlphabeticalRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\AlphabeticalRegistration.aspx.designer.cs">
+      <DependentUpon>AlphabeticalRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ATCAuctionsOpenDealList.aspx.cs">
+      <DependentUpon>ATCAuctionsOpenDealList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\ATCAuctionsOpenDealList.aspx.designer.cs">
+      <DependentUpon>ATCAuctionsOpenDealList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\AvgCommissionReport.aspx.cs">
+      <DependentUpon>AvgCommissionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\AvgCommissionReport.aspx.designer.cs">
+      <DependentUpon>AvgCommissionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BillOFSaleReport.aspx.cs">
+      <DependentUpon>BillOFSaleReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BillOFSaleReport.aspx.designer.cs">
+      <DependentUpon>BillOFSaleReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BlockRunList.aspx.cs">
+      <DependentUpon>BlockRunList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BlockRunList.aspx.designer.cs">
+      <DependentUpon>BlockRunList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BlockRunListEnhanced.aspx.cs">
+      <DependentUpon>BlockRunListEnhanced.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BlockRunListEnhanced.aspx.designer.cs">
+      <DependentUpon>BlockRunListEnhanced.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BlockRunListExcludingCost.aspx.cs">
+      <DependentUpon>BlockRunListExcludingCost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BlockRunListExcludingCost.aspx.designer.cs">
+      <DependentUpon>BlockRunListExcludingCost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BuyerInventory.aspx.cs">
+      <DependentUpon>BuyerInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BuyerInventory.aspx.designer.cs">
+      <DependentUpon>BuyerInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BuyerReportMaster.Master.cs">
+      <DependentUpon>BuyerReportMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BuyerReportMaster.Master.designer.cs">
+      <DependentUpon>BuyerReportMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BuyersReport.aspx.cs">
+      <DependentUpon>BuyersReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BuyersReport.aspx.designer.cs">
+      <DependentUpon>BuyersReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\BuyersReportV2.aspx.cs">
+      <DependentUpon>BuyersReportV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\BuyersReportV2.aspx.designer.cs">
+      <DependentUpon>BuyersReportV2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ChargeBackReport.aspx.cs">
+      <DependentUpon>ChargeBackReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\ChargeBackReport.aspx.designer.cs">
+      <DependentUpon>ChargeBackReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\CommissionReport.aspx.cs">
+      <DependentUpon>CommissionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\CommissionReport.aspx.designer.cs">
+      <DependentUpon>CommissionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ExpenseReport.aspx.cs">
+      <DependentUpon>ExpenseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\ExpenseReport.aspx.designer.cs">
+      <DependentUpon>ExpenseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\HereNotHere.aspx.cs">
+      <DependentUpon>HereNotHere.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\HereNotHere.aspx.designer.cs">
+      <DependentUpon>HereNotHere.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\InventoryOnHandReport.aspx.cs">
+      <DependentUpon>InventoryOnHandReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\InventoryOnHandReport.aspx.designer.cs">
+      <DependentUpon>InventoryOnHandReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\InventoryReportJS.aspx.cs">
+      <DependentUpon>InventoryReportJS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\InventoryReportJS.aspx.designer.cs">
+      <DependentUpon>InventoryReportJS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\NetProfitAndLoss.aspx.cs">
+      <DependentUpon>NetProfitAndLoss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\NetProfitAndLoss.aspx.designer.cs">
+      <DependentUpon>NetProfitAndLoss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\NetProfitAndLossSpecialCaseNotes.aspx.cs">
+      <DependentUpon>NetProfitAndLossSpecialCaseNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\NetProfitAndLossSpecialCaseNotes.aspx.designer.cs">
+      <DependentUpon>NetProfitAndLossSpecialCaseNotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\NormanReport.aspx.cs">
+      <DependentUpon>NormanReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\NormanReport.aspx.designer.cs">
+      <DependentUpon>NormanReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\NoTitlesReport.aspx.cs">
+      <DependentUpon>NoTitlesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\NoTitlesReport.aspx.designer.cs">
+      <DependentUpon>NoTitlesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\PaidInventoryReport.aspx.cs">
+      <DependentUpon>PaidInventoryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\PaidInventoryReport.aspx.designer.cs">
+      <DependentUpon>PaidInventoryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\PurchasedCarsByBuyers.aspx.cs">
+      <DependentUpon>PurchasedCarsByBuyers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\PurchasedCarsByBuyers.aspx.designer.cs">
+      <DependentUpon>PurchasedCarsByBuyers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\PurchasedCarsByDealers.aspx.cs">
+      <DependentUpon>PurchasedCarsByDealers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\PurchasedCarsByDealers.aspx.designer.cs">
+      <DependentUpon>PurchasedCarsByDealers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\RegistrationReport.aspx.cs">
+      <DependentUpon>RegistrationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\RegistrationReport.aspx.designer.cs">
+      <DependentUpon>RegistrationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ReportMaster.Master.cs">
+      <DependentUpon>ReportMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\ReportMaster.Master.designer.cs">
+      <DependentUpon>ReportMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ReportParameters.cs" />
+    <Compile Include="VMSReports\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\SalesBreakDownReport.aspx.cs">
+      <DependentUpon>SalesBreakDownReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\SalesBreakDownReport.aspx.designer.cs">
+      <DependentUpon>SalesBreakDownReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\SBPayablesReport.aspx.cs">
+      <DependentUpon>SBPayablesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\SBPayablesReport.aspx.designer.cs">
+      <DependentUpon>SBPayablesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\SoldInventory.aspx.cs">
+      <DependentUpon>SoldInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\SoldInventory.aspx.designer.cs">
+      <DependentUpon>SoldInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\SpecialRunListReport.aspx.cs">
+      <DependentUpon>SpecialRunListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\SpecialRunListReport.aspx.designer.cs">
+      <DependentUpon>SpecialRunListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\UnPaidReport.aspx.cs">
+      <DependentUpon>UnPaidReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\UnPaidReport.aspx.designer.cs">
+      <DependentUpon>UnPaidReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\UnPaidReportSpecificDate.aspx.cs">
+      <DependentUpon>UnPaidReportSpecificDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\UnPaidReportSpecificDate.aspx.designer.cs">
+      <DependentUpon>UnPaidReportSpecificDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ViewAllPayments.aspx.cs">
+      <DependentUpon>ViewAllPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\ViewAllPayments.aspx.designer.cs">
+      <DependentUpon>ViewAllPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMSReports\ViewAllSoldCars.aspx.cs">
+      <DependentUpon>ViewAllSoldCars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMSReports\ViewAllSoldCars.aspx.designer.cs">
+      <DependentUpon>ViewAllSoldCars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AutoFillCustomersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ManheimAutoAuction_OnlineRegistration\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PeachtreeService\Reference.cs" />
+    <Compile Include="Web References\ReportingService\Reference.cs" />
+    <Compile Include="Web References\UCR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WS\AutoFill.asmx.cs">
+      <DependentUpon>AutoFill.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS\AutoFillCustomers.asmx.cs">
+      <DependentUpon>AutoFillCustomers.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\AccountsPayable.aspx.cs">
+      <DependentUpon>AccountsPayable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AccountsPayable.aspx.designer.cs">
+      <DependentUpon>AccountsPayable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddBuyer.aspx.cs">
+      <DependentUpon>AddBuyer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddBuyer.aspx.designer.cs">
+      <DependentUpon>AddBuyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddCustomer.aspx.cs">
+      <DependentUpon>AddCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddCustomer.aspx.designer.cs">
+      <DependentUpon>AddCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddDocument.aspx.cs">
+      <DependentUpon>AddDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddDocument.aspx.designer.cs">
+      <DependentUpon>AddDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddEmployee.aspx.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddEmployee.aspx.designer.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddGroup.aspx.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddGroup.aspx.designer.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddInventory.aspx.cs">
+      <DependentUpon>AddInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddInventory.aspx.designer.cs">
+      <DependentUpon>AddInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddNewAnnouncement.aspx.cs">
+      <DependentUpon>AddNewAnnouncement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddNewAnnouncement.aspx.designer.cs">
+      <DependentUpon>AddNewAnnouncement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddNewContact.aspx.cs">
+      <DependentUpon>AddNewContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddNewContact.aspx.designer.cs">
+      <DependentUpon>AddNewContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddNote.aspx.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddNote.aspx.designer.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddUtilityCompany.aspx.cs">
+      <DependentUpon>AddUtilityCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddUtilityCompany.aspx.designer.cs">
+      <DependentUpon>AddUtilityCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddVendor.aspx.cs">
+      <DependentUpon>AddVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddVendor.aspx.designer.cs">
+      <DependentUpon>AddVendor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminChangePassword.aspx.cs">
+      <DependentUpon>AdminChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AdminChangePassword.aspx.designer.cs">
+      <DependentUpon>AdminChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AnnouncementDetails.aspx.cs">
+      <DependentUpon>AnnouncementDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AnnouncementDetails.aspx.designer.cs">
+      <DependentUpon>AnnouncementDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuyerList.aspx.cs">
+      <DependentUpon>BuyerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BuyerList.aspx.designer.cs">
+      <DependentUpon>BuyerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChromeHistory.aspx.cs">
+      <DependentUpon>ChromeHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChromeHistory.aspx.designer.cs">
+      <DependentUpon>ChromeHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DealerList.aspx.cs">
+      <DependentUpon>DealerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DealerList.aspx.designer.cs">
+      <DependentUpon>DealerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditContact.aspx.cs">
+      <DependentUpon>EditContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EditContact.aspx.designer.cs">
+      <DependentUpon>EditContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditPreference.aspx.cs">
+      <DependentUpon>EditPreference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EditPreference.aspx.designer.cs">
+      <DependentUpon>EditPreference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmployeeList.aspx.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EmployeeList.aspx.designer.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmployeeSearchList.aspx.cs">
+      <DependentUpon>EmployeeSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EmployeeSearchList.aspx.designer.cs">
+      <DependentUpon>EmployeeSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GroupList.aspx.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\GroupList.aspx.designer.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryDocuments.aspx.cs">
+      <DependentUpon>InventoryDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryDocuments.aspx.designer.cs">
+      <DependentUpon>InventoryDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryDriver.aspx.cs">
+      <DependentUpon>InventoryDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryDriver.aspx.designer.cs">
+      <DependentUpon>InventoryDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryExpense.aspx.cs">
+      <DependentUpon>InventoryExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryExpense.aspx.designer.cs">
+      <DependentUpon>InventoryExpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryLifeCycle.aspx.cs">
+      <DependentUpon>InventoryLifeCycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryLifeCycle.aspx.designer.cs">
+      <DependentUpon>InventoryLifeCycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryList.aspx.cs">
+      <DependentUpon>InventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryList.aspx.designer.cs">
+      <DependentUpon>InventoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventoryNotes.aspx.cs">
+      <DependentUpon>InventoryNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventoryNotes.aspx.designer.cs">
+      <DependentUpon>InventoryNotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventorySearch.aspx.cs">
+      <DependentUpon>InventorySearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\InventorySearch.aspx.designer.cs">
+      <DependentUpon>InventorySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LaneAssignment.aspx.cs">
+      <DependentUpon>LaneAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LaneAssignment.aspx.designer.cs">
+      <DependentUpon>LaneAssignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LaneAssignmentsMaster.Master.cs">
+      <DependentUpon>LaneAssignmentsMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LaneAssignmentsMaster.Master.designer.cs">
+      <DependentUpon>LaneAssignmentsMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LaneHistory.aspx.cs">
+      <DependentUpon>LaneHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LaneHistory.aspx.designer.cs">
+      <DependentUpon>LaneHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LiveUsers.aspx.cs">
+      <DependentUpon>LiveUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LiveUsers.aspx.designer.cs">
+      <DependentUpon>LiveUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LookUpTables.aspx.cs">
+      <DependentUpon>LookUpTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LookUpTables.aspx.designer.cs">
+      <DependentUpon>LookUpTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MakeANewPayment.aspx.cs">
+      <DependentUpon>MakeANewPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MakeANewPayment.aspx.designer.cs">
+      <DependentUpon>MakeANewPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageInventory.aspx.cs">
+      <DependentUpon>ManageInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ManageInventory.aspx.designer.cs">
+      <DependentUpon>ManageInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MasterPageNoLeftPanel.Master.cs">
+      <DependentUpon>MasterPageNoLeftPanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPageNoLeftPanel.Master.designer.cs">
+      <DependentUpon>MasterPageNoLeftPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NotesPopUp.aspx.cs">
+      <DependentUpon>NotesPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\NotesPopUp.aspx.designer.cs">
+      <DependentUpon>NotesPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Payments.aspx.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Payments.aspx.designer.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PaymentStatus.aspx.cs">
+      <DependentUpon>PaymentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PaymentStatus.aspx.designer.cs">
+      <DependentUpon>PaymentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Permission.aspx.cs">
+      <DependentUpon>Permission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Permission.aspx.designer.cs">
+      <DependentUpon>Permission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SearchPayment.aspx.cs">
+      <DependentUpon>SearchPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SearchPayment.aspx.designer.cs">
+      <DependentUpon>SearchPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectDealer.aspx.cs">
+      <DependentUpon>SelectDealer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SelectDealer.aspx.designer.cs">
+      <DependentUpon>SelectDealer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SystemError.aspx.cs">
+      <DependentUpon>SystemError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SystemError.aspx.designer.cs">
+      <DependentUpon>SystemError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SystemStats.aspx.cs">
+      <DependentUpon>SystemStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SystemStats.aspx.designer.cs">
+      <DependentUpon>SystemStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UtilityCompanyList.aspx.cs">
+      <DependentUpon>UtilityCompanyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UtilityCompanyList.aspx.designer.cs">
+      <DependentUpon>UtilityCompanyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ValidateVin.aspx.cs">
+      <DependentUpon>ValidateVin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ValidateVin.aspx.designer.cs">
+      <DependentUpon>ValidateVin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VendorList.aspx.cs">
+      <DependentUpon>VendorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\VendorList.aspx.designer.cs">
+      <DependentUpon>VendorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewAnnouncementList.aspx.cs">
+      <DependentUpon>ViewAnnouncementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewAnnouncementList.aspx.designer.cs">
+      <DependentUpon>ViewAnnouncementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewBuyerDetails.aspx.cs">
+      <DependentUpon>ViewBuyerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewBuyerDetails.aspx.designer.cs">
+      <DependentUpon>ViewBuyerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewBuyers.aspx.cs">
+      <DependentUpon>ViewBuyers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewBuyers.aspx.designer.cs">
+      <DependentUpon>ViewBuyers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewDealer.aspx.cs">
+      <DependentUpon>ViewDealer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewDealer.aspx.designer.cs">
+      <DependentUpon>ViewDealer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewEmployee.aspx.cs">
+      <DependentUpon>ViewEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewEmployee.aspx.designer.cs">
+      <DependentUpon>ViewEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewUtilityCompany.aspx.cs">
+      <DependentUpon>ViewUtilityCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewUtilityCompany.aspx.designer.cs">
+      <DependentUpon>ViewUtilityCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewVendor.aspx.cs">
+      <DependentUpon>ViewVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewVendor.aspx.designer.cs">
+      <DependentUpon>ViewVendor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditPreference.ascx.cs">
+      <DependentUpon>EditPreference.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditPreference.ascx.designer.cs">
+      <DependentUpon>EditPreference.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WS\DecodeUCRVirtualPah.asmx.cs">
+      <DependentUpon>DecodeUCRVirtualPah.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS\LaneAssignment.asmx.cs">
+      <DependentUpon>LaneAssignment.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\BAL.dll" />
+    <Content Include="bin\DAL.dll" />
+    <Content Include="bin\MetaOption.Web.UI.WebControls.dll" />
+    <Content Include="bin\SSOLib.dll" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="TestManheim_Page.aspx" />
+    <Content Include="UI\AddCustomMMB.aspx" />
+    <Content Include="UI\AfterSalesInventories.aspx" />
+    <Content Include="UI\AfterSalesInventoryHistory.aspx" />
+    <Content Include="UI\MAA_AfterSalesInventories.aspx" />
+    <Content Include="UI\MakeANewBuyerPayment.aspx" />
+    <Content Include="UI\PreInventory.aspx" />
+    <Content Include="UI\QuickSearch.aspx" />
+    <Content Include="VMSReports\ReportMaster.Master" />
+    <Content Include="UI\PreInventoryMaster.Master" />
+    <None Include="Web References\AutoFillCustomersService\AutoFillCustomers.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WS\AutoFill.asmx" />
+    <Content Include="WS\AutoFillCustomers.asmx" />
+    <Content Include="UI\AccountsPayable.aspx" />
+    <Content Include="UI\AddBuyer.aspx" />
+    <Content Include="UI\AddCustomer.aspx" />
+    <Content Include="UI\AddDocument.aspx" />
+    <Content Include="UI\AddEmployee.aspx" />
+    <Content Include="UI\AddGroup.aspx" />
+    <Content Include="UI\AddInventory.aspx" />
+    <Content Include="UI\AddNewAnnouncement.aspx" />
+    <Content Include="UI\AddNewContact.aspx" />
+    <Content Include="UI\AddNote.aspx" />
+    <Content Include="UI\AddUtilityCompany.aspx" />
+    <Content Include="UI\AddVendor.aspx" />
+    <Content Include="UI\AdminChangePassword.aspx" />
+    <Content Include="UI\AnnouncementDetails.aspx" />
+    <Content Include="UI\BuyerList.aspx" />
+    <Content Include="UI\ChangePassword.aspx" />
+    <Content Include="UI\ChromeHistory.aspx" />
+    <Content Include="UI\DealerList.aspx" />
+    <Content Include="UI\Default.aspx" />
+    <Content Include="UI\EditContact.aspx" />
+    <Content Include="UI\EditPreference.aspx" />
+    <Content Include="UI\EmployeeList.aspx" />
+    <Content Include="UI\EmployeeSearchList.aspx" />
+    <Content Include="UI\GroupList.aspx" />
+    <Content Include="UI\InventoryDocuments.aspx" />
+    <Content Include="UI\InventoryDriver.aspx" />
+    <Content Include="UI\InventoryExpense.aspx" />
+    <Content Include="UI\InventoryLifeCycle.aspx" />
+    <Content Include="UI\InventoryList.aspx" />
+    <Content Include="UI\InventoryNotes.aspx" />
+    <Content Include="UI\InventorySearch.aspx" />
+    <Content Include="UI\LaneAssignment.aspx" />
+    <Content Include="UI\LaneAssignmentsMaster.Master" />
+    <Content Include="UI\LaneHistory.aspx" />
+    <Content Include="UI\LiveUsers.aspx" />
+    <Content Include="UI\LookUpTables.aspx" />
+    <Content Include="UI\MakeANewPayment.aspx" />
+    <Content Include="UI\MakeUser.aspx" />
+    <Content Include="UI\ManageInventory.aspx" />
+    <Content Include="UI\MasterPage.Master" />
+    <Content Include="UI\MasterPageNoLeftPanel.Master" />
+    <Content Include="UI\NotesPopUp.aspx" />
+    <Content Include="UI\Payments.aspx" />
+    <Content Include="UI\PaymentStatus.aspx" />
+    <Content Include="UI\Permission.aspx" />
+    <Content Include="UI\SearchPayment.aspx" />
+    <Content Include="UI\SelectDealer.aspx" />
+    <Content Include="UI\SystemError.aspx" />
+    <Content Include="UI\SystemStats.aspx" />
+    <Content Include="UI\User.aspx" />
+    <Content Include="UI\UtilityCompanyList.aspx" />
+    <Content Include="UI\ValidateVin.aspx" />
+    <Content Include="UI\VendorList.aspx" />
+    <Content Include="UI\ViewAnnouncementList.aspx" />
+    <Content Include="UI\ViewBuyerDetails.aspx" />
+    <Content Include="UI\ViewBuyers.aspx" />
+    <Content Include="UI\ViewDealer.aspx" />
+    <Content Include="UI\ViewEmployee.aspx" />
+    <Content Include="UI\ViewUtilityCompany.aspx" />
+    <Content Include="UI\ViewVendor.aspx" />
+    <Content Include="UI\Web.config" />
+    <Content Include="UserControls\AnnouncementList.ascx" />
+    <Content Include="UserControls\Contact.ascx" />
+    <Content Include="UserControls\EditPreference.ascx" />
+    <Content Include="WS\DecodeUCRVirtualPah.asmx" />
+    <Content Include="WS\LaneAssignment.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UCR\</RelPath>
+      <UpdateFromURL>http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HeadStartVMS_UCR_LinkCRService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:9616/HeadStartVMS/WS/AutoFillCustomers.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AutoFillCustomersService\</RelPath>
+      <UpdateFromURL>http://localhost:9616/HeadStartVMS/WS/AutoFillCustomers.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HeadStartVMS_AutoFillCustomersService_AutoFillNames</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ManheimAutoAuction_OnlineRegistration\</RelPath>
+      <UpdateFromURL>http://www.manheimautoauctiononline3.com/hhead/RegisterVehicles.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HeadStartVMS_ManheimAutoAuction_OnlineRegistration_RegisterVehicles</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AutoFillCustomersService\AutoFillCustomers.wsdl" />
+    <None Include="Web References\AutoFillCustomersService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ManheimAutoAuction_OnlineRegistration\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ManheimAutoAuction_OnlineRegistration\RegisterVehicles.wsdl" />
+    <None Include="Web References\ManheimAutoAuction_OnlineRegistration\UploadFileResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57626</DevelopmentServerPort>
+          <DevelopmentServerVPath>/HeadStartVMS</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/HeadStartVMSPeachtree" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/HeadStartVMSPeachtree" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/HeadStartVMSPeachtree">
+      <s:element name="GetVendorListWithExpenseCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendorListWithExpenseCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVendorListWithExpenseCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendorList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendorListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVendorListResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorListXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendorName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VendorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VendorGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendorNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVendorNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentCountByCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentCountByCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPaymentCountByCheckResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportPaymentXMLResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentDataTables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtPayment">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtExpenses">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentDataTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportPaymentDataTablesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentDataTablesWithExpenseCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GLPAGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GLPA" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtPayment">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtExpenses">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentDataTablesWithExpenseCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportPaymentDataTablesWithExpenseCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securtiyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GLPAGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GLPA" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boolTestMode" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtPayment">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtExpenses">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVendorListWithExpenseCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVendorListWithExpenseCode" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorListWithExpenseCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVendorListWithExpenseCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVendorList" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVendorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVendorName" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVendorNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentList" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentCountByCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentCountByCheck" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentCountByCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentCountByCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportPaymentXML" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportPaymentXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentDataTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportPaymentDataTables" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentDataTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportPaymentDataTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentDataTablesWithExpenseCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportPaymentDataTablesWithExpenseCode" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentDataTablesWithExpenseCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportPaymentDataTablesWithExpenseCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID" />
+  </wsdl:message>
+  <wsdl:message name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HeadStartVMSPtreeSoap">
+    <wsdl:operation name="GetVendorListWithExpenseCode">
+      <wsdl:input message="tns:GetVendorListWithExpenseCodeSoapIn" />
+      <wsdl:output message="tns:GetVendorListWithExpenseCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorList">
+      <wsdl:input message="tns:GetVendorListSoapIn" />
+      <wsdl:output message="tns:GetVendorListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorName">
+      <wsdl:input message="tns:GetVendorNameSoapIn" />
+      <wsdl:output message="tns:GetVendorNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentList">
+      <wsdl:input message="tns:GetPaymentListSoapIn" />
+      <wsdl:output message="tns:GetPaymentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCountByCheck">
+      <wsdl:input message="tns:GetPaymentCountByCheckSoapIn" />
+      <wsdl:output message="tns:GetPaymentCountByCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentXML">
+      <wsdl:input message="tns:ImportPaymentXMLSoapIn" />
+      <wsdl:output message="tns:ImportPaymentXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTables">
+      <wsdl:input message="tns:ImportPaymentDataTablesSoapIn" />
+      <wsdl:output message="tns:ImportPaymentDataTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTablesWithExpenseCode">
+      <wsdl:input message="tns:ImportPaymentDataTablesWithExpenseCodeSoapIn" />
+      <wsdl:output message="tns:ImportPaymentDataTablesWithExpenseCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID">
+      <wsdl:input message="tns:ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDSoapIn" />
+      <wsdl:output message="tns:ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HeadStartVMSPtreeSoap" type="tns:HeadStartVMSPtreeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVendorListWithExpenseCode">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetVendorListWithExpenseCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorList">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetVendorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorName">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetVendorName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentList">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetPaymentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCountByCheck">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetPaymentCountByCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentXML">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTables">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentDataTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTablesWithExpenseCode">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentDataTablesWithExpenseCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID">
+      <soap:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HeadStartVMSPtreeSoap12" type="tns:HeadStartVMSPtreeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVendorListWithExpenseCode">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetVendorListWithExpenseCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorList">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetVendorList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorName">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetVendorName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentList">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetPaymentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCountByCheck">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/GetPaymentCountByCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentXML">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTables">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentDataTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTablesWithExpenseCode">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentDataTablesWithExpenseCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID">
+      <soap12:operation soapAction="http://tempuri.org/HeadStartVMSPeachtree/ImportPaymentDataTablesWithExpenseCodeAndReturnPaymentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HeadStartVMSPtree">
+    <wsdl:port name="HeadStartVMSPtreeSoap" binding="tns:HeadStartVMSPtreeSoap">
+      <soap:address location="http://24.229.49.203/HeadStartVMS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HeadStartVMSPtreeSoap12" binding="tns:HeadStartVMSPtreeSoap12">
+      <soap12:address location="http://24.229.49.203/HeadStartVMS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

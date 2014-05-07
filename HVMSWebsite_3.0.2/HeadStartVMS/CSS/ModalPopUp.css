@@ -1,0 +1,170 @@
+﻿body
+{
+    background-color: #ECF5FB;
+}
+
+.Container
+{
+    margin: auto;
+    background: #ffffff;
+    max-width: 500px;
+    min-width: 50px;
+    border: solid 1px #d4d4d4;
+    padding: 0 20px 20px 20px;
+}
+
+.ToolBar
+{
+    border: solid 1px #d4d4d4;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+.ModalPopupBG
+{
+    background-color: #D9D9D9;
+    filter: alpha(opacity=50);
+    opacity: 0.7;
+}
+
+.popup_Container
+{
+    background-color: Silver;
+    border: 2px solid #000000;
+    padding: 0px 0px 0px 0px;
+}
+
+.popupConfirmation
+{
+    width: 200px;
+    height: 70px;
+}
+
+.popup_Titlebar
+{
+    background: url(../Images/titlebar_bg.jpg);
+    height: 29px;
+}
+
+.popup_Body
+{
+    padding: 4px 4px 4px 4px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+    line-height: 15pt;
+    clear: both;
+    padding: 20px;
+    text-align: left;
+}
+
+.TitlebarLeft
+{
+    float: left;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+.TitlebarRight
+{
+    background: url(../Images/cross_icon_normal.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 16px;
+    float: right;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+/* Model POPUP CSS Added on 03-07-2012 */
+.web_dialog_overlay
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    opacity: .15;
+    filter: alpha(opacity=15);
+    -moz-opacity: .15;
+    z-index: 101;
+    display: none;
+}
+.web_dialog
+{
+    display: none;
+    position: fixed; /*width: 380px;*/ /*height: 200px;*/
+    top: 50%;
+    left: 50%;
+    margin-left: -190px;
+    margin-top: -100px;
+    background-color: #ffffff;
+    border: 3px solid Gray;
+    padding: 3px;
+    z-index: 102;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+.web_dialogPreExpense
+{
+    display: none;
+    position: fixed; /*width: 380px;*/ /*height: 200px;*/
+    top: 50%;
+    left: 40%;
+    margin-left: -190px;
+    margin-top: -100px;
+    background-color: #ffffff;
+    border: 3px solid Gray;
+    padding: 3px;
+    z-index: 102;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+.web_dialogEmail
+{
+    display: none;
+    position: fixed; /*width: 380px;*/ /*height: 200px;*/
+    top: 16%;
+    left: 30%;
+    bottom: 20%;
+    right: 20%;
+    margin-left: -190px;
+    margin-top: -100px;
+    background-color: #ffffff;
+    border: 3px solid Gray;
+    padding: 3px;
+    z-index: 102;
+    font-family: Verdana;
+    font-size: 10pt;
+   
+}
+.web_dialog_title
+{
+    border-bottom: solid 2px #336699;
+    background-color: #336699;
+    padding: 4px;
+    color: White;
+    font-weight: bold;
+}
+.web_dialog_title a
+{
+    color: White;
+    text-decoration: none;
+}
+.align_right
+{
+    text-align: right;
+}
+

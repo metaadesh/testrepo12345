@@ -1,0 +1,418 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ReportMaster.master.cs"
+    Inherits="HeadStartVMS.Reports.ReportMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>View Reports</title>
+    <%--<link href="../CSS/min.css?v=1" rel="stylesheet" type="text/css" />
+    <script src="../CSS/min.js?v=1" type="text/javascript"></script>--%>
+    <link href="../CSS/AjaxRelated.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/MainStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../CSS/Menu.js" type="text/javascript"></script>
+    <link href="../CSS/ControlStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <center>
+        <table border="0" cellpadding="0" class="MainTable" style="border-collapse: collapse">
+            <tr>
+                <td>
+                    <!-- Header Start -->
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="Logo">
+                                <div>
+                                    <img id="imgLogo" border="0" src="../images/Logo.gif" width="207" height="35" alt=""
+                                        runat="server" />
+                                </div>
+                                <div style='margin-top: 6px;'>
+                                    <asp:Label ID="lblOrgName" runat="server" Text="" CssClass="OrgName"></asp:Label>
+                                </div>
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                </asp:ScriptManager>
+                            </td>
+                            <td class="LoginStatusWindow" align="right">
+                                <!-- Login Status Window Start -->
+                                <table border="0" cellpadding="0" style="border-collapse: collapse" class="LoginStatus">
+                                    <tr>
+                                        <td class="LoginTd" nowrap>
+                                            <asp:Label ID="lblWelcome" CssClass="LoginTxt" runat="server"></asp:Label>
+                                            &nbsp;|&nbsp;
+                                            <%--<a href="#" class="LoginTxt">Logout</a>--%>
+                                            <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout" class="LoginTxt" OnClick="lnkLogout_Click"></asp:LinkButton>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LoginTd" nowrap>
+                                            <%--Last Login was on : 11/11/2008 11:46 PM--%>
+                                            <asp:Label ID="lblLastLogin" runat="server" CssClass="LoginTxt"></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Login Status Window End -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="TopMenuBarTd">
+                                <div class="suckertreemenu" align="center">
+                                    <ul id="treemenu1">
+                                        <li><a href="../UI/default.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Home','','../images/Home-Tab-On.gif',0)">
+                                            <%--<img src="../images/Home-Tab.gif" alt="Home" name="Home" width="79" height="38" border="0" id="Home" />--%>
+                                            <img src="../Images/img_trans.gif" width="1" height="1" alt="Home" name="Home" border="0"
+                                                id="Home" />
+                                        </a></li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Intities','','../images/Intities-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Intities-Tab.gif" width="96" height="38" alt="" name="Intities" id="Intities" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="" name="Intities"
+                                                id="Intities" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li><a href="../UI/ValidateVin.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add Inventory&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li>
+                                                    <asp:HyperLink NavigateUrl="~/UI/InventoryList.aspx" runat="server" ID="HyperLink1">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Manage Inventory&nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink NavigateUrl="~/UI/InventoryList.aspx?CarStatus=3" runat="server" ID="HyperLink2">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Manage Archive Inventory&nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                                <li><a href="../UI/AddCustomer.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add Purchased From/Sold
+                                                    To&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/DealerList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Purchased From/Sold
+                                                    To&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/AddBuyer.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add Buyer&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/BuyerList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Buyers&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/AddVendor.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add Vendor&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/VendorList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Vendors&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/AddUtilityCompany.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add Utility Company/Sub-Contractor&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/UtilityCompanyList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Utility Company/Sub
+                                                    Contractors&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/AddEmployee.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add Employee&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/EmployeeSearchList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Employees&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('AccontsPayable','','../images/AccontsPayable-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/AccontsPayable-Tab.gif" width="180" height="38" alt="Acconts Payable" name="AccontsPayable" id="AccontsPayable" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Acconts Payable"
+                                                name="AccontsPayable" id="AccontsPayable" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li><a href="../UI/MakeANewPayment.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Add New Payment&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/AccountsPayable.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View All Payment&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/SearchPayment.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search Payment&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','../images/Search-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Search-Tab.gif" width="94" height="38" alt="Search" name="Search" id="Search" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Search" name="Search"
+                                                id="Search" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li><a href="../UI/InventorySearch.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search Inventory&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/DealerList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search Dealer &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/SearchPayment.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search Payment&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="../VMSReports/Account_Payable.aspx" onmouseout="MM_swapImgRestore()"
+                                            onmouseover="MM_swapImage('Reports','','../images/Reports-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Reports-Tab.gif" width="102" height="38" alt="Reports" id="Reports" name="Reports" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Reports"
+                                                id="Reports" name="Reports" />
+                                        </a></li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Admin','','../images/Admin-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Admin-Tab.gif" width="90" height="38" alt="Admin" id="Admin" name="Admin" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Admin" id="Admin"
+                                                name="Admin" />
+                                        </a>
+                                            <ul style="top: 15px; width: 155px">
+                                                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;MAA&nbsp;&nbsp;>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                    <ul style="margin-top: -12px;">
+                                                        <li><a href="../UI/AfterSalesInventories.aspx">&nbsp;&nbsp;&nbsp;&nbsp;After Sales&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/MAA_AfterSalesInventories.aspx">&nbsp;&nbsp;&nbsp;&nbsp;MAA After
+                                                            Sales&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href='#here' onclick='window.open("RegistrationRequest.aspx")'>&nbsp;&nbsp;&nbsp;&nbsp;MAA
+                                                            Registration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Lanes&nbsp;&nbsp;>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                    <ul style="margin-top: -12px;">
+                                                        <li id="liApplyLaneAutomation" runat="server"><a href="../UI/ApplyLaneAutomation.aspx">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Apply Lane Automation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li id="liLaneAutomationSetting" runat="server"><a href="../UI/LaneAutomationSetting.aspx">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Lane Automation Setting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/ManageLanes.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Lanes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/ManageAuctionSchedule.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Auction
+                                                            Schedules&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/ManageRules.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Rules&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Logs&nbsp;&nbsp;>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                    <ul style="margin-top: -12px;">
+                                                        <li><a href="../UI/LaneLog.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Lane History&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/Audit.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Audit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/ExportHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Export History&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Settings&nbsp;&nbsp;>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                    <ul style="margin-top: -12px;">
+                                                        <li><a href="../UI/ManagePermissions.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/EmployeeList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/GroupList.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Groups&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li>
+                                                            <asp:HyperLink NavigateUrl="../UI/LookUpTables.aspx" runat="server" ID="hplLookUpTables">&nbsp;&nbsp;&nbsp;&nbsp;Manage 
+                                                    Lookups&nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink>
+                                                        </li>
+                                                        <li><a href="../UI/ChangePassword.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Change Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                        <li><a href="../UI/NotificationSettings.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Notifications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                                        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Mobile','','../images/Mobile-Tab-On.gif',0)">
+                                            <%--<img border="0" src="../images/Mobile-Tab.gif" width="90" height="38" alt="Mobile" id="Mobile" name="Mobile" />--%>
+                                            <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Mobile" id="Img1"
+                                                name="Mobile" />
+                                        </a>
+                                            <ul style="top: 15px;">
+                                                <li><a href="../UI/PreInventory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Pre-Inventory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/PreExpense.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Pre-Expense&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/ManageLocation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Manage Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/ViewLocation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/VinScanLog.aspx">&nbsp;&nbsp;&nbsp;&nbsp;VIN Scan Log&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                                <li><a href="../UI/GenericImages.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Generic Images&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Header End -->
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="padding: 0px 2px 0px 2px;">
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="LeftPanel" valign="top">
+                                <!-- Left Panel Start -->
+                                <table border="1" cellpadding="0" style="border-collapse: collapse">
+                                    <tr>
+                                        <td colspan="2" style="background-image: url( '../Images/HeadingImg.gif' ); background-repeat: repeat-x;
+                                            width: 236px; color: #21618C; height: 28px; font-size: 14px; text-align: left;
+                                            vertical-align: middle; font-weight: bold">
+                                            &nbsp;&nbsp;:&nbsp;:&nbsp;&nbsp;HeadStartVMS&nbsp;-&nbsp;Reports
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelTable" style="padding: 5px" colspan="2" align="left">
+                                            <ul>
+                                                <li style="padding-top: 7px"><a href="Account_Payable.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Account Payable </b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="AccountingReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Accounting Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="AfterSalesManagement.aspx" class="OrangeText_LeftPanel">
+                                                    <b>After Sale Management</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="AlphabeticalRegistration.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Alphabetical Registration</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="ATCAuctionsOpenDealList.aspx" class="OrangeText_LeftPanel">
+                                                    <b>ATC Auctions Open Deal List</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="AvgCommissionReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Average Commission</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BlockRunList.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Block Run List</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BlockRunListEnhanced.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Block Run List Enhanced</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BlockRunListExcludingCost.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Block Run List Excluding Cost</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BuyersReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Buyers Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BuyersReportV2.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Buyers Report v2.0</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="BuyerInventory.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Buyer Inventory</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="ChargeBackReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>ChargeBack Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="CommissionReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Commission Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="ExpenseReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Expense Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="HereNotHere.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Here/Not Here Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="InventoryOnHandReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Inventory On-Hand</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a></li>
+                                                <li style="padding-top: 7px"><a href="InventoryReportJs.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Inventory Report (JS)</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a></li>
+                                                <li style="padding-top: 7px"><a href="NetProfitAndLoss.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Net Profit & Loss</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="NetProfitAndLossSpecialCaseNotes.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Net Profit & Loss Special Notes</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="NoTitlesReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>No Titles</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="NormanReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Norman Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="PaidInventoryReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Paid Inventory </b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="PurchasedCarsByBuyers.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Purchased Cars By Buyers </b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <!-- <li style="padding-top: 7px"><a href="PurchasedCarsByDealers.aspx" class="OrangeText_LeftPanel">
+                                       <b>Purchased Cars By Dealers </b></a>
+                                       <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                    </li>-->
+                                                <li style="padding-top: 7px"><a href="RegistrationReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Registration Report</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="SalesBreakDownReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Sales BreakDown</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="SBPayablesReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>S. B. Payables</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="SoldInventory.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Sold Inventory</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="SpecialRunListReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Special Run List</b>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                                </li>
+                                                <!--<li style="padding-top: 7px"><a href="ViewAllSoldCars.aspx" class="OrangeText_LeftPanel">
+                                       <b>View All Sold Cars</b>
+                                       <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" /></a>
+                                    </li>-->
+                                                <li style="padding-top: 7px"><a href="UnpaidReport.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Unpaid Report</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                                <li style="padding-top: 7px"><a href="UnpaidReportSpecificDate.aspx" class="OrangeText_LeftPanel">
+                                                    <b>Unpaid Report Specific Date</b></a>
+                                                    <img border="0" src="../images/Pop-Up.gif" width="13" height="13" alt="" />
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="LeftPanelFooter">
+                                            &nbsp;
+                                        </td>
+                                        <!--<td class="LeftPanelFooter" align="right">
+                                 <a href="../UI/SystemStats.aspx" class="BlackTxt_Link">View All Stats</a>
+                              </td>-->
+                                    </tr>
+                                </table>
+                                <!-- Left Panel End -->
+                            </td>
+                            <td valign="top" width="730" class="RightPanel" align="left">
+                                <!-- Right Panel/Content Panel Start -->
+                                <!-- Right Panel/Content Panel Start -->
+                                <asp:Label ID="lblUIMessage" Width="90%" runat="server"></asp:Label>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="FooterPanel">
+                    <!-- Footer Start Here -->
+                    <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+                        <tr>
+                            <td class="FooterPanelLinkTd" align="left">
+                                <a href="../UI/Default.aspx" class="FooterLink">Home</a><span class="FooterLink_Devider">|</span>
+                                <a href="../UI/LaneAssignment.aspx" class="FooterLink">Lane Assignments</a><span
+                                    class="FooterLink_Devider">|</span> <a href="../UI/InventoryList.aspx?CarStatus=3"
+                                        class="FooterLink">Archived Cars</a><span class="FooterLink_Devider">|</span>
+                                <a href="../UI/SystemStats.aspx" class="FooterLink">System Stats</a><span class="FooterLink_Devider">|</span>
+                                <a href="../UI/AnnouncementDetails.aspx" class="FooterLink">Announcements</a><span
+                                    class="FooterLink_Devider">|</span> <a href="../UI/ChromeHistory.aspx" class="FooterLink">
+                                        Chrome History</a><span class="FooterLink_Devider">|</span> <a href="Account_Payable.aspx"
+                                            class="FooterLink">Reports</a><span class="FooterLink_Devider">|</span>
+                                <asp:LinkButton ID="lnkClearCache" runat="server" Text="Clear Cache" class="FooterLink"
+                                    CausesValidation="false" OnClick="lnkClearCache_Click"></asp:LinkButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="OrangeText_LeftPanel" align="left">
+                                <asp:Label ID="lblCopyright" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Footer Start nd -->
+                </td>
+            </tr>
+        </table>
+    </center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,614 @@
+﻿html, body
+{
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Verdana, Arial;
+    height: 100%;
+    line-height: 19px;
+}
+.ContentArea
+{
+    background: min-width: 1000px;
+    padding: 0;
+    margin: 0px;
+    min-height: 100%;
+}
+.InnerContent
+{
+    min-width: 950px;
+    min-height: 100%;
+}
+.Banner
+{
+    background-image: url(/Images/banner.jpg);
+    background-repeat: no-repeat;
+    height: 110px;
+}
+.lblAddress
+{
+    font-size: 12px;
+    font-family: Verdana, Tahoma, Arial;
+}
+
+/* DEFAULTS
+----------------------------------------------------------*/
+
+DIV.title
+{
+    font-size: 3em;
+    padding: .6em;
+}
+/*.footer{position: relative;margin: 0px;padding: 0px;background: #64676A;width: 100%;height:40px; color:#fff; clear:both;}*/
+
+.main
+{
+    clear: both;
+    min-height: 350px;
+    padding: 7px;
+}
+a:link, a:visited
+{
+    color: #034af3;
+    text-decoration: none;
+    font-size: 12px;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #034af3;
+}
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+.heading
+{
+    background-color: #444;
+    border-bottom: 2px solid #111;
+    color: White;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    height: 27px;
+    border-bottom: solid 1px #bbb;
+}
+.heading td
+{
+    color: #fff;
+}
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+.ohead
+{
+    color: #006600; /*font-size: 1.3em;*/
+    font-size: 13px;
+    font-weight: bold;
+}
+.fieldset
+{
+    border: solid 1px #bbbbbb;
+}
+.legend
+{
+    padding: 2px 7px;
+    font-weight: bold;
+    color: #000066;
+}
+/* Controls
+-----------------------------------------------------------*/
+.txt1
+{
+    width: 90px;
+    font-size: 11px;
+    padding: 3px 5px;
+    font-family: Verdana, Tahoma, Arial;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.txt2
+{
+    width: 170px;
+    font-size: 11px;
+    padding: 3px 5px;
+    font-family: Verdana, Tahoma, Arial;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 5px;
+    border-radius: 3px;
+}
+.txt3
+{
+    width: 250px;
+    font-size: 11px;
+    padding: 3px 5px;
+    font-family: Verdana, Tahoma, Arial;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.txt4
+{
+    width: 102px;
+    font-size: 11px;
+    padding: 3px 5px;
+    font-family: Verdana, Tahoma, Arial;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.ddl1
+{
+    width: 91px;
+    font-size: 11px;
+    padding: 3px;
+}
+.ddl2
+{
+    width: 180px;
+    font-size: 11px;
+    padding: 3px;
+}
+.ddl3
+{
+    width: 253px;
+    font-size: 11px;
+    padding: 3px;
+}
+.ddl4
+{
+    width: 355px;
+    font-size: 11px;
+    padding: 3px;
+}
+
+.txtmult
+{
+    width: 400px;
+    font-size: 12px;
+}
+.lbl
+{
+    font-size: 12px;
+    font-family: Verdana, Arial;
+}
+.lblColor
+{
+    color: GrayText;
+}
+.ddl
+{
+    font-size: 11px;
+}
+
+
+/* GridView
+--------------------------------------*/
+
+
+.gvFooter
+{
+    color: #003300;
+}
+.gvFooter a:link, .gvFooter a:link
+{
+    color: #FFFFFF;
+    border: solid 1px #555;
+    background-color: #333300;
+    padding: 1px 6px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.gvFooter span
+{
+    color: #333300;
+    border: solid 1px #555;
+    background-color: #FFFFFF;
+    padding: 1px 6px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+tr.gvEmpty td
+{
+    color: #345;
+    height: 35px;
+    padding: 0 17px;
+    background-color: #E8E8E8;
+    font-weight: bold;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial;
+}
+
+
+.err
+{
+    color: Red;
+    font-size: 12px;
+}
+.msg
+{
+    color: Green;
+    font-size: 12px;
+}
+
+.menubg a:link, .menubg a:visited
+{
+    text-decoration: none;
+    color: #CCFFFF;
+    padding: 14px 20px;
+    vertical-align: middle;
+    background-color: #677854;
+    font-weight: bold;
+}
+
+.menubg a:hover
+{
+    text-decoration: none;
+    color: #FFCC00;
+    padding: 14px 20px;
+    vertical-align: middle;
+    background-color: #009900;
+    font-weight: bold;
+}
+
+
+.uppercase
+{
+    text-transform: uppercase;
+}
+.VIN
+{
+    border: 2px solid #A2A2A2;
+    font-size: 12px;
+    padding: 1px 4px;
+    margin-left: 2px;
+    text-transform: uppercase;
+}
+
+.TwoDoor, .FourDoor
+{
+    background-image: url(/Images/carbg.jpg);
+    background-repeat: no-repeat;
+    background-position: 120px;
+    height: 470px;
+    width: 400px;
+}
+.TwoDoor table, .FourDoor table
+{
+    height: 470px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+
+.Truck
+{
+    background-image: url(/Images/truck.jpg);
+    background-repeat: no-repeat;
+    background-position: 120px;
+    height: 470px;
+    width: 400px;
+}
+.Truck table
+{
+    height: 470px;
+    margin-left: 0px;
+    width: 100%;
+}
+.SUV
+{
+    background-image: url(/Images/van_suv.jpg);
+    background-repeat: no-repeat;
+    background-position: 120px;
+    height: 470px;
+    width: 400px;
+}
+.SUV table
+{
+    height: 470px;
+    margin-left: 0px;
+    width: 100%;
+}
+.btndel
+{
+    border: none;
+    background-color: transparent;
+    color: Maroon;
+}
+.checkboxlist
+{
+    padding-left: 0px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #535152;
+}
+.checkboxlist tr td
+{
+    margin: 0px;
+    padding: 2px 3px 0px 3px;
+}
+.checkboxlist label
+{
+    padding-left: 4px;
+}
+tr td input[type=checkbox]:checked + label
+{
+    color: #123456;
+    font-weight: bold;
+}
+tr td input[type=radio]:checked + label
+{
+    color: #123456;
+    font-weight: bold;
+}
+
+.dl
+{
+    padding: 3px 0px;
+    margin: 0px;
+    vertical-align: top;
+}
+.dl dt
+{
+    min-width: 180px;
+    float: left;
+    white-space: nowrap;
+}
+.dl dt + dd
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.dlRule
+{
+    padding: 3px 0px;
+    margin: 0px;
+    vertical-align: top;
+}
+.dlRule dt
+{
+    min-width: 100px;
+    float: left;
+    white-space: nowrap;
+    padding-left: 25px;
+}
+.dlRule dt + dd
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.overlay
+{
+    border: 1px solid #FFBE9F;
+    padding: 5px;
+    z-index: 1000;
+    width: 100px;
+    position: absolute;
+    background-color: #fff;
+    -moz-opacity: 0.75;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+.meterReading
+{
+    padding: 2px 7px;
+    font-weight: normal;
+    text-align: center;
+}
+.meterReading td span
+{
+    cursor: pointer;
+    color: #0033CC;
+}
+.meterPopup
+{
+    border: 1px solid #333300;
+    background-color: #DCE6E9;
+    position: absolute;
+    width: 185px;
+    margin-left: 505px;
+    margin-top: 17px;
+}
+.meterBumper
+{
+    width: 200px;
+}
+div.meterBumper div img, meterBumper img
+{
+    display: none;
+}
+
+
+.btnVdieoImages
+{
+    background-color: #C0C0C0;
+    border: none;
+    border-bottom: solid 1px #eee;
+    border-right: solid 1px #eee;
+    padding: 0px 5px;
+}
+.btnVideoImagesActive
+{
+    background-color: #005E00;
+    border: none;
+    color: #FF9900;
+    border-bottom: solid 1px #eee;
+    border-right: solid 1px #eee;
+    padding: 0px 5px;
+}
+input.btnVdieoImages:hover
+{
+    background-color: #005E00;
+    border: none;
+    color: #FF9900;
+    border-bottom: solid 1px #eee;
+    border-right: solid 1px #eee;
+    padding: 0px 5px;
+}
+
+.imagevideobox
+{
+    font-size: 12px;
+    min-height: 23px;
+    padding: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #CECECE;
+    background-image: -moz-linear-gradient(top, #cecece, #eee);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #cecece),color-stop(1, #eee));
+    background-image: -webkit-linear-gradient(#cecece, #eee);
+}
+
+
+
+
+.star0color
+{
+    color: Green;
+}
+.star1color
+{
+    color: Green;
+}
+.star2color
+{
+    color: #FF9900;
+}
+.star3color
+{
+    color: Red;
+}
+
+.border_top
+{
+    background: url("/Images/video_box_top.jpg") no-repeat scroll 0 0 transparent;
+    height: 23px;
+}
+.border_bottom
+{
+    background: url("/Images/video_box_bottom.jpg") no-repeat scroll 0 0 transparent;
+    height: 23px;
+}
+.border_vline_left
+{
+    background: url("/Images/video_box_left.jpg") repeat-y scroll 0 0 transparent;
+    width: 23px;
+}
+.border_vline_right
+{
+    background: url("/Images/video_box_right.jpg") repeat-y scroll 0 0 transparent;
+    width: 23px;
+}
+.pmTable td
+{
+    padding: 2px 10px;
+    font-size: 11px;
+    line-height: 17px;
+}
+.pmTable td
+{
+    padding: 2px 10px;
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+    line-height: 17px;
+}
+.divPopup
+{
+    border: 7px solid gray;
+    padding: 10px;
+    position: absolute;
+    display: none;
+    background: #f1f1f1;
+    margin-left: 25px;
+    min-width: 300px;
+    max-width: 600px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+.divPopup:hover
+{
+    display: block;
+}
+.alteredRow
+{
+    background-color: #FFCC99;
+}
+/* POPUP
+-----------------------*/
+.popupdiv
+{
+    text-align: left;
+    background-color: #f1f1f1;
+    min-width: 400px;
+    min-height: 200px;
+    position: absolute;
+    border: 7px solid #3123123;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+.popupheader
+{
+    text-align: right;
+    padding: 6px 6px 0px 0px;
+    min-height: 25px;
+    background-color: #5D7B9D;
+    -moz-border-radius: 6px 6px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+.popupcontent
+{
+    padding: 7px 10px;
+}
+.popupheading
+{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}

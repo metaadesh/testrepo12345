@@ -1,0 +1,17 @@
+﻿.divcontrol
+{
+    width:100%; height:600px;
+}
+div.divinput 
+{
+    font-size: 11px; color: #222222; padding:10px; line-height: 14px; font-family: "verdana" , "sans-serif"; 
+    margin:5px; margin-bottom:10px; background-color:#f0f0f0; text-align:left; 
+}
+#divScannerControl label
+{
+    color: White !important;
+}
+#divScannerControl li b
+{
+    color: White !important;
+}

@@ -1,0 +1,422 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DealerMasterPageNoLeftPanel.master.cs"
+    Inherits="METAOPTION.UI.DealerMasterPageNoLeftPanel" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head1" runat="server">
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HeadStart VMS</title>
+    <%--<link href="../CSS/min.css?v=1" rel="stylesheet" type="text/css" />--%>
+    <%--<script src="../CSS/min.js?v=1" type="text/javascript"></script>
+
+    <link href="../CSS/AjaxRelated.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/MainStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/ModalPopUp.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/ControlStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/thickbox.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/tipTip.css" rel="stylesheet" type="text/css" />--%>
+    <%--<script src="../CSS/Menu.js" type="text/javascript"></script>
+    <script src="../CSS/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="../CSS/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../CSS/jquery.browser.min.js" type="text/javascript"></script>
+    <script src="../CSS/PageScript.js" type="text/javascript"></script>
+    <script src="../CSS/thickbox-compressed.js" type="text/javascript"></script>
+    <script src="../CSS/jquery.tipTip.minified.js" type="text/javascript"></script>
+    <script src="../CSS/jquery.tipTip.js" type="text/javascript"></script>--%>
+    <link href="../CSS/AjaxRelated.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/MainStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/ModalPopUp.css" rel="stylesheet" type="text/css" />
+    <script src="../CSS/Menu.js" type="text/javascript"></script>
+    <link href="../CSS/ControlStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/thickbox.css" rel="stylesheet" type="text/css" />
+    <script src="../CSS/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="../CSS/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../CSS/jquery.browser.min.js" type="text/javascript"></script>
+    <script src="../CSS/PageScript.js" type="text/javascript"></script>
+    <script src="../CSS/thickbox-compressed.js" type="text/javascript"></script>
+    <link href="../CSS/tipTip.css" rel="stylesheet" type="text/css" />
+    <script src="../CSS/jquery.tipTip.minified.js" type="text/javascript"></script>
+    <script src="../CSS/jquery.tipTip.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function SetProgressPosition(e) {
+            var posx = 0;
+            var posy = 0;
+            if (!e) var e = window.event;
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            }
+            else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.documentElement.scrollLeft;
+                posy = e.clientY + document.documentElement.scrollTop;
+            }
+            document.getElementById('dvProg').style.left = posx + 10 + "px";
+            document.getElementById('dvProg').style.top = posy + "px";
+        }
+    </script>
+    <script type="text/javascript" language="javascript">
+        function HideModelpopup11092012() {
+            $find('ImageModelPopup').hide();
+            return false;
+        }
+
+        function HideDocumentpopup11092012(inventoryID) {
+            //var InventoryId = $('#inventoryID').val();
+            //$find('DocumentModelPopup11').hide();
+            document.getElementById('ctl00_divScan').value;
+
+            window.location.href = '../UI/InventoryDocuments.aspx?Code=' + inventoryID;
+            return false;
+        }
+
+        function validateScanVIN() {
+            var txt = document.getElementById('ctl00_txtScanVIN').value;
+            if (txt == '') {
+                alert("Please enter a VIN");
+                return false;
+            }
+            else
+                return true;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server">
+        <Services>
+            <asp:ServiceReference Path="~/WS/AutoFillCustomers.asmx" />
+        </Services>
+    </asp:ScriptManager>
+    <div style="margin: 0px auto; min-width: 1000px; max-width: 1200px; height: auto;">
+        <!-- Header Start -->
+        <table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+            <tr>
+                <td class="Logo">
+                    <div>
+                        <img id="imgLogo" border="0" src="../images/Logo.gif" width="207" height="35" alt=""
+                            runat="server" />
+                    </div>
+                    <div style='margin-top: 6px;'>
+                        <asp:Label ID="lblOrgName" runat="server" Text="" CssClass="OrgName"></asp:Label>
+                    </div>
+                </td>
+                <td style="text-align: right;">
+                    <!-- Login Status Window Start -->
+                    <%-- <table border="0" cellpadding="0" style="border-collapse: collapse;" class="LoginStatus">
+                        <tr>
+                            <td class="LoginTd" nowrap="nowrap">
+                                <asp:Panel ID="pnlVINPattern" runat="server" Style="float: left">
+                                    <asp:DropDownList ID="ddlVINPartern" runat="server" CssClass="txt1">
+                                        <asp:ListItem Value="-1">Exact</asp:ListItem>
+                                        <asp:ListItem Selected="True" Value="6">Last 6</asp:ListItem>
+                                        <asp:ListItem Value="10">First 10</asp:ListItem>
+                                    </asp:DropDownList>
+                                </asp:Panel>
+                                <asp:Panel ID="pnlVINSearch" runat="server" DefaultButton="btnSearchInv" Style="float: right">
+                                    &nbsp;<asp:TextBox ID="txtVINNo" runat="server" CssClass="txt2" />
+                                    <asp:Button ID="btnSearchInv" Text="VIN Search" CausesValidation="false" runat="server"
+                                        CssClass="btn" OnClick="btnSearchInv_Click" Width="80px" />
+                                </asp:Panel>
+                                <br /><br />
+                                <asp:Panel ID="pnlVINScan" runat="server" Visible="false" DefaultButton="btnScan" Style="clear: both">
+                                    <asp:TextBox ID="txtScanVIN" runat="server" CssClass="txt2" Style="margin-left: 80px"></asp:TextBox>
+                                    <asp:Button ID="btnScan" Text="Scan" CausesValidation="false" runat="server" CssClass="btn"
+                                        OnClick="btnScan_Click" Width="80px" OnClientClick="return validateScanVIN();" />
+                                </asp:Panel>
+                                <asp:DropDownList ID="DDLSystem" runat="server" CssClass="txt2">
+                                </asp:DropDownList>
+                                &nbsp;<asp:Button ID="btnChange" Text="Change System" CausesValidation="false" runat="server"
+                                    CssClass="btn" OnClick="btnChange_Click" />
+                            </td>
+                        </tr>
+                    </table>--%>
+                    <table border="0" cellpadding="0" style="border-collapse: collapse;" class="LoginStatus">
+                        <tr>
+                            <td style="height: 6px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Panel ID="pnlVINPattern" runat="server" Style="float: left">
+                                    <asp:DropDownList ID="ddlVINPartern" runat="server" CssClass="txt1">
+                                        <asp:ListItem Value="-1">Exact</asp:ListItem>
+                                        <asp:ListItem Selected="True" Value="6">Last 6</asp:ListItem>
+                                        <asp:ListItem Value="10">First 10</asp:ListItem>
+                                    </asp:DropDownList>
+                                </asp:Panel>
+                            </td>
+                            <td align="left" style="white-space: nowrap;">
+                                <asp:Panel ID="pnlVINSearch" runat="server" DefaultButton="btnSearchInv">
+                                    &nbsp;<asp:TextBox ID="txtVINNo" runat="server" CssClass="txt2" Width="150px" />
+                                    <asp:Button ID="btnSearchInv" Text="VIN Search" CausesValidation="false" runat="server"
+                                        CssClass="btn" OnClick="btnSearchInv_Click" Width="80px" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td align="left" style="white-space: nowrap;">
+                                <asp:Panel ID="pnlVINScan" runat="server" DefaultButton="btnScan" Style="clear: both">
+                                    <asp:TextBox ID="txtScanVIN" runat="server" CssClass="txt2" Width="150px" Style="margin-left: 3px;"></asp:TextBox>
+                                    <asp:Button ID="btnScan" Text="Scan" CausesValidation="false" runat="server" CssClass="btn"
+                                        OnClick="btnScan_Click" Width="80px" OnClientClick="return validateScanVIN();" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <%--class="LoginTd"--%>
+                            <td nowrap="nowrap" align="left">
+                                <asp:DropDownList ID="DDLSystem" runat="server" CssClass="txt2" Width="152px" Style="margin-left: 3px;">
+                                </asp:DropDownList>
+                                <asp:Button ID="btnChange" Text="Change System" CausesValidation="false" runat="server"
+                                    CssClass="btn" OnClick="btnChange_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 6px;">
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Login Status Window End -->
+                </td>
+                <td class="LoginStatusWindow" align="right">
+                    <!-- Login Status Window Start -->
+                    <table border="0" cellpadding="0" style="border-collapse: collapse" class="LoginStatus">
+                        <tr>
+                            <td class="LoginTd" style="white-space: nowrap;">
+                                <asp:Label ID="lblWelcome" CssClass="LoginTxt" runat="server"></asp:Label>
+                                &nbsp;|&nbsp;
+                                <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout" class="LoginTxt" OnClick="lnkLogout_Click"
+                                    CssClass="LoginTxt" CausesValidation="false"></asp:LinkButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="LoginTd" style="white-space: nowrap;">
+                                <%--Last Login was on : 11/11/2008 11:46 PM--%>
+                                <asp:Label ID="lblLastLogin" runat="server" CssClass="LoginTxt"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Login Status Window End -->
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="TopMenuBarTd">
+                    <div class="suckertreemenu" align="center">
+                        <ul id="treemenu1">
+                            <li><a href="DealerDefault.aspx?Query=refresh" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('EntityHome','','../images/Home-Tab-On.gif',0)">
+                                <%--<img src="../images/Home-Tab.gif" alt="Home" name="Home" width="79" height="38" border="0" id="Home" />--%>
+                                <img src="../Images/img_trans.gif" width="1" height="1" alt="Home" name="Home" border="0"
+                                    id="EntityHome" />
+                            </a></li>
+                            <li>
+                                <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                            <li><a onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('CompanyDetails','','../images/company-hover.PNG',0)">
+                                <%--<img src="../images/Home-Tab.gif" alt="Home" name="Home" width="79" height="38" border="0" id="Home" />--%>
+                                <img src="../Images/img_trans.gif" width="1" height="1" alt="Company Details" name="CompanyDetails"
+                                    border="0" id="CompanyDetails" />
+                            </a>
+                                <ul style="top: 15px; width: 140px;">
+                                    <li>
+                                        <asp:LinkButton ID="lnkViewDealerCustomerMenu" runat="server" OnClick="lnkViewVendorMenu_Click">&nbsp;&nbsp;&nbsp;&nbsp;Details&nbsp;&nbsp;&nbsp;&nbsp;</asp:LinkButton>
+                                    </li>
+                                    <%-- <asp:HyperLink NavigateUrl="~/UI/ViewVendor.aspx" runat="server" ID="hylnkvendor">&nbsp;&nbsp;&nbsp;&nbsp;Details&nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>--%>
+                                    <li>
+                                        <asp:HyperLink NavigateUrl="~/UI/CompanyContacts.aspx" runat="server" ID="hylnkcontc">&nbsp;&nbsp;&nbsp;&nbsp;Contact &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink NavigateUrl="~/UI/EntityUserList.aspx" runat="server" ID="hylnkUsers">&nbsp;&nbsp;&nbsp;&nbsp;Users &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                    <li>
+                                        <%--<asp:HyperLink NavigateUrl="~/UI/CompanyExpenseType.aspx" runat="server" ID="HyperLink1">&nbsp;&nbsp;&nbsp;&nbsp;Expense Types &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>--%>
+                                </ul>
+                            </li>
+                            <li>
+                                <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                            <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('EntityAccountPayable','','../images/AccontsPayable-Tab-On.gif',0)">
+                                <%--<img border="0" src="../images/AccontsPayable-Tab.gif" width="180" height="38" alt="Acconts Payable" name="AccontsPayable" id="AccontsPayable" />--%>
+                                <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Acconts Payable"
+                                    name="EntityAccountPayable" id="EntityAccountPayable" />
+                            </a>
+                                <ul style="top: 15px;">
+                                    <li>
+                                        <asp:HyperLink NavigateUrl="Payments.aspx" runat="server" ID="lnkPayments">&nbsp;&nbsp;&nbsp;&nbsp;View 
+                                                    All Payment&nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink NavigateUrl="ViewAllExpenses.aspx" runat="server" ID="lnkViewAllExpenses">&nbsp;&nbsp;&nbsp;&nbsp;View All Expense &nbsp;&nbsp;&nbsp;&nbsp;</asp:HyperLink></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                            <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','../images/Search-Tab-On.gif',0)">
+                                <%--<img border="0" src="../images/Search-Tab.gif" width="94" height="38" alt="Search" name="Search" id="Search" />--%>
+                                <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="Search" name="Search"
+                                    id="SearchDealer" />
+                            </a>
+                                <ul style="top: 15px;">
+                                    <li><a href="InventorySearch.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search Inventory&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img border="0" src="../images/TopMenuDevider.gif" width="2" height="38" alt="" /></li>
+                            <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('EntityMobile','','../images/Mobile-Tab-On.gif',0)">
+                                <%--<img border="0" src="../images/Mobile-Tab.gif" width="90" height="38" alt="Mobile" id="Mobile" name="Mobile" />--%>
+                                <img border="0" src="../Images/img_trans.gif" width="1" height="1" alt="EntityMobile"
+                                    id="EntityMobile" name="EntityMobile" />
+                            </a>
+                                <ul style="top: 15px;">
+                                    <li><a href="PreInventory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Mobile Inventory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                    <li><a href="ViewLocation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                    <li><a href="VinScanLog.aspx">&nbsp;&nbsp;&nbsp;&nbsp;VIN Scan Log&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                    <li><a href="GenericImages.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Generic Images&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <!-- Header End -->
+        <div style="padding: 5px 1px; background-color: #fff; vertical-align: top; height: auto;
+            float: left; width: 100%">
+            <!-- Content Start Here -->
+            <asp:Label ID="lblUIMessage" Width="90%" runat="server"></asp:Label>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- Content End Here -->
+        </div>
+        <div class="FooterPanel" style="background-color: #fff; float: left; width: 100%">
+            <!-- Footer Start Here -->
+            <div class="FooterPanelLinkTd" style="padding: 7px 13px; text-align: left">
+                <a href="DealerDefault.aspx" class="FooterLink">Home</a><span class="FooterLink_Devider">|</span>
+                <asp:LinkButton ID="lnkClearCache" runat="server" Text="Clear Cache" class="FooterLink"
+                    CausesValidation="false" OnClick="lnkClearCache_Click"></asp:LinkButton>
+            </div>
+            <div class="OrangeText_LeftPanel" style="text-align: left; padding: 8px 13px 15px 13px;">
+                <asp:Label ID="lblCopyright" runat="server" />
+            </div>
+            <!-- Footer Start nd -->
+        </div>
+    </div>
+    <%----------Scan PopUp Begin----------%>
+    <div id="divScan" class="modalPopup" style="display: none; min-width: 400px; min-height: 200px"
+        runat="server">
+        <div>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td class="PopUpBoxHeading">
+                        &nbsp;&nbsp;
+                        <asp:Label ID="lblScan" runat="server"></asp:Label>
+                    </td>
+                    <td class="PopUpBoxHeading" align="right">
+                        <img border="0" src="../Images/close.gif" id="imgCloseScanPopUp" alt="close" />
+                    </td>
+                </tr>
+            </table>
+            <iframe id="frmScanner" runat="server" scrolling="yes" style="height: 680px; width: 880px;
+                overflow: auto" frameborder="0"></iframe>
+        </div>
+    </div>
+    <asp:HiddenField ID="hfScan" runat="server" />
+    <ajax:ModalPopupExtender ID="mpeScan" runat="server" BackgroundCssClass="modalBackground"
+        TargetControlID="hfScan" PopupControlID="divScan" CancelControlID="imgCloseScanPopUp"
+        BehaviorID="ScanModalPopup">
+    </ajax:ModalPopupExtender>
+    <div style="width: 100%; height: auto">
+        <asp:HiddenField ID="HiddenField2" runat="server" />
+        <ajax:ModalPopupExtender ID="ModalPopupExtender2" runat="server" TargetControlID="HiddenField2"
+            PopupControlID="pnlDocument" BackgroundCssClass="modalBackground" CancelControlID="img2"
+            PopupDragHandleControlID="pnlDocument" BehaviorID="DocumentModelPopup" />
+        <asp:Panel ID="pnlDocument" runat="server" Height="980px" Width="890px" CssClass="imagevideobox">
+            <div style="position: absolute; text-align: right; padding-right: 10px; width: 885px;">
+                <img src="../Images/close_icon.gif" alt="close" id="img2" runat="server" />
+            </div>
+            <iframe id="Iframe1" runat="server" scrolling="no" style="height: 680px; width: 890px;
+                margin-top: 10px; background-color: White" frameborder="0"></iframe>
+        </asp:Panel>
+    </div>
+    <%----------Scan PopUp End----------%>
+    <%----------VIN PopUp Begin----------%>
+    <div id="divSelInv" class="modalPopup" style="display: none; min-width: 400px; min-height: 200px"
+        runat="server">
+        <div>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td class="PopUpBoxHeading">
+                        &nbsp;&nbsp;Select Inventory
+                        <asp:Label ID="Label2" runat="server"></asp:Label>
+                    </td>
+                    <td class="PopUpBoxHeading" align="right">
+                        <img border="0" src="../Images/close.gif" id="imgCloseSelInv" alt="close" />
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <asp:GridView ID="gvSelInv" runat="server" AutoGenerateColumns="false" GridLines="None"
+                    Width="100%" RowStyle-CssClass="gvRow" AlternatingRowStyle-CssClass="gvAlternateRow">
+                    <Columns>
+                        <asp:TemplateField HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent"
+                            HeaderStyle-Width="5px" ItemStyle-Width="5px">
+                            <ItemTemplate>
+                                <asp:RadioButton ID="rdselect" runat="server" onclick="toggleSelection(this);" AutoPostBack="false" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Inventory ID" HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent">
+                            <ItemTemplate>
+                                <asp:Label ID="lblInventoryID" runat="server" Text='<%#Eval("InventoryID") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="VIN" HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent">
+                            <ItemTemplate>
+                                <asp:Label ID="lblVIN" runat="server" Text='<%#Eval("VIN") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Year" HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent">
+                            <ItemTemplate>
+                                <asp:Label ID="lblYear" runat="server" Text='<%#Eval("Year") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Make" HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent">
+                            <ItemTemplate>
+                                <asp:Label ID="lblMake" runat="server" Text='<%#Eval("Make") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Model" HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent">
+                            <ItemTemplate>
+                                <asp:Label ID="lblModel" runat="server" Text='<%#Eval("Model") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Body" HeaderStyle-CssClass="GridHeader" ItemStyle-CssClass="GridContent">
+                            <ItemTemplate>
+                                <asp:Label ID="lblBody" runat="server" Text='<%#Eval("Body") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+                <div style="text-align: center; padding: 10px 0px">
+                    <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click" CssClass="btn"
+                        Width="80px" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:HiddenField ID="hfSelInv" runat="server" />
+    <ajax:ModalPopupExtender ID="mpeSelInv" runat="server" BackgroundCssClass="modalBackground"
+        TargetControlID="hfSelInv" PopupControlID="divSelInv" CancelControlID="imgCloseSelInv">
+    </ajax:ModalPopupExtender>
+    <%----------VIN PopUp End----------%>
+    </form>
+    <script type="text/javascript">
+        function toggleSelection(Source) {
+            var crvalues = '';
+            var isChecked = Source.checked;
+            $("#ctl00_gvSelInv input[id*='rdselect']").each(function (index) {
+                $(this).attr('checked', false);
+            });
+            Source.checked = isChecked;
+        }
+    </script>
+</body>
+</html>

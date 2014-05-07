@@ -1,0 +1,259 @@
+﻿
+.tabs
+{
+    position: relative;
+    clear: both;
+    margin: 25px 0;
+    top: 0px;
+    left: 0px;
+    width: 780px;
+}
+.tab
+{
+    float: left;
+}
+.tab label
+{
+    background: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    position: relative;
+    left: 1px;
+}
+.tab [type=radio]
+{
+    display: none;
+}
+.content
+{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background: white;
+    right: 0;
+    bottom: 0;
+    padding: 0px;
+}
+[type=radio]:checked ~ label
+{
+    background: white;
+    border-bottom: 1px solid white;
+    z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content
+{
+    z-index: 1;
+}
+.button
+{
+    display: block;
+    width: 115px;
+    height: 25px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+#container
+{
+    width: 700px;
+}
+
+
+
+*
+{
+    font-family: "Lucida Grande" , "Lucida Sans Unicode" , "Lucida Sans" , Verdana, Arial, sans-serif;
+    color: #21618C;
+    line-height: 140%;
+}
+select, input, textarea
+{
+    font-size: 1em;
+}
+body
+{
+    padding: 0;
+    font-size: 70%;
+    width: 800px;
+}
+h2
+{
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: 1px dotted #dedede;
+}
+h3
+{
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    padding: 0;
+}
+.example
+{
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+}
+ul
+{
+    list-style-image: url(list-style.gif);
+}
+pre
+{
+    font-family: "Lucida Console" , "Courier New" , Verdana;
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+}
+code
+{
+    font-family: "Lucida Console" , "Courier New" , Verdana;
+    margin: 0;
+    padding: 0;
+}
+
+#gallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    width: 650px;
+}
+#PreExpensegallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    width: 650px;
+}
+#Genericgallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    width: 650px;
+}
+#UCRgalleryThumb
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 13px;
+    width: 650px;
+    height:530px;
+}
+#UCRAudioThumb
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    width: 650px;
+}
+#UCRVideoThumb
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    width: 650px;
+}
+#divAllImageThumb
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    width: 650px;
+}
+
+#gallery1
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 550px;
+    width: 700px;
+}
+#UCRImagegallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 560px;
+    width: 700px;
+}
+#Audiogallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 560px;
+    width: 700px;
+}
+#Videogallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 560px;
+    width: 700px;
+}
+
+#PreExpensegallery1
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 550px;
+    width: 700px;
+}
+#Genericgallery1
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 550px;
+    width: 700px;
+}
+#UCRgallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #C0D9D9;
+    margin-top: 5px;
+    height: 550px;
+    width: 700px;
+}
+#AllImageGallery
+{
+    padding: 0px 30px 30px 30px;
+    background: #e1eef5;
+    margin-top: 5px;
+    height: 550px;
+    width: 700px;
+}
+#descriptions
+{
+    position: relative;
+    height: 50px;
+    background: #EEE;
+    margin-top: 10px;
+    width: 640px;
+    padding: 10px;
+    overflow: hidden;
+}
+#descriptions .ad-image-description
+{
+    position: absolute;
+}
+#descriptions .ad-image-description .ad-description-title
+{
+    display: block;
+}
+.BackColorTab
+{
+    font-family: Verdana, Arial, Courier New;
+    font-size: 9pt;
+    cursor: pointer;
+    height: auto;
+    float: left;
+}

@@ -1,0 +1,364 @@
+﻿.txtMan1
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 75px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+
+
+
+.txtMan2
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 150px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+.txtMan3
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 300px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+
+.txt1
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 75px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+
+.txtSmall
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 65px;
+}
+
+.txt2
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 150px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+.txt3
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 300px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+.txtMulti
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 455px;
+    margin-top: 3PX;
+    margin-bottom: 3px;
+}
+.lblr
+{
+    border: #bbdef1 1px solid;
+    font-size: 11px;
+    font-family: Verdana, Arial, Courier New;
+    text-align: right;
+    width: 150px;
+    color: #202020;
+    padding: 3px 5px 3px 5px;
+}
+.lbl
+{
+    border: #bbdef1 1px solid;
+    font-size: 11px;
+    font-family: Verdana, Arial, Courier New;
+    width: 150px;
+    padding: 3px 5px 3px 5px;
+    color: #202020;
+}
+.lblb
+{
+    border: #bbdef1 1px solid;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    padding: 3px 5px 3px 5px;
+    color: #202020;
+    font-weight: bold;
+}
+.gridView
+{
+    font-family: Verdana;
+    font-size: 10px;
+    min-width: 910px;
+    max-width: 1200px;
+}
+.gridViewAlt
+{
+    font-family: Verdana;
+    font-size: 10px;
+    background-color: #E1E1E1;
+}
+.fieldset
+{
+    width: 96%;
+    padding: 10px 5px 5px 5px;
+    margin-left: 10px;
+}
+.legend
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #0000FF;
+}
+.btn
+{
+    background-color: #0c4f7c;
+    color: #ffffff;
+    padding: 1px;
+    font-size: 12px;
+    font-family: Arial;
+    border: #0c4f7c 0px solid;
+}
+input[type=submit][disabled=disabled], btn[disabled=disabled]
+{
+    background-color: #C0C0C0;
+}
+.note
+{
+    font-size: 11px;
+    font-family: Verdana, Arial, Courier New;
+    margin-right: 5px;
+    color: #336600;
+    padding: 4PX;
+}
+.gvHeading
+{
+    background: url(../images/tablebg.jpg) !important;
+    font-size: 11px;
+    font-weight: bolder;
+    height: 27px;
+    padding: 4px;
+    border: #bbdef1 1px solid;
+    margin-left: 5px;
+}
+
+
+
+.gvRow
+{
+    border: #bbdef1 1px solid;
+    font-weight: normal;
+    font-size: 11px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 4px;
+    background-color: #F9F9F9;
+    height: 25px;
+}
+.gvAlternateRow
+{
+    border: #bbdef1 1px solid;
+    padding: 4px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    height: 25px;
+}
+.gvEmpty
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000080;
+    background-color: #E4E4F3;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    width: 100%;
+}
+.err
+{
+    font-family: Arial;
+    color: #CC0000;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.hideCol
+{
+    display: none;
+}
+.lnktxt
+{
+    font-family: verdana, Arial;
+    font-size: 10px;
+    width: 75px;
+    margin-top: 5PX;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.CellHeight
+{
+    height: 10px;
+}
+.WordCounter
+{
+    border: 0;
+}
+
+.overlay
+{
+    border: 1px solid #FFBE9F;
+    padding: 5px;
+    z-index: 100;
+    width: 100px;
+    position: absolute;
+    background-color: #fff;
+    -moz-opacity: 0.75;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.row-fluid
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.row-fluid:before, .row-fluid:after
+{
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.row-fluid:after
+{
+    clear: both;
+}
+.row-fluid [class*="span"]
+{
+    -moz-box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-left: 2.5641%;
+    min-height: 30px;
+}
+.row-fluid [class*="span"]:first-child
+{
+    margin-left: 0;
+}
+.row-fluid .controls-row [class*="span"] + [class*="span"]
+{
+    margin-left: 2.5641%;
+}
+
+.span5
+{
+    width: 31%;
+}
+.grid table
+{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #DDDDDD;
+}
+.grid table tr td
+{
+    padding: 4px;
+    line-height: 20px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+.right-dic
+{
+    text-align: right !important;
+    color: #d87900;
+    font-weight: bold;
+}
+.right-dic a
+{
+    color: #d87900;
+}
+.grid-col
+{
+    background: #edeff1;
+    padding: 4px;
+}
+.lef-col
+{
+    color: #31404a;
+    font-weight: bold;
+}
+.header-tag
+{
+    background: url(../images/loctaion-bg.png) #095181;
+    background-repeat: repeat-x;
+    color: #fff;
+    padding: 4px;
+    line-height: 24px;
+    border-radius: 8px 8px 0 0;
+}
+.header-tag td
+{
+    color: #fff;
+    font-size: 14px;
+}
+.sub-line
+{
+    background: #c3ddf8;
+    color: #31404a;
+    padding: 4px;
+    line-height: 24px;
+}
+.sub-line td
+{
+    padding-left: 8px;
+    font-size: 14px;
+    border-right: 1px solid #e0e3e7;
+}
+.sub-tab td
+{
+    padding: 4px;
+    line-height: 24px;
+}
+.sub-tab
+{
+    border-right: 1px solid #E0E3E7;
+    border-bottom: 1px solid #E0E3E7;
+}
+.location-box
+{
+    box-shadow: 0 0 5px #DDDDDD;
+}
+
+.gvEmptyBlue
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000080;
+    background-color: #F0FAFF;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    width: 100%;
+}

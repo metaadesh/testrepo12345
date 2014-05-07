@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://metaoption.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://metaoption.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://metaoption.com">
+      <s:element name="GetUCRDetailToLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="crID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="matchType" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUCRDetailToLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUCRDetailToLinkResult" type="tns:ServiceResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResponce">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CRNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Records" type="tns:ArrayOfWebService_LinkCRResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWebService_LinkCRResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WebService_LinkCRResult" nillable="true" type="tns:WebService_LinkCRResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WebService_LinkCRResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CR" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VIN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Year" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Make" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CRDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatePublished" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserCredentials" type="tns:UserCredentials" />
+      <s:complexType name="UserCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DealerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegacySystemCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="VerifyURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyURLResult" type="tns:ServiceResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUCRDetailToLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUCRDetailToLink" />
+  </wsdl:message>
+  <wsdl:message name="GetUCRDetailToLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUCRDetailToLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUCRDetailToLinkUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="VerifyURLSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyURL" />
+  </wsdl:message>
+  <wsdl:message name="VerifyURLSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyURLUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="LinkCRServiceSoap">
+    <wsdl:operation name="GetUCRDetailToLink">
+      <wsdl:input message="tns:GetUCRDetailToLinkSoapIn" />
+      <wsdl:output message="tns:GetUCRDetailToLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyURL">
+      <wsdl:input message="tns:VerifyURLSoapIn" />
+      <wsdl:output message="tns:VerifyURLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LinkCRServiceSoap" type="tns:LinkCRServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUCRDetailToLink">
+      <soap:operation soapAction="http://metaoption.com/GetUCRDetailToLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUCRDetailToLinkUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyURL">
+      <soap:operation soapAction="http://metaoption.com/VerifyURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyURLUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LinkCRServiceSoap12" type="tns:LinkCRServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUCRDetailToLink">
+      <soap12:operation soapAction="http://metaoption.com/GetUCRDetailToLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUCRDetailToLinkUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyURL">
+      <soap12:operation soapAction="http://metaoption.com/VerifyURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyURLUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LinkCRService">
+    <wsdl:port name="LinkCRServiceSoap" binding="tns:LinkCRServiceSoap">
+      <soap:address location="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LinkCRServiceSoap12" binding="tns:LinkCRServiceSoap12">
+      <soap12:address location="http://cr.rhollensheadautosales.com/ws/LinkCRService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
