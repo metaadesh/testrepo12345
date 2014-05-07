@@ -21,6 +21,7 @@
          width: 550px" runat="server">
          <tr>
             <td id="MainHeading" colspan="2" align="center">
+			<!--Forgot Your Password-->
                Forget Password
             </td>
          </tr>
